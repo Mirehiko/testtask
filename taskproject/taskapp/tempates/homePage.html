@@ -1,0 +1,18 @@
+{% extends 'works/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" charset="utf-8"
+    href="{% static 'css/pageHome.min.css' %}?v{{ settings.STATIC_VERSION }}">
+{% endblock %}
+
+{% block main %}
+<main>
+
+</main>
+{% endblock %}
+
+{% block tail %}
+<script type="text/javascript" src="{% static 'js/pageHome.min.js' %}?v{{ settings.STATIC_VERSION }}" charset="utf-8"
+    defer></script>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Document</title>
+    {% block css %}{% endblock %}
+</head>
+
+<body>
+    <header>
+        {% block header %}
+        {% include 'modules/header.html' %}
+        {% endblock %}
+    </header>
+
+    {% block main %}
+    {% endblock %}
+
+    <footer>
+        {% block footer %}
+        {% include 'modules/footer.html' %}
+        {% endblock %}
+    </footer>
+</body>
+
+</html>
