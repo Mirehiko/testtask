@@ -16,9 +16,9 @@ import urllib
 
 from django.conf import settings
 # from .serializers import WorkSerializer
-from rest_framework import generics
-from rest_framework.permissions import IsAdminUser
-from works.models import Task
+# from rest_framework import generics
+# from rest_framework.permissions import IsAdminUser
+from taskapp.models import Task
 
 
 
