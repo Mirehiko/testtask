@@ -3,9 +3,9 @@
 *.zip
 __pycache__
 taskenv
-env
 npm-debug.log
-task/media
+taskproject/media
+taskproject/static
 /node_modules
 db.sqlite3
 # /static

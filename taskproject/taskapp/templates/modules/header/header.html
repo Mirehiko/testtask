@@ -1,0 +1,8 @@
+<nav class="menu mainMenu">
+    <div class="menu__item menuBrand"><a href="/"><i class="fas fa-home"></i></a></div>
+    <div class="menu__item">
+        <a href="/{% if authorized %}logout{% else %}login{% endif %}/">
+            {% if authorized %}Выход{% else %}Вход{% endif %}
+        </a>
+    </div>
+</nav>

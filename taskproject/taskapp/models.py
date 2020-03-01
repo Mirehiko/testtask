@@ -17,6 +17,8 @@ class User(models.Model):
 
 class Task(models.Model):
     title = models.CharField(max_length=200, default='', verbose_name='Название')
+    user = models.CharField(max_length=200, default='', verbose_name='Пользователь')
+    email = models.CharField(max_length=200, default='', verbose_name='Email')
     description = models.TextField(max_length=500, default='', verbose_name='Описание', blank=True)
     pub_date = models.DateTimeField(auto_now_add=True)
     is_cofirmed = models.BooleanField(verbose_name='Выполнена', default=False, blank=True)

@@ -3,13 +3,13 @@ from django.template import loader
 from django.shortcuts import render
 from django.conf import settings
 
-# from .models import Task, User
+from .models import Task, User
 
 def index(request):
-	# taskList = TaskList.objects.order_by('-pub_date')
+	taskList = Task.objects.order_by('-pub_date')
 
 	context = {
-		# 'taskList': taskList,
+		'taskList': taskList,
 	}
 
 	return render(request, 'homePage.html', context )
