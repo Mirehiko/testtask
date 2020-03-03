@@ -48,6 +48,7 @@ urlpatterns = [
     path('', views.homepage, name='homepage'),
     path('login/', views.authUser, name='authUser'),
     path('logout/', views.logout, name='logout'),
+    path('createtask/', views.createTask, name='createTask'),
     # path('<int:work_id>/', views.detail, name='detail'),
     # path('api/', include(router.urls)),
 ]

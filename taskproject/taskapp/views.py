@@ -4,6 +4,8 @@ from django.conf import settings
 from django.shortcuts import render, redirect
 
 # from django.core import serializers
+
+from django.db import transaction
 # from django.urls import reverse
 
 # from django.contrib.auth.models import User
@@ -11,8 +13,6 @@ from django.shortcuts import render, redirect
 from .models import Task, User
 
 def authUser(request):
-	print('data===================================')
-
 	if request.method == 'POST':
 		# добавить проверку на совпадение пароля
 		username = request.POST['username']
@@ -34,7 +34,6 @@ def homepage(request):
 	taskList = Task.objects.order_by('-pub_date')
 
 	context = {}
-
 	if request.session.has_key('username'):
 		auth_user = request.session['username']
 		user = User.objects.get(name=auth_user) 
@@ -59,3 +58,16 @@ def logout(request):
 	except:
 	 	pass
 	return redirect('/')
+
+def createTask(request):
+	title = request.POST['title']
+	description = request.POST['description']
+	username = request.POST['username']
+	email = request.POST['email']
+
+	with transaction.atomic():
+		task = Task(user=username, description=description, title=title, email=email)
+		task.save()
+
+	return redirect('/')
+
