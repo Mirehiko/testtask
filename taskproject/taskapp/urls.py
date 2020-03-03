@@ -45,8 +45,9 @@ from django.conf.urls import include
 app_name = 'taskapp'
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('administrator/', views.administrator, name='administrator'),
+    path('', views.homepage, name='homepage'),
+    path('login/', views.authUser, name='authUser'),
+    path('logout/', views.logout, name='logout'),
     # path('<int:work_id>/', views.detail, name='detail'),
     # path('api/', include(router.urls)),
 ]

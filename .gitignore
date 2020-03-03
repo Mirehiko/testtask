@@ -10,3 +10,7 @@ taskproject/static
 db.sqlite3
 # /static
 .DS_Store
+Dockerfile
+docker-entrypoint.sh
+node/
+uwsgi_conf/

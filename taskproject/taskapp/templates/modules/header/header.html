@@ -1,8 +1,13 @@
 <nav class="menu mainMenu">
-    <div class="menu__item menuBrand"><a href="/"><i class="fas fa-home"></i></a></div>
+    <div class="menu__item menuBrand"><a href="/" class="menuItem__content"><i class="fas fa-home"></i></a></div>
+    {% if is_authorized %}
     <div class="menu__item">
-        <a href="/{% if authorized %}logout{% else %}login{% endif %}/">
-            {% if authorized %}Выход{% else %}Вход{% endif %}
+        <span class="menuItem__content">{{ user }}</span>
+    </div>
+    {% endif %}
+    <div class="menu__item">
+        <a class="menuItem__content" href="/{% if is_authorized %}logout{% else %}login{% endif %}/">
+            {% if is_authorized %}Выход{% else %}Вход{% endif %}
         </a>
     </div>
 </nav>
