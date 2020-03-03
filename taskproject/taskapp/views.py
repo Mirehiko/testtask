@@ -31,23 +31,32 @@ def authUser(request):
 
 
 def homepage(request):
-	taskList = Task.objects.order_by('-pub_date')
+	taskList = Task.objects.order_by('-pub_date')[:3][::-1]
+	firstTask = taskList[0]
+	lastTaskt = taskList[2]
+	next_obj = Task.objects.filter(pub_date__gt=firstTask.pub_date).first() or Task.objects.first()
+	prev_obj = Task.objects.filter(pub_date__lt=lastTaskt.pub_date).last() or Task.objects.last()
 
-	context = {}
+	context = {
+		'taskList': taskList,
+		'next_obj': next_obj,
+		'prev_obj': prev_obj,
+	}
 	if request.session.has_key('username'):
 		auth_user = request.session['username']
-		user = User.objects.get(name=auth_user) 
-		
-		context = {
-			'taskList': taskList,
-			'user': user.name,
-			'is_authorized': True,
-		}
-	else:
-		context = {
-			'taskList': taskList,
-			'is_authorized': False,
-		}
+		user = User.objects.get(name=auth_user)
+		context['user'] = user.name
+		context['is_authorized'] = True
+		# context = {
+		# 	'taskList': taskList,
+		# 	'user': user.name,
+		# 	'is_authorized': True,
+		# }
+	# else:
+	# 	context = {
+	# 		'taskList': taskList,
+	# 		'is_authorized': False,
+	# 	}
 
 	return render(request, 'homePage.html', context )
 

@@ -45,7 +45,7 @@ a {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 11px;
-    transition: all .5s;
+    transition: all 0.5s;
 }
 
 .menu .menuItem__content:hover,
@@ -65,7 +65,6 @@ a {
     width: 50px;
     padding: 0;
 }
-
 
 .menuBtn {
     border: none;
@@ -94,9 +93,8 @@ a {
     padding: 0 10px;
     line-height: 20px;
     cursor: pointer;
-    transition: all .5s;
+    transition: all 0.5s;
 }
-
 
 .dropList__item:hover {
     background-color: #ffe4b3;
@@ -118,7 +116,6 @@ a {
     display: block;
 }
 
-
 /*custom*/
 .mainMenu {
     background-color: #222;
@@ -127,7 +124,6 @@ a {
     width: 100%;
     box-shadow: 0 1px 5px 0 #222;
     z-index: 200;
-
 }
 
 .mainMenu .menuItem__content {
@@ -144,7 +140,7 @@ a {
     border: 1px solid #ddd;
     border-bottom-width: 2px;
     outline: none;
-    transition: all .5s;
+    transition: all 0.5s;
     width: 100%;
     border-radius: 5px;
     font-size: 14px;
@@ -191,9 +187,8 @@ main {
     border-bottom: 1px solid #ccc;
 }
 
-.task {
-    background-color: #fff;
-    border-bottom: 1px solid #ccc;
+.taskTitle {
+    font-weight: bold;
 }
 
 .taskHeader {
@@ -204,14 +199,40 @@ main {
     height: 50px;
 }
 
-.taskHeader__item {
-    align-self: center;
-    padding: 0 10px;
+.taskBody {
+    padding: 0 5px;
+    display: none;
 }
 
-.taskControls {
+.taskHeader__item {
+    align-self: center;
+    padding: 0 5px;
+}
+
+.taskStateToggler {
     display: flex;
     justify-content: center;
     background-color: #fff;
     padding: 10px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.task {
+    padding: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.task.task-opened .taskBody {
+    display: block;
+}
+
+.taskBody .btn {
+    background-color: transparent;
+    width: 30px;
+    margin: 0 0 5px;
+    height: 30px;
+    text-align: center;
+    padding: 0;
 }

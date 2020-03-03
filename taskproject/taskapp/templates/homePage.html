@@ -22,14 +22,25 @@
         </nav>
         <div class="taskList">
             {% for task in taskList %}
-            <div class="task" id="{{ task.id }}">
+            <div class="task" taskid="{{ task.id }}">
                 <div class="taskHeader">
                     <span class="taskHeader__item taskTitle">{{ task.title }}</span>
                     <span class="taskHeader__item taskUser">{{ task.user }}</span>
                     <span class="taskHeader__item taskEmail">{{ task.email }}</span>
-                    <button type="button" class="taskHeader__item taskControls" taskid="{{ task.id }}"></button>
+                    <button type="button" class="taskHeader__item taskStateToggler" taskid="{{ task.id }}"><i
+                            class="fas fa-chevron-down"></i></button>
                 </div>
-                <div class="taskBody">{{ task.description }}</div>
+                <div class="taskBody">
+                    {% if is_authorized %}
+                    <div class="taskControls">
+                        <button type="button" class="btn taskConfirm" title="Пометить как выполненное"
+                            taskid="{{ task.id }}"><i class="far fa-square"></i></button>
+                        <button type="button" class="btn taskEdit" title="Редактировать" taskid="{{ task.id }}"><i
+                                class="far fa-edit"></i></button>
+                    </div>
+                    {% endif %}
+                    <div>{{ task.description }}</div>
+                </div>
             </div>
             {% endfor %}
         </div>
@@ -71,4 +82,17 @@
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous" defer></script>
 <script type="text/javascript" src="{% static 'js/pageHome.min.js' %}?v{{ settings.STATIC_VERSION }}" charset="utf-8"
     defer></script>
+
+<script>
+    let taskList = {};
+    {% for task in taskList %}
+    taskList['{{ task.id }}'] = {
+        title: '{{ task.title }}',
+        user: '{{ task.user }}',
+        email: '{{ task.email }}',
+        description: '{{ task.description }}',
+        is_cofirmed: '{{ task.is_cofirmed }}',
+    };
+    {% endfor %}
+</script>
 {% endblock %}
