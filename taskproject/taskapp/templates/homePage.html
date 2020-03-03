@@ -45,12 +45,17 @@
             {% endfor %}
         </div>
         <div class="taskControls">
-            <button class="btn taskControl" action="prev">
+            {% if prev %}
+            <a href="/?page={{prev}}" class="btn taskControl" action="prev">
                 <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="btn taskControl" action="next">
+            </a>
+            {% endif %}
+            {% if next %}
+
+            <a href="/?page={{next}}" class="btn taskControl" action="next">
                 <i class="fas fa-chevron-right"></i>
-            </button>
+            </a>
+            {% endif %}
         </div>
     </section>
     <section class="section" window="empty">
@@ -84,15 +89,19 @@
     defer></script>
 
 <script>
-    let taskList = {};
-    {% for task in taskList %}
+    let taskList = {}; {
+        %
+        for task in taskList %
+    }
     taskList['{{ task.id }}'] = {
         title: '{{ task.title }}',
         user: '{{ task.user }}',
         email: '{{ task.email }}',
         description: '{{ task.description }}',
         is_cofirmed: '{{ task.is_cofirmed }}',
-    };
-    {% endfor %}
+    }; {
+        %
+        endfor %
+    }
 </script>
 {% endblock %}

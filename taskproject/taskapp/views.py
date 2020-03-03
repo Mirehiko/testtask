@@ -3,14 +3,20 @@ from django.template import loader
 from django.conf import settings
 from django.shortcuts import render, redirect
 
-# from django.core import serializers
-
 from django.db import transaction
-# from django.urls import reverse
-
-# from django.contrib.auth.models import User
+from django.core.paginator import Paginator
 
 from .models import Task, User
+from rest_framework import viewsets
+from .serializers import TaskSerializer
+
+class TaskViewSet(viewsets.ModelViewSet):
+	"""
+	API endpoint that allows groups to be viewed or edited.
+	"""
+	queryset = Task.objects.all()
+	serializer_class = TaskSerializer
+
 
 def authUser(request):
 	if request.method == 'POST':
@@ -31,32 +37,32 @@ def authUser(request):
 
 
 def homepage(request):
-	taskList = Task.objects.order_by('-pub_date')[:3][::-1]
-	firstTask = taskList[0]
-	lastTaskt = taskList[2]
-	next_obj = Task.objects.filter(pub_date__gt=firstTask.pub_date).first() or Task.objects.first()
-	prev_obj = Task.objects.filter(pub_date__lt=lastTaskt.pub_date).last() or Task.objects.last()
+	taskList = Task.objects.all().order_by('-pub_date')
+
+	paginator = Paginator(taskList, 3)
+	page_number = request.GET.get('page')
+	page_obj = paginator.get_page(page_number)
+
+	next_page = None
+	prev_page = None
+
+	if page_obj.has_next():
+		next_page = page_obj.next_page_number()
+
+	if page_obj.has_previous():
+		prev_page = page_obj.previous_page_number()
 
 	context = {
-		'taskList': taskList,
-		'next_obj': next_obj,
-		'prev_obj': prev_obj,
+		'taskList': page_obj.object_list,
+		'next': next_page,
+		'prev': prev_page,
 	}
+
 	if request.session.has_key('username'):
 		auth_user = request.session['username']
 		user = User.objects.get(name=auth_user)
 		context['user'] = user.name
 		context['is_authorized'] = True
-		# context = {
-		# 	'taskList': taskList,
-		# 	'user': user.name,
-		# 	'is_authorized': True,
-		# }
-	# else:
-	# 	context = {
-	# 		'taskList': taskList,
-	# 		'is_authorized': False,
-	# 	}
 
 	return render(request, 'homePage.html', context )
 

@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'rest_framework',
+    'rest_framework',
     # 'corsheaders',
 ]
 
@@ -78,6 +78,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'taskproject.wsgi.application'
 
+TASK_PER_PAGE = 3
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': TASK_PER_PAGE
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
