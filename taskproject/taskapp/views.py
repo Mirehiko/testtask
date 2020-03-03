@@ -86,15 +86,15 @@ def createTask(request):
 
 	return redirect('/')
 
-def updateTask(request, data):
-	task_id = request.POST['task_id']
+def updateTask(request):
+	task_id = request.POST['taskid']
 	title = request.POST['title']
 	description = request.POST['description']
 	username = request.POST['username']
 	email = request.POST['email']
 	# status = request.POST['status']
 
-	task = Task.objects.get(identifier=task_id)
+	task = Task.objects.get(id=task_id)
 	task.title = title
 	task.description = description
 	task.username = username

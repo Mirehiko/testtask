@@ -60,7 +60,7 @@
     </section>
     <section class="section" window="empty">
         <h2>Добавить задачу</h2>
-        <form class="taskCreateForm" action="/createtask/" method="post">
+        <form class="createTaskForm" action="/createtask/" method="post">
             <input type="text" name="username" class="inputField" id="username" placeholder="ФИО">
             <input type="text" name="email" class="inputField" id="email" placeholder="Email">
             <input type="text" name="title" class="inputField" id="tasktitle" placeholder="Название">
@@ -69,8 +69,8 @@
             <button type="confirm" class="btn" id="create_task">Создать</button>
         </form>
         <h2>Редактирование</h2>
-        <form class="taskCreateForm" action="/createtask/" method="post">
-            <input type="hidden" name="id" id="id" value="8">
+        <form class="updateTaskForm" action="/updatetask/" method="post">
+            <input type="hidden" name="taskid" class="inputField" id="id" value="8">
             <input type="text" name="username" class="inputField" id="username" placeholder="ФИО">
             <input type="text" name="email" class="inputField" id="email" placeholder="Email">
             <input type="text" name="title" class="inputField" id="tasktitle" placeholder="Название">
@@ -89,19 +89,20 @@
     defer></script>
 
 <script>
-    let taskList = {}; {
-        %
-        for task in taskList %
-    }
+    let taskList = {};
+    let toPage = {
+        prev: +'{{ prev }}',
+        next: +'{{ next }}',
+    };
+
+    {% for task in taskList %}
     taskList['{{ task.id }}'] = {
         title: '{{ task.title }}',
         user: '{{ task.user }}',
         email: '{{ task.email }}',
         description: '{{ task.description }}',
         is_cofirmed: '{{ task.is_cofirmed }}',
-    }; {
-        %
-        endfor %
-    }
+    };
+    {% endfor %}
 </script>
 {% endblock %}
