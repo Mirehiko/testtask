@@ -52,6 +52,16 @@
                 placeholder="Описание"></textarea>
             <button type="confirm" class="btn" id="create_task">Создать</button>
         </form>
+        <h2>Редактирование</h2>
+        <form class="taskCreateForm" action="/createtask/" method="post">
+            <input type="hidden" name="id" id="id" value="8">
+            <input type="text" name="username" class="inputField" id="username" placeholder="ФИО">
+            <input type="text" name="email" class="inputField" id="email" placeholder="Email">
+            <input type="text" name="title" class="inputField" id="tasktitle" placeholder="Название">
+            <textarea name="description" class="inputField" id="taskdesc" cols="30" rows="10"
+                placeholder="Описание"></textarea>
+            <button type="confirm" class="btn" id="create_task">Сохранить</button>
+        </form>
     </section>
 </main>
 {% endblock %}
