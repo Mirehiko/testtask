@@ -144,6 +144,7 @@ a {
   width: 100%;
   border-radius: 5px;
   font-size: 14px;
+  font-family: serif;
 }
 
 .inputField:focus {
@@ -155,15 +156,21 @@ textarea.inputField {
   min-height: 100px;
   min-width: 100%;
   padding: 15px 10px;
+  transition: none;
 }
 
 .btn {
   border: 1px solid #ddd;
   font-size: 16px;
   padding: 0 10px;
-  background-color: #666;
+  background-color: #efefef;
   cursor: pointer;
   height: 30px;
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+.btn:hover {
+  background-color: #d6d6d6;
 }
 
 main {
@@ -172,6 +179,14 @@ main {
   margin: 0 auto;
 }
 
+.btnConfirm {
+  border: 1px solid #d2623f;
+  background-color: #ff5722;
+  color: #fff;
+}
+.btnConfirm:hover {
+  background-color: #fb7246;
+}
 /*content*/
 
 main {
@@ -235,4 +250,37 @@ main {
   height: 30px;
   text-align: center;
   padding: 0;
+}
+
+.taskTitle {
+  margin: 5px 0 15px;
+}
+
+.taskForm {
+  position: relative;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  display: none;
+}
+.taskForm[state='visible'] {
+  display: block;
+}
+
+.btnClose {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  text-align: center;
+  padding: 0;
+  background-color: #555;
+  color: #fff;
+  font-size: 14px;
+}
+
+.btnClose:hover {
+  background-color: #c71414;
 }

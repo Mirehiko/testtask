@@ -41,6 +41,8 @@ def homepage(request):
 
 	paginator = Paginator(taskList, 3)
 	page_number = request.GET.get('page')
+	if page_number == None:
+		page_number = 1
 	page_obj = paginator.get_page(page_number)
 
 	next_page = None
@@ -52,10 +54,13 @@ def homepage(request):
 	if page_obj.has_previous():
 		prev_page = page_obj.previous_page_number()
 
+	
+
 	context = {
 		'taskList': page_obj.object_list,
 		'next': next_page,
 		'prev': prev_page,
+		'page': page_number,
 	}
 
 	if request.session.has_key('username'):
@@ -93,6 +98,7 @@ def updateTask(request):
 	username = request.POST['username']
 	email = request.POST['email']
 	# status = request.POST['status']
+	print(POST)
 
 	task = Task.objects.get(id=task_id)
 	task.title = title
@@ -103,4 +109,4 @@ def updateTask(request):
 	with transaction.atomic():
 		task.save()
 	
-	return redirect('/')
+	return JsonResponse({'status': 'success'})

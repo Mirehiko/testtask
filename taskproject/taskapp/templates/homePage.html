@@ -46,38 +46,19 @@
         </div>
         <div class="taskControls">
             {% if prev %}
-            <a href="/?page={{prev}}" class="btn taskControl" action="prev">
+            <a href="/?page={{prev}}" class="btn taskControl js-goto" action="prev">
                 <i class="fas fa-chevron-left"></i>
             </a>
             {% endif %}
+            <span class="btn taskControl">{{page}}</span>
             {% if next %}
-
-            <a href="/?page={{next}}" class="btn taskControl" action="next">
+            <a href="/?page={{next}}" class="btn taskControl js-goto" action="next">
                 <i class="fas fa-chevron-right"></i>
             </a>
             {% endif %}
         </div>
     </section>
-    <section class="section" window="empty">
-        <h2>Добавить задачу</h2>
-        <form class="createTaskForm" action="/createtask/" method="post">
-            <input type="text" name="username" class="inputField" id="username" placeholder="ФИО">
-            <input type="text" name="email" class="inputField" id="email" placeholder="Email">
-            <input type="text" name="title" class="inputField" id="tasktitle" placeholder="Название">
-            <textarea name="description" class="inputField" id="taskdesc" cols="30" rows="10"
-                placeholder="Описание"></textarea>
-            <button type="confirm" class="btn" id="create_task">Создать</button>
-        </form>
-        <h2>Редактирование</h2>
-        <form class="updateTaskForm" action="/updatetask/" method="post">
-            <input type="hidden" name="taskid" class="inputField" id="id" value="8">
-            <input type="text" name="username" class="inputField" id="username" placeholder="ФИО">
-            <input type="text" name="email" class="inputField" id="email" placeholder="Email">
-            <input type="text" name="title" class="inputField" id="tasktitle" placeholder="Название">
-            <textarea name="description" class="inputField" id="taskdesc" cols="30" rows="10"
-                placeholder="Описание"></textarea>
-            <button type="confirm" class="btn" id="create_task">Сохранить</button>
-        </form>
+    <section id="taskActions" class="section" window="empty">
     </section>
 </main>
 {% endblock %}
@@ -97,8 +78,9 @@
 
     {% for task in taskList %}
     taskList['{{ task.id }}'] = {
+        taskid: +'{{ task.id }}',
         title: '{{ task.title }}',
-        user: '{{ task.user }}',
+        username: '{{ task.user }}',
         email: '{{ task.email }}',
         description: '{{ task.description }}',
         is_cofirmed: '{{ task.is_cofirmed }}',
