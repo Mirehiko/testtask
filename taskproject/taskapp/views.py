@@ -44,10 +44,27 @@ def authUser(request):
 
 
 def homepage(request):
-	taskList = Task.objects.all().order_by('-pub_date')
+	sortby = request.GET.get('sortby') or ''
+	sortkey = request.GET.get('sortkey')
+	page_number = request.GET.get('page')
+	taskList = None
+
+	if sortby == 'status':
+		print('status')
+		taskList = Task.objects.order_by('-is_cofirmed')
+	elif sortby == 'user': 
+		print('user')
+		taskList = Task.objects.order_by('-user')
+	elif sortby == 'email': 
+		print('email')
+		taskList = Task.objects.order_by('-email')
+	else:
+		print('defauld')
+		taskList = Task.objects.all().order_by('-pub_date')
+
+	# taskList = Task.objects.all().order_by('-pub_date')
 
 	paginator = Paginator(taskList, 3)
-	page_number = request.GET.get('page')
 	if page_number == None:
 		page_number = 1
 	page_obj = paginator.get_page(page_number)
@@ -78,7 +95,6 @@ def homepage(request):
 
 	return render(request, 'homePage.html', context )
 
-
 def logout(request):
 	try:
 		del request.session['username']
@@ -91,6 +107,7 @@ def createTask(request):
 	description = request.POST['description']
 	username = request.POST['username']
 	email = request.POST['email']
+
 	print('+++++++++++++++++++++++++++++++++++++++')
 	print(request.POST)
 
@@ -101,34 +118,58 @@ def createTask(request):
 
 	return JsonResponse({'status': 'success'})
 	
-
 def updateTask(request):
+	print('===============================')
+	print(request.POST)
+
 	task_id = request.POST['taskid']
 	title = request.POST['title']
 	description = request.POST['description']
 	username = request.POST['username']
 	email = request.POST['email']
-	# status = request.POST['status']
-	print('===============================')
-	print(request.POST)
+	is_cofirmed = False
+	if request.POST['is_cofirmed'] == 'true':
+		is_cofirmed = True
+
 
 	task = Task.objects.get(id=task_id)
 	task.title = title
 	task.description = description
-	task.username = username
+	task.name = username
 	task.email = email
+	task.is_cofirmed = is_cofirmed
 
 	with transaction.atomic():
 		task.save()
 	
 	return JsonResponse({'status': 'success'})
 
+
 def getTasks(request):
-	taskList = Task.objects.all().order_by('-pub_date')
 	print('=================================')
 	print(request.GET)
-	paginator = Paginator(taskList, 3)
 	page_number = request.GET.get('page')
+	sortby = request.GET.get('sortby') or ''
+	sortkey = request.GET.get('sortkey')
+	taskList = None
+
+	if sortby == 'status':
+		print('status')
+		taskList = Task.objects.order_by('-is_cofirmed')
+	elif sortby == 'user': 
+		print('user')
+		taskList = Task.objects.order_by('-user')
+	elif sortby == 'email': 
+		print('email')
+		taskList = Task.objects.order_by('-email')
+	else:
+		print('defauld')
+		taskList = Task.objects.all().order_by('-pub_date')
+
+
+	# taskList = Task.objects.all().order_by('-pub_date')
+
+	paginator = Paginator(taskList, 3)
 	if page_number == None:
 		page_number = 1
 	page_obj = paginator.get_page(page_number)
@@ -142,22 +183,16 @@ def getTasks(request):
 	if page_obj.has_previous():
 		prev_page = page_obj.previous_page_number()
 
-	# json = serializers.serialize('json', page_obj.object_list)
-	print('---------------------------------')
-	# print(page_obj)
-	# print(page_obj.object_list)
-	# print(serializers.serialize('json', page_obj.object_list))
 	json = []
 	for task in page_obj.object_list:
 		json.append({
-			'id': task.id,
+			'taskid': task.id,
 			'title': task.title,
 			'user': task.user,
 			'email': task.email,
 			'description': task.description,
+			'is_cofirmed': task.is_cofirmed,
 		})
-	print(json)
-	# json = serializers.serialize('json', list(page_obj.object_list))
 
 	results = {
 		'taskList': json,

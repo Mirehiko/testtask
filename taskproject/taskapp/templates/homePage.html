@@ -15,9 +15,9 @@
             <div class="menu__item dropMenu">
                 <button class="menuBtn"><i class="fas fa-sort"></i>Сортировать</button>
                 <ul class="dropList">
-                    <li class="dropList__item">по имени</lidropList>
-                    <li class="dropList__item">по почте</li>
-                    <li class="dropList__item">по статусу</li>
+                    <li class="dropList__item sortItem" sortby="user">по имени</lidropList>
+                    <li class="dropList__item sortItem" sortby="email">по почте</li>
+                    <li class="dropList__item sortItem" sortby="status">по статусу</li>
                 </ul>
             </div>
         </nav>
@@ -70,7 +70,7 @@
     taskList['{{ task.id }}'] = {
         taskid: +'{{ task.id }}',
         title: '{{ task.title }}',
-        username: '{{ task.user }}',
+        user: '{{ task.user }}',
         email: '{{ task.email }}',
         description: '{{ task.description }}',
         is_cofirmed: '{{ task.is_cofirmed }}',
