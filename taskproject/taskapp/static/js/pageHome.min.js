@@ -4,14 +4,13 @@
 class Task {
     static getPage(pageNumber) {
         $.ajax({
-            url: '/api/gettasks/',
+            url: `/api/gettasks/?page=${pageNumber}`,
             type: "GET",
-            data: pageNumber,
+            // data: pageNumber,
             dataType: "json",
             success: function (response) {
                 console.log('response:', response);
-                // draw results
-                drawTaskList(response.results);
+                drawTaskList(response);
             }
         });
     }
@@ -204,7 +203,7 @@ class TaskListView {
         this.task.append(this.taskHeader);
 
 
-        this.taskTitle = $(document.createElement('div'));
+        this.taskTitle = $(document.createElement('span'));
         this.taskTitle.addClass('taskHeader__item taskTitle');
         this.taskHeader.append(this.taskTitle);
 
@@ -270,8 +269,8 @@ class TaskListView {
     }
     fillFileds() {
         this.taskTitle.text(this.data.title);
-        this.taskUser.text(this.data.username);
-        this.taskEmail.text(this.data.email);
+        this.taskUser.val(this.data.username);
+        this.taskEmail.append(this.data.email);
         this.taskDescription.text(this.data.description);
     }
     open() {
@@ -285,19 +284,73 @@ class TaskListView {
 }
 
 function drawTaskList(data) {
-    console.log(data);
-
     taskObjects = {};
+    let tasks = JSON.parse(data.taskList);
+    console.log('adsasdasd', tasks)
     let fragment = $(document.createDocumentFragment());
-    for (let task in data) {
-        taskObjects[task] = new TaskListView(data[task]);
+    for (let task in tasks) {
+        taskObjects[task] = new TaskListView(tasks[task]);
         fragment.append(taskObjects[task].task);
     }
     console.log(taskObjects);
-    $('.taskList').append(fragment)
+    $('.taskList').empty();
+    $('.taskList').append(fragment);
+
+    paginator.setData(data);
+}
+
+class Paginator {
+    constructor() {
+        this.name = '';
+        this.nextPage = 0;
+        this.currenPage = 0;
+        this.prevPage = 0;
+    }
+
+    init() {
+        this.pagination = $(document.createElement('div'));
+        this.pagination.addClass('taskControls pagination');
+
+        this.prevBtn = $(document.createElement('a'));
+        this.prevBtn.attr('type', 'button');
+        this.prevBtn.addClass('btn taskControl js-goto');
+        this.prevBtn.append('<i class="fas fa-chevron-left"></i>');
+        this.pagination.append(this.prevBtn);
+
+        this.current = $(document.createElement('span'));
+        this.current.attr('type', 'button');
+        this.current.addClass('btn taskControl');
+        this.current.text(this.currenPage);
+        this.pagination.append(this.current);
+
+        this.nextBtn = $(document.createElement('a'));
+        this.nextBtn.attr('type', 'button');
+        this.nextBtn.addClass('btn taskControl js-goto');
+        this.nextBtn.append('<i class="fas fa-chevron-right"></i>');
+        this.pagination.append(this.nextBtn);
+
+        this.prevBtn.on('click', (e) => {
+            e.preventDefault();
+            Task.getPage(this.prevPage);
+        });
+
+        this.nextBtn.on('click', (e) => {
+            e.preventDefault();
+            Task.getPage(this.nextPage);
+        });
+    }
+
+    setData(data) {
+        this.currenPage = data.page;
+        this.nextPage = data.next;
+        this.prevPage = data.prev;
+        this.current.text(this.currenPage);
+    }
 }
 
 let taskObjects = {};
+const paginator = new Paginator();
+//draw
 
 function updateTask(task, data) {
     task.updateData(data);

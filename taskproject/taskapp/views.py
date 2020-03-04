@@ -125,7 +125,8 @@ def updateTask(request):
 
 def getTasks(request):
 	taskList = Task.objects.all().order_by('-pub_date')
-
+	print('=================================')
+	print(request.GET)
 	paginator = Paginator(taskList, 3)
 	page_number = request.GET.get('page')
 	if page_number == None:
