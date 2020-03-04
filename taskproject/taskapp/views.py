@@ -142,7 +142,22 @@ def getTasks(request):
 	if page_obj.has_previous():
 		prev_page = page_obj.previous_page_number()
 
-	json = serializers.serialize('json', list(page_obj.object_list))
+	# json = serializers.serialize('json', page_obj.object_list)
+	print('---------------------------------')
+	# print(page_obj)
+	# print(page_obj.object_list)
+	# print(serializers.serialize('json', page_obj.object_list))
+	json = []
+	for task in page_obj.object_list:
+		json.append({
+			'id': task.id,
+			'title': task.title,
+			'user': task.user,
+			'email': task.email,
+			'description': task.description,
+		})
+	print(json)
+	# json = serializers.serialize('json', list(page_obj.object_list))
 
 	results = {
 		'taskList': json,

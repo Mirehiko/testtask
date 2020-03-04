@@ -45,19 +45,7 @@
             </div>
             {% endfor %}
         </div>
-        <div class="taskControls pagination">
-            {% if prev %}
-            <a href="/?page={{prev}}" class="btn taskControl js-goto" action="prev">
-                <i class="fas fa-chevron-left"></i>
-            </a>
-            {% endif %}
-            <span class="btn taskControl">{{page}}</span>
-            {% if next %}
-            <a href="/?page={{next}}" class="btn taskControl js-goto" action="next">
-                <i class="fas fa-chevron-right"></i>
-            </a>
-            {% endif %}
-        </div>
+        <div id="paginator"></div>
     </section>
     <section id="taskActions" class="section" window="empty">
     </section>
@@ -75,6 +63,7 @@
     let toPage = {
         prev: +'{{ prev }}',
         next: +'{{ next }}',
+        page: +'{{page}}',
     };
 
     {% for task in taskList %}

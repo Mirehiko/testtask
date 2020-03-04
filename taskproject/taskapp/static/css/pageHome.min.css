@@ -168,6 +168,7 @@ textarea.inputField {
     height: 30px;
     border-radius: 5px;
     transition: all 0.5s;
+    display: inline-block;
 }
 
 .btn:hover {
@@ -287,4 +288,17 @@ main {
 
 .btnClose:hover {
     background-color: #c71414;
+}
+
+
+.pageControl[state="hidden"] {
+    display: none;
+}
+
+.taskControl {
+    padding: 0;
+    text-align: center;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
 }
