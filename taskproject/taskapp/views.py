@@ -10,6 +10,13 @@ from .models import Task, User
 from rest_framework import viewsets
 from .serializers import TaskSerializer
 
+from rest_framework import serializers
+from django.core import serializers
+
+import json 
+from django.forms.models import model_to_dict
+
+
 class TaskViewSet(viewsets.ModelViewSet):
 	"""
 	API endpoint that allows groups to be viewed or edited.
@@ -134,11 +141,10 @@ def getTasks(request):
 	if page_obj.has_previous():
 		prev_page = page_obj.previous_page_number()
 
-	# js = serializers.serialize('json', page_obj.object_list)
-	# json = JSONRenderer().render(serializer.data)
+	json = serializers.serialize('json', list(page_obj.object_list))
 
 	results = {
-		'taskList': list(page_obj.object_list),
+		'taskList': json,
 		'next': next_page,
 		'prev': prev_page,
 		'page': page_number,
@@ -150,5 +156,4 @@ def getTasks(request):
 		results['user'] = user.name
 		results['is_authorized'] = True
 
-	# return JsonResponse(results, content_type='application/json')
-	return HttpResponse(json.dumps(results), content_type='application/json')
+	return JsonResponse(results, content_type='application/json')

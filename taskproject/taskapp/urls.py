@@ -7,7 +7,7 @@ from rest_framework import routers
 
 
 router = routers.DefaultRouter()
-router.register('gettasks', views.TaskViewSet)
+router.register('tasklist', views.TaskViewSet)
 
 app_name = 'taskapp'
 
@@ -18,6 +18,7 @@ urlpatterns = [
     path('createtask/', views.createTask, name='createTask'),
     path('updatetask/', views.updateTask, name='updateTask'),
     path('api/', include(router.urls)),
+    path('api/gettasks/', views.getTasks, name='gettasks'),
     path('api/createtask/', views.createTask, name='createTask'),
     path('api/updatetask/', views.updateTask, name='updateTask'),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
