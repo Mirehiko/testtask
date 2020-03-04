@@ -4,25 +4,28 @@
 class Task {
     static getPage(pageNumber) {
         $.ajax({
-            url: '/api/tasklist/',
+            url: '/api/gettasks/',
             type: "GET",
             data: pageNumber,
             dataType: "json",
             success: function (response) {
                 console.log('response:', response);
                 // draw results
+                drawTaskList(response.results);
             }
         });
     }
     static create(data) {
+        console.log(data)
+
         $.ajax({
-            url: '/api/tasklist/',
+            url: '/api/createtask/',
             type: "POST",
             data: data,
             dataType: "json",
             success: function (response) {
                 console.log('response:', response);
-                // draw results
+                taskCreateForm.clearFormData();
             }
         });
     }
@@ -122,10 +125,13 @@ class TaskForm {
 
         this.confirmBtn.on('click', (e) => {
             e.preventDefault();
-            this.data.username = this.formTaskUserName.val();
-            this.data.email = this.formTaskEmail.val();
-            this.data.title = this.formTaskTitle.val();
-            this.data.description = this.formTaskDescription.text();
+            if (this.data === null) {
+                this.data = {};
+            }
+            this.data['username'] = this.formTaskUserName.val();
+            this.data['email'] = this.formTaskEmail.val();
+            this.data['title'] = this.formTaskTitle.val();
+            this.data['description'] = this.formTaskDescription.val();
             this.action(this.data);
         });
 
@@ -255,7 +261,7 @@ class TaskListView {
         this.taskEdit.on('click', () => {
             taskForms.closeForms();
             taskUpdateForm.setFormData(this.data);
-            taskUpdateForm.show(this.data);
+            taskUpdateForm.show();
         });
     }
     updateData(data) {
@@ -278,7 +284,20 @@ class TaskListView {
     }
 }
 
+function drawTaskList(data) {
+    console.log(data);
 
+    taskObjects = {};
+    let fragment = $(document.createDocumentFragment());
+    for (let task in data) {
+        taskObjects[task] = new TaskListView(data[task]);
+        fragment.append(taskObjects[task].task);
+    }
+    console.log(taskObjects);
+    $('.taskList').append(fragment)
+}
+
+let taskObjects = {};
 
 function updateTask(task, data) {
     task.updateData(data);
@@ -311,6 +330,10 @@ taskForms.add(taskUpdateForm);
 
 
 
+$('#createTask').on('click', function () {
+    taskForms.closeForms();
+    taskCreateForm.show();
+});
 
 $('.taskStateToggler').on('click', function (e) {
     const task = $(`.task[taskid="${$(this).attr('taskid')}"]`);
@@ -325,10 +348,11 @@ $('.taskEdit').on('click', function (e) {
     const taskid = $(this).attr('taskid');
     taskForms.closeForms();
     taskUpdateForm.setFormData(taskList[taskid]);
-    taskUpdateForm.show(taskList[taskid]);
+    taskUpdateForm.show();
 });
+
 
 $('.taskControl.js-goto').on('click', function (e) {
     e.preventDefault();
-    setPage(toPage[$(this).attr('action')]);
+    Task.getPage([$(this).attr('action')]);
 });

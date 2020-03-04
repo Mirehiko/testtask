@@ -84,12 +84,16 @@ def createTask(request):
 	description = request.POST['description']
 	username = request.POST['username']
 	email = request.POST['email']
+	print('+++++++++++++++++++++++++++++++++++++++')
+	print(request.POST)
+
 
 	with transaction.atomic():
 		task = Task(user=username, description=description, title=title, email=email)
 		task.save()
 
-	return redirect('/')
+	return JsonResponse({'status': 'success'})
+	
 
 def updateTask(request):
 	task_id = request.POST['taskid']
@@ -98,7 +102,8 @@ def updateTask(request):
 	username = request.POST['username']
 	email = request.POST['email']
 	# status = request.POST['status']
-	print(POST)
+	print('===============================')
+	print(request.POST)
 
 	task = Task.objects.get(id=task_id)
 	task.title = title
@@ -110,3 +115,40 @@ def updateTask(request):
 		task.save()
 	
 	return JsonResponse({'status': 'success'})
+
+def getTasks(request):
+	taskList = Task.objects.all().order_by('-pub_date')
+
+	paginator = Paginator(taskList, 3)
+	page_number = request.GET.get('page')
+	if page_number == None:
+		page_number = 1
+	page_obj = paginator.get_page(page_number)
+
+	next_page = None
+	prev_page = None
+
+	if page_obj.has_next():
+		next_page = page_obj.next_page_number()
+
+	if page_obj.has_previous():
+		prev_page = page_obj.previous_page_number()
+
+	# js = serializers.serialize('json', page_obj.object_list)
+	# json = JSONRenderer().render(serializer.data)
+
+	results = {
+		'taskList': list(page_obj.object_list),
+		'next': next_page,
+		'prev': prev_page,
+		'page': page_number,
+	}
+
+	if request.session.has_key('username'):
+		auth_user = request.session['username']
+		user = User.objects.get(name=auth_user)
+		results['user'] = user.name
+		results['is_authorized'] = True
+
+	# return JsonResponse(results, content_type='application/json')
+	return HttpResponse(json.dumps(results), content_type='application/json')

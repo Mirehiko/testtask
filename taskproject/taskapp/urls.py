@@ -7,7 +7,7 @@ from rest_framework import routers
 
 
 router = routers.DefaultRouter()
-router.register('tasklist', views.TaskViewSet)
+router.register('gettasks', views.TaskViewSet)
 
 app_name = 'taskapp'
 
