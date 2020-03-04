@@ -168,7 +168,9 @@ textarea.inputField {
   height: 30px;
   border-radius: 5px;
   transition: all 0.5s;
+  display: inline-block;
 }
+
 .btn:hover {
   background-color: #d6d6d6;
 }
@@ -184,9 +186,11 @@ main {
   background-color: #ff5722;
   color: #fff;
 }
+
 .btnConfirm:hover {
   background-color: #fb7246;
 }
+
 /*content*/
 
 main {
@@ -211,7 +215,8 @@ main {
   display: flex;
   justify-content: space-between;
   align-content: center;
-  height: 50px;
+  min-height: 50px;
+  word-break: break-word;
 }
 
 .taskBody {
@@ -232,6 +237,8 @@ main {
   border: 1px solid #ddd;
   cursor: pointer;
 }
+
+
 
 .task {
   padding: 10px;
@@ -254,6 +261,12 @@ main {
 
 .taskTitle {
   margin: 5px 0 15px;
+  width: 40%;
+}
+
+.taskUser,
+.taskEmail {
+  width: 20%;
 }
 
 .taskForm {
@@ -263,6 +276,7 @@ main {
   border: 1px solid #eee;
   display: none;
 }
+
 .taskForm[state='visible'] {
   display: block;
 }
@@ -283,4 +297,17 @@ main {
 
 .btnClose:hover {
   background-color: #c71414;
+}
+
+
+.pageControl[state="hidden"] {
+  display: none;
+}
+
+.taskControl {
+  padding: 0;
+  text-align: center;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
 }

@@ -105,7 +105,7 @@ def logout(request):
 def createTask(request):
 	title = request.POST['title']
 	description = request.POST['description']
-	username = request.POST['username']
+	username = request.POST['user']
 	email = request.POST['email']
 
 	print('+++++++++++++++++++++++++++++++++++++++')
@@ -119,13 +119,13 @@ def createTask(request):
 	return JsonResponse({'status': 'success'})
 	
 def updateTask(request):
-	print('===============================')
+	print('======---==============---===========')
 	print(request.POST)
 
 	task_id = request.POST['taskid']
 	title = request.POST['title']
 	description = request.POST['description']
-	username = request.POST['username']
+	username = request.POST['user']
 	email = request.POST['email']
 	is_cofirmed = False
 	if request.POST['is_cofirmed'] == 'true':
