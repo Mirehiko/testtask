@@ -49,7 +49,7 @@ def homepage(request):
 	taskList = None
 
 	if sortby == 'status':
-		taskList = Task.objects.order_by('is_cofirmed')
+		taskList = Task.objects.order_by('-is_cofirmed')
 	elif sortby == 'user': 
 		taskList = Task.objects.order_by('user')
 	elif sortby == 'email': 
@@ -107,6 +107,11 @@ def createTask(request):
 	return JsonResponse({'status': 'success'})
 	
 def updateTask(request):
+	if request.session.has_key('username'):
+		auth_user = request.session['username']
+	else:
+		return redirect('/login/')
+
 	print('======---UPDATE---===========')
 	print(request.POST)
 
