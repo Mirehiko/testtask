@@ -34,7 +34,6 @@ class Task {
         });
     }
     static update(data) {
-        console.log('before update', data);
         $.ajax({
             url: "/api/updatetask/",
             type: "POST",
@@ -136,7 +135,6 @@ class TaskForm {
             data["email"] = this.formTaskEmail.val();
             data["title"] = this.formTaskTitle.val();
             data["description"] = this.formTaskDescription.val();
-            console.log('prepare', data)
             this.action(data);
         });
 
@@ -151,7 +149,7 @@ class TaskForm {
 
     setFormData(data) {
         this.data = data;
-        console.log('formdata', this.data)
+        // console.log('formdata', this.data)
         this.formTaskTitle.val(data.title);
         this.formTaskDescription.val(data.description);
         this.formTaskUserName.val(data.user);
@@ -209,6 +207,12 @@ class TaskListView {
         this.taskHeader = $(document.createElement("div"));
         this.taskHeader.addClass("taskHeader");
         this.task.append(this.taskHeader);
+
+        this.taskMsg = $(document.createElement("span"));
+        this.taskMsg.addClass("taskMsg");
+        this.taskMsg.text('Отредактировано администратором');
+        this.task.append(this.taskMsg);
+
 
         this.taskTitle = $(document.createElement("span"));
         this.taskTitle.addClass("taskHeader__item taskTitle");
@@ -288,11 +292,17 @@ class TaskListView {
         this.data = data;
     }
     fillFileds() {
-
         this.taskTitle.text(this.data.title);
         this.taskUser.text(this.data.user);
         this.taskEmail.text(this.data.email);
         this.taskDescription.text(this.data.description);
+
+        if (this.data.is_cofirmed) {
+            this.taskMsg.addClass("taskMsg-visible");
+        }
+        else {
+            this.taskMsg.removeClass("taskMsg-visible");
+        }
 
         if (is_authorized) {
             if (this.data.is_cofirmed) {

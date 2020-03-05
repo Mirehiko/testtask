@@ -35,7 +35,7 @@ main {
 
 .menu .menuItem__content,
 .menuBtn {
-  color: #222;
+  color: #616161;
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
@@ -224,15 +224,31 @@ main {
   display: flex;
   -webkit-box-pack: center;
   justify-content: center;
-  background-color: #fff;
+  background-color: transparent;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #7b7b7b;
+  border-radius: 5px;
   cursor: pointer; }
+
+.taskStateToggler:hover {
+  background-color: #00000014; }
 
 .task {
   padding: 10px;
   background-color: #fff;
-  border-bottom: 1px solid #ccc; }
+  border-bottom: 1px solid #ccc;
+  position: relative; }
+
+.taskMsg {
+  padding: 2px 10px;
+  background-color: #00000005;
+  border-radius: 15px;
+  border: 1px solid #c3d5af;
+  margin: 5px;
+  display: none; }
+
+.taskMsg-visible {
+  display: inline-block; }
 
 .task-confirmed {
   background-color: #d8ecc1; }
@@ -241,15 +257,18 @@ main {
   display: block; }
 
 .taskBody .btn {
-  background-color: transparent;
+  background-color: #00000005;
   width: 30px;
-  margin: 0 0 5px;
+  margin: 0 3px 5px;
   height: 30px;
   text-align: center;
-  padding: 0; }
+  padding: 0;
+  border: 1px solid #7b7b7b; }
+
+.taskBody .btn:hover {
+  background-color: #00000014; }
 
 .taskTitle {
-  margin: 5px 0 15px;
   width: 40%; }
 
 .taskUser,

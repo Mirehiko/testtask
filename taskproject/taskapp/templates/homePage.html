@@ -22,28 +22,6 @@
             </div>
         </nav>
         <div class="taskList">
-            <!-- {% for task in taskList %}
-            <div class="task" taskid="{{ task.id }}">
-                <div class="taskHeader">
-                    <span class="taskHeader__item taskTitle">{{ task.title }}</span>
-                    <span class="taskHeader__item taskUser">{{ task.user }}</span>
-                    <span class="taskHeader__item taskEmail">{{ task.email }}</span>
-                    <button type="button" class="taskHeader__item taskStateToggler" taskid="{{ task.id }}"><i
-                            class="fas fa-chevron-down"></i></button>
-                </div>
-                <div class="taskBody">
-                    {% if is_authorized %}
-                    <div class="taskControls">
-                        <button type="button" class="btn taskConfirm" title="Пометить как выполненное"
-                            taskid="{{ task.id }}"><i class="far fa-square"></i></button>
-                        <button type="button" class="btn taskEdit" title="Редактировать" taskid="{{ task.id }}"><i
-                                class="far fa-edit"></i></button>
-                    </div>
-                    {% endif %}
-                    <div>{{ task.description }}</div>
-                </div>
-            </div>
-            {% endfor %} -->
         </div>
         <div id="paginator"></div>
     </section>
