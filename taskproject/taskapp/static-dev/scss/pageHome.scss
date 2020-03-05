@@ -1,0 +1,121 @@
+@import 'base';
+@import 'menu';
+@import 'inputs';
+@import 'btns';
+
+.mainMenu {
+  background-color: #222;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 1px 5px 0 #222;
+  z-index: 200;
+}
+
+.mainMenu .menuItem__content {
+  color: #fff;
+}
+
+/*content*/
+
+main {
+  display: flex;
+}
+
+.section {
+  width: 50%;
+  padding: 10px;
+}
+
+.taskMenu {
+  border-bottom: 1px solid #ccc;
+}
+
+.taskTitle {
+  font-weight: bold;
+}
+
+.taskHeader {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  min-height: 50px;
+  word-break: break-word;
+}
+
+.taskBody {
+  padding: 0 5px;
+  display: none;
+}
+
+.taskHeader__item {
+  align-self: center;
+  padding: 0 5px;
+}
+
+.taskStateToggler {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.task {
+  padding: 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.task-confirmed {
+  background-color: #d2623f;
+}
+
+.task.task-opened .taskBody {
+  display: block;
+}
+
+.taskBody .btn {
+  background-color: transparent;
+  width: 30px;
+  margin: 0 0 5px;
+  height: 30px;
+  text-align: center;
+  padding: 0;
+}
+
+.taskTitle {
+  margin: 5px 0 15px;
+  width: 40%;
+}
+
+.taskUser,
+.taskEmail {
+  width: 20%;
+}
+
+.taskForm {
+  position: relative;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  display: none;
+}
+
+.taskForm[state='visible'] {
+  display: block;
+}
+
+.pageControl[state='hidden'] {
+  display: none;
+}
+
+.taskControl {
+  padding: 0;
+  text-align: center;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+}

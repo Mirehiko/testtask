@@ -1,3 +1,9 @@
+const ID = function () {
+    return `_${Math.random()
+        .toString(36)
+        .substr(2, 9)}`;
+};
+
 class Task {
     static getPage(pageNumber) {
         let url = `/api/gettasks/?page=${pageNumber}`;
@@ -9,7 +15,8 @@ class Task {
             type: "GET",
             dataType: "json",
             success: function (response) {
-                drawTaskList(response);
+                drawTaskList(response.taskList);
+                paginator.setData(response);
             }
         });
     }
@@ -27,7 +34,7 @@ class Task {
         });
     }
     static update(data) {
-        console.log(data)
+        console.log('before update', data);
         $.ajax({
             url: "/api/updatetask/",
             type: "POST",
@@ -35,10 +42,8 @@ class Task {
             dataType: "json",
             success: function (response) {
                 if (response.status === "success") {
-                    taskCreateForm.clearFormData();
+                    // taskCreateForm.clearFormData();
                     Task.getPage(paginator.currentPage);
-                    // updateTask(data);
-                    // console.log(response);
                 } else {
                     console.error(response);
                 }
@@ -122,16 +127,16 @@ class TaskForm {
 
         this.confirmBtn.on("click", e => {
             e.preventDefault();
-            console.log(this.data)
-            console.log(this)
             if (this.data === null) {
                 this.data = {};
             }
-            this.data["username"] = this.formTaskUserName.val();
-            this.data["email"] = this.formTaskEmail.val();
-            this.data["title"] = this.formTaskTitle.val();
-            this.data["description"] = this.formTaskDescription.val();
-            this.action(this.data);
+            let data = this.data;
+            data["user"] = this.formTaskUserName.val();
+            data["email"] = this.formTaskEmail.val();
+            data["title"] = this.formTaskTitle.val();
+            data["description"] = this.formTaskDescription.val();
+            console.log('prepare', data)
+            this.action(data);
         });
 
         this.closeBtn.on("click", () => {
@@ -188,7 +193,7 @@ class TaskForms {
 
 class TaskListView {
     constructor(data) {
-        this.data = data;
+        this.updateData(data);
         this.state = "closed";
         this.init();
     }
@@ -196,6 +201,9 @@ class TaskListView {
         this.task = $(document.createElement("div"));
         this.task.attr("taskid", this.data.taskid);
         this.task.addClass("task");
+        if (this.data.is_cofirmed) {
+            this.task.addClass("task-confirmed");
+        }
 
         this.taskHeader = $(document.createElement("div"));
         this.taskHeader.addClass("taskHeader");
@@ -234,11 +242,12 @@ class TaskListView {
         this.taskConfirm.attr("type", "button");
         this.taskConfirm.attr("taskid", this.data.taskid);
         this.taskConfirm.addClass("btn taskConfirm");
-        if (this.data.is_confimed) {
-            this.taskConfirm.append('<i class="far fa-check-square"></i>');
+        this.taskConfirm.append('<i class="far fa-check-square"></i>');
+        if (this.data.is_cofirmed) {
+            this.taskConfirm.find('i').addClass('fa-check-square');
         }
         else {
-            this.taskConfirm.append('<i class="far fa-square"></i>');
+            this.taskConfirm.find('i').addClass('fa-square');
         }
         this.taskControls.append(this.taskConfirm);
 
@@ -272,37 +281,35 @@ class TaskListView {
     }
     updateData(data) {
         this.data = data;
-        this.fillFileds();
+        // console.log('updateData:', this.data.taskid, this.data.is_cofirmed)
     }
     fillFileds() {
-        console.log(this)
+        // console.log('Fill fields:', this)
+
         this.taskTitle.text(this.data.title);
         this.taskUser.text(this.data.user);
         this.taskEmail.append(this.data.email);
         this.taskDescription.text(this.data.description);
+
+        if (this.data.is_cofirmed) {
+            this.taskConfirm.find('i').removeClass('fa-square');
+            this.taskConfirm.find('i').addClass('fa-check-square');
+        }
+        else {
+            this.taskConfirm.find('i').removeClass('fa-check-square');
+            this.taskConfirm.find('i').addClass('fa-square');
+        }
     }
+
     open() {
         this.state = "opened";
         this.task.addClass("task-opened");
     }
+
     close() {
         this.state = "closed";
         this.task.removeClass("task-opened");
     }
-}
-
-
-function drawTaskList(data) {
-    taskList = {};
-    let fragment = $(document.createDocumentFragment());
-    for (let task in data.taskList) {
-        taskList[task] = new TaskListView(data.taskList[task]);
-        fragment.append(taskList[task].task);
-    }
-    $(".taskList").empty();
-    $(".taskList").append(fragment);
-
-    paginator.setData(data);
 }
 
 class Paginator {
@@ -371,21 +378,45 @@ class Paginator {
     }
 }
 
-// let taskList = {};
+function fillTaskList(data) {
+    taskList = [];
+    for (let taskid in data) {
+        taskList.push(new TaskListView(data[taskid]));
+    }
+}
+
+function drawTaskList(data) {
+    fillTaskList(data);
+    let fragment = $(document.createDocumentFragment());
+    for (let taskid in data) {
+        fragment.append(taskList[taskid].task);
+    }
+    $(".taskList").empty();
+    $(".taskList").append(fragment);
+}
+
+
+
+function confirmTask() {
+    const taskid = $(this).attr('taskid');
+    let task = taskList.filter(task => task.data.taskid == taskid);
+    task = task[0].data;
+    if (task.is_cofirmed) {
+        task.is_cofirmed = false;
+    }
+    else {
+        task.is_cofirmed = true;
+    }
+    Task.update(task);
+}
+
+
+
+//==========================================================
+
 const paginator = new Paginator();
 paginator.setData(toPage);
 $('#paginator').append(paginator.pagination);
-//draw
-
-// function updateTask(task, data) {
-//     task.updateData(data);
-// }
-
-const ID = function () {
-    return `_${Math.random()
-        .toString(36)
-        .substr(2, 9)}`;
-};
 
 const taskCreateForm = new TaskForm({
     action: Task.create,
@@ -407,28 +438,25 @@ const taskForms = new TaskForms();
 taskForms.add(taskCreateForm);
 taskForms.add(taskUpdateForm);
 
+let sortParams = '';
+
+//============================================
+
+drawTaskList(taskList);
+
 $("#createTask").on("click", function () {
     taskForms.closeForms();
     taskCreateForm.show();
 });
 
-$(".taskStateToggler").on("click", function (e) {
-    const task = $(`.task[taskid="${$(this).attr("taskid")}"]`);
-    if (task.hasClass("task-opened")) {
-        task.removeClass("task-opened");
-    } else {
-        task.addClass("task-opened");
-    }
-});
-
-$(".taskEdit").on("click", function (e) {
-    const taskid = $(this).attr("taskid");
-    taskForms.closeForms();
-    taskUpdateForm.setFormData(taskList[taskid]);
-    taskUpdateForm.show();
-});
-
-let sortParams = '';
+// $(".taskStateToggler").on("click", function (e) {
+//     const task = $(`.task[taskid="${$(this).attr("taskid")}"]`);
+//     if (task.hasClass("task-opened")) {
+//         task.removeClass("task-opened");
+//     } else {
+//         task.addClass("task-opened");
+//     }
+// });
 
 $(".sortItem").on("click", function (e) {
     e.preventDefault();
@@ -439,22 +467,5 @@ $(".sortItem").on("click", function (e) {
     Task.getPage(paginator.currentPage);
 });
 
-$('.taskConfirm').on('click', confirmTask);
 
-function confirmTask() {
-    const taskid = $(this).attr('taskid');
-    console.log(taskid)
-    console.log(taskList)
-    console.log(taskList[taskid])
-    if (taskList[taskid].is_confimed) {
-        taskList[taskid].is_confimed = false;
-        $(this).removeClass('fa-check-square');
-        $(this).addClass('fa-square');
-    }
-    else {
-        $(this).addClass('fa-check-square');
-        $(this).removeClass('fa-square');
-        taskList[taskid].is_confimed = true;
-    }
-    Task.update(taskList[taskid]);
-}
+
