@@ -118,4 +118,12 @@ main {
   height: 30px;
   width: 30px;
   line-height: 30px;
+  margin: 0 2px;
+}
+
+.pagination {
+  padding: 10px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
