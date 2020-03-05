@@ -232,32 +232,45 @@ class TaskListView {
         this.taskBody.addClass("taskBody");
         this.task.append(this.taskBody);
 
-        this.taskControls = $(document.createElement("div"));
-        this.taskControls.addClass("taskControls");
-        this.taskBody.append(this.taskControls);
+        if (is_authorized) {
+            this.taskControls = $(document.createElement("div"));
+            this.taskControls.addClass("taskControls");
+            this.taskBody.append(this.taskControls);
+
+            this.taskConfirm = $(document.createElement("button"));
+            this.taskConfirm.attr("type", "button");
+            this.taskConfirm.attr("taskid", this.data.taskid);
+            this.taskConfirm.addClass("btn taskConfirm");
+            this.taskConfirm.append('<i class="far fa-check-square"></i>');
+            if (this.data.is_cofirmed) {
+                this.taskConfirm.find('i').addClass('fa-check-square');
+            }
+            else {
+                this.taskConfirm.find('i').addClass('fa-square');
+            }
+            this.taskControls.append(this.taskConfirm);
+
+            this.taskEdit = $(document.createElement("button"));
+            this.taskEdit.attr("type", "button");
+            this.taskEdit.attr("taskid", this.data.taskid);
+            this.taskEdit.addClass("btn taskEdit");
+            this.taskEdit.append('<i class="far fa-edit"></i>');
+            this.taskControls.append(this.taskEdit);
+
+            this.taskConfirm.on("click", function () {
+                confirmTask.call(this)
+            });
+
+            this.taskEdit.on("click", () => {
+                taskForms.closeForms();
+                taskUpdateForm.clearFormData();
+                taskUpdateForm.setFormData(this.data);
+                taskUpdateForm.show();
+            });
+        }
 
         this.taskDescription = $(document.createElement("div"));
         this.taskBody.append(this.taskDescription);
-
-        this.taskConfirm = $(document.createElement("button"));
-        this.taskConfirm.attr("type", "button");
-        this.taskConfirm.attr("taskid", this.data.taskid);
-        this.taskConfirm.addClass("btn taskConfirm");
-        this.taskConfirm.append('<i class="far fa-check-square"></i>');
-        if (this.data.is_cofirmed) {
-            this.taskConfirm.find('i').addClass('fa-check-square');
-        }
-        else {
-            this.taskConfirm.find('i').addClass('fa-square');
-        }
-        this.taskControls.append(this.taskConfirm);
-
-        this.taskEdit = $(document.createElement("button"));
-        this.taskEdit.attr("type", "button");
-        this.taskEdit.attr("taskid", this.data.taskid);
-        this.taskEdit.addClass("btn taskEdit");
-        this.taskEdit.append('<i class="far fa-edit"></i>');
-        this.taskControls.append(this.taskEdit);
 
         this.fillFileds();
 
@@ -269,16 +282,7 @@ class TaskListView {
             }
         });
 
-        this.taskConfirm.on("click", function () {
-            confirmTask.call(this)
-        });
 
-        this.taskEdit.on("click", () => {
-            taskForms.closeForms();
-            taskUpdateForm.clearFormData();
-            taskUpdateForm.setFormData(this.data);
-            taskUpdateForm.show();
-        });
     }
     updateData(data) {
         this.data = data;
@@ -290,15 +294,17 @@ class TaskListView {
         this.taskEmail.text(this.data.email);
         this.taskDescription.text(this.data.description);
 
-        if (this.data.is_cofirmed) {
-            this.task.addClass("task-confirmed");
-            this.taskConfirm.find('i').removeClass('fa-square');
-            this.taskConfirm.find('i').addClass('fa-check-square');
-        }
-        else {
-            this.task.removeClass("task-confirmed");
-            this.taskConfirm.find('i').removeClass('fa-check-square');
-            this.taskConfirm.find('i').addClass('fa-square');
+        if (is_authorized) {
+            if (this.data.is_cofirmed) {
+                this.task.addClass("task-confirmed");
+                this.taskConfirm.find('i').removeClass('fa-square');
+                this.taskConfirm.find('i').addClass('fa-check-square');
+            }
+            else {
+                this.task.removeClass("task-confirmed");
+                this.taskConfirm.find('i').removeClass('fa-check-square');
+                this.taskConfirm.find('i').addClass('fa-square');
+            }
         }
     }
 

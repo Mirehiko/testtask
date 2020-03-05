@@ -60,22 +60,14 @@
 
 <script>
     let taskList = [];
-    // let taskList = {};
     let toPage = {
         prev: +'{{ prev }}',
         next: +'{{ next }}',
         page: +'{{page}}',
     };
+    const is_authorized = `{{is_authorized}}`;
 
     {% for task in taskList %}
-    /*// taskList['{{ task.id }}'] = {
-    //     taskid: +'{{ task.id }}',
-    //     title: '{{ task.title }}',
-    //     user: '{{ task.user }}',
-    //     email: '{{ task.email }}',
-    //     description: `{{ task.description }}`,
-    //     is_cofirmed: '{{ task.is_cofirmed }}' === 'True' ? true : false,
-    // };*/
     taskList.push({
         taskid: +'{{ task.id }}',
         title: '{{ task.title }}',
