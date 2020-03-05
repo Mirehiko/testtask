@@ -123,7 +123,7 @@ def updateTask(request):
 	task = Task.objects.get(id=task_id)
 	task.title = title
 	task.description = description
-	task.name = username
+	task.user = username
 	task.email = email
 	task.is_cofirmed = is_cofirmed
 
