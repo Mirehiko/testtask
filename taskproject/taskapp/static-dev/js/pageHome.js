@@ -29,7 +29,7 @@ class Task {
             success: function (response) {
                 // console.log("response:", response);
                 taskCreateForm.clearFormData();
-                Task.getPage(paginator.currentPage);
+                Task.getPage(1);
             }
         });
     }
