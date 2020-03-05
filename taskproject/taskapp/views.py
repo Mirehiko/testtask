@@ -30,7 +30,6 @@ def authUser(request):
 		# добавить проверку на совпадение пароля
 		username = request.POST['username']
 		password = request.POST['password']
-		# user = serializers.serialize('json', user)
 		user = User.objects.filter(name=username)
 		if user:
 			user = User.objects.get(name=username)
@@ -50,21 +49,16 @@ def homepage(request):
 	taskList = None
 
 	if sortby == 'status':
-		print('status')
-		taskList = Task.objects.order_by('-is_cofirmed')
+		taskList = Task.objects.order_by('is_cofirmed')
 	elif sortby == 'user': 
-		print('user')
-		taskList = Task.objects.order_by('-user')
+		taskList = Task.objects.order_by('user')
 	elif sortby == 'email': 
-		print('email')
-		taskList = Task.objects.order_by('-email')
+		taskList = Task.objects.order_by('email')
 	else:
-		print('defauld')
 		taskList = Task.objects.all().order_by('-pub_date')
 
-	# taskList = Task.objects.all().order_by('-pub_date')
-
 	paginator = Paginator(taskList, 3)
+
 	if page_number == None:
 		page_number = 1
 	page_obj = paginator.get_page(page_number)
@@ -77,8 +71,6 @@ def homepage(request):
 
 	if page_obj.has_previous():
 		prev_page = page_obj.previous_page_number()
-
-	
 
 	context = {
 		'taskList': page_obj.object_list,
@@ -108,10 +100,6 @@ def createTask(request):
 	username = request.POST['user']
 	email = request.POST['email']
 
-	print('+++++++++++++++++++++++++++++++++++++++')
-	print(request.POST)
-
-
 	with transaction.atomic():
 		task = Task(user=username, description=description, title=title, email=email)
 		task.save()
@@ -119,7 +107,7 @@ def createTask(request):
 	return JsonResponse({'status': 'success'})
 	
 def updateTask(request):
-	print('======---==============---===========')
+	print('======---UPDATE---===========')
 	print(request.POST)
 
 	task_id = request.POST['taskid']
@@ -146,30 +134,20 @@ def updateTask(request):
 
 
 def getTasks(request):
-	print('=================================')
+	print('================get task================')
 	print(request.GET)
 	page_number = request.GET.get('page')
-	sortby = request.GET.get('sortby') or ''
+	sortby = request.GET.get('sortby') or 'pub_date'
 	sortkey = request.GET.get('sortkey')
 	taskList = None
 
 	if sortby == 'status':
-		print('status')
-		taskList = Task.objects.order_by('-is_cofirmed')
-	elif sortby == 'user': 
-		print('user')
-		taskList = Task.objects.order_by('-user')
-	elif sortby == 'email': 
-		print('email')
-		taskList = Task.objects.order_by('-email')
-	else:
-		print('defauld')
-		taskList = Task.objects.all().order_by('-pub_date')
+		sortby = '-is_cofirmed'
 
+	taskList = Task.objects.order_by(sortby)
 
-	# taskList = Task.objects.all().order_by('-pub_date')
+	paginator = Paginator(taskList, 25)
 
-	paginator = Paginator(taskList, 3)
 	if page_number == None:
 		page_number = 1
 	page_obj = paginator.get_page(page_number)

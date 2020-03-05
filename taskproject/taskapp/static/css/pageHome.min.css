@@ -246,6 +246,10 @@ main {
     border-bottom: 1px solid #ccc;
 }
 
+.task-confirmed {
+    background-color: #d2623f;
+}
+
 .task.task-opened .taskBody {
     display: block;
 }

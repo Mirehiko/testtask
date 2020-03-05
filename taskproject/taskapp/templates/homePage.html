@@ -22,7 +22,7 @@
             </div>
         </nav>
         <div class="taskList">
-            {% for task in taskList %}
+            <!-- {% for task in taskList %}
             <div class="task" taskid="{{ task.id }}">
                 <div class="taskHeader">
                     <span class="taskHeader__item taskTitle">{{ task.title }}</span>
@@ -43,7 +43,7 @@
                     <div>{{ task.description }}</div>
                 </div>
             </div>
-            {% endfor %}
+            {% endfor %} -->
         </div>
         <div id="paginator"></div>
     </section>
@@ -59,7 +59,8 @@
     defer></script>
 
 <script>
-    let taskList = {};
+    let taskList = [];
+    // let taskList = {};
     let toPage = {
         prev: +'{{ prev }}',
         next: +'{{ next }}',
@@ -67,14 +68,22 @@
     };
 
     {% for task in taskList %}
-    taskList['{{ task.id }}'] = {
+    /*// taskList['{{ task.id }}'] = {
+    //     taskid: +'{{ task.id }}',
+    //     title: '{{ task.title }}',
+    //     user: '{{ task.user }}',
+    //     email: '{{ task.email }}',
+    //     description: `{{ task.description }}`,
+    //     is_cofirmed: '{{ task.is_cofirmed }}' === 'True' ? true : false,
+    // };*/
+    taskList.push({
         taskid: +'{{ task.id }}',
         title: '{{ task.title }}',
         user: '{{ task.user }}',
         email: '{{ task.email }}',
-        description: '{{ task.description }}',
-        is_cofirmed: '{{ task.is_cofirmed }}',
-    };
+        description: `{{ task.description }}`,
+        is_cofirmed: '{{ task.is_cofirmed }}' === 'True' ? true : false,
+    });
     {% endfor %}
 </script>
 {% endblock %}

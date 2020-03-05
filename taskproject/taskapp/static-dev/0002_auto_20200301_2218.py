@@ -20,4 +20,8 @@ class Migration(migrations.Migration):
             name='user',
             field=models.CharField(default='', max_length=200, verbose_name='Пользователь'),
         ),
+        migrations.AlterModelOptions(
+            name='task',
+            options={'ordering': ('is_cofirmed', 'title', 'user', 'email', 'pub_date')},
+        ),
     ]

@@ -23,6 +23,9 @@ class Task(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
     is_cofirmed = models.BooleanField(verbose_name='Выполнена', default=False, blank=True)
 
+    class Meta:
+        ordering = ('is_cofirmed', 'title', 'user', 'email', 'pub_date')
+
     def __str__(self):
         return self.title
 
