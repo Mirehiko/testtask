@@ -42,8 +42,6 @@ class Task {
             dataType: "json",
             success: function (response) {
                 if (response.status === "success") {
-                    // taskCreateForm.clearFormData();
-                    // Task.getPage(paginator.currentPage);
                     let task = taskList.filter(task => task.data.taskid == data.taskid);
                     task[0].updateData(data);
                     task[0].fillFileds();
@@ -293,10 +291,12 @@ class TaskListView {
         this.taskDescription.text(this.data.description);
 
         if (this.data.is_cofirmed) {
+            this.task.addClass("task-confirmed");
             this.taskConfirm.find('i').removeClass('fa-square');
             this.taskConfirm.find('i').addClass('fa-check-square');
         }
         else {
+            this.task.removeClass("task-confirmed");
             this.taskConfirm.find('i').removeClass('fa-check-square');
             this.taskConfirm.find('i').addClass('fa-square');
         }

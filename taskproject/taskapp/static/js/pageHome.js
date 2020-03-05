@@ -60,8 +60,6 @@ function () {
         dataType: "json",
         success: function success(response) {
           if (response.status === "success") {
-            // taskCreateForm.clearFormData();
-            // Task.getPage(paginator.currentPage);
             var task = taskList.filter(function (task) {
               return task.data.taskid == data.taskid;
             });
@@ -335,9 +333,11 @@ function () {
       this.taskDescription.text(this.data.description);
 
       if (this.data.is_cofirmed) {
+        this.task.addClass("task-confirmed");
         this.taskConfirm.find('i').removeClass('fa-square');
         this.taskConfirm.find('i').addClass('fa-check-square');
       } else {
+        this.task.removeClass("task-confirmed");
         this.taskConfirm.find('i').removeClass('fa-check-square');
         this.taskConfirm.find('i').addClass('fa-square');
       }
