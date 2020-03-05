@@ -43,7 +43,10 @@ class Task {
             success: function (response) {
                 if (response.status === "success") {
                     // taskCreateForm.clearFormData();
-                    Task.getPage(paginator.currentPage);
+                    // Task.getPage(paginator.currentPage);
+                    let task = taskList.filter(task => task.data.taskid == data.taskid);
+                    task[0].updateData(data);
+                    task[0].fillFileds();
                 } else {
                     console.error(response);
                 }
@@ -281,14 +284,12 @@ class TaskListView {
     }
     updateData(data) {
         this.data = data;
-        // console.log('updateData:', this.data.taskid, this.data.is_cofirmed)
     }
     fillFileds() {
-        // console.log('Fill fields:', this)
 
         this.taskTitle.text(this.data.title);
         this.taskUser.text(this.data.user);
-        this.taskEmail.append(this.data.email);
+        this.taskEmail.text(this.data.email);
         this.taskDescription.text(this.data.description);
 
         if (this.data.is_cofirmed) {
@@ -395,8 +396,6 @@ function drawTaskList(data) {
     $(".taskList").append(fragment);
 }
 
-
-
 function confirmTask() {
     const taskid = $(this).attr('taskid');
     let task = taskList.filter(task => task.data.taskid == taskid);
@@ -448,15 +447,6 @@ $("#createTask").on("click", function () {
     taskForms.closeForms();
     taskCreateForm.show();
 });
-
-// $(".taskStateToggler").on("click", function (e) {
-//     const task = $(`.task[taskid="${$(this).attr("taskid")}"]`);
-//     if (task.hasClass("task-opened")) {
-//         task.removeClass("task-opened");
-//     } else {
-//         task.addClass("task-opened");
-//     }
-// });
 
 $(".sortItem").on("click", function (e) {
     e.preventDefault();
