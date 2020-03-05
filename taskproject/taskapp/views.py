@@ -142,7 +142,7 @@ def getTasks(request):
 	print('================get task================')
 	print(request.GET)
 	page_number = request.GET.get('page')
-	sortby = request.GET.get('sortby') or 'pub_date'
+	sortby = request.GET.get('sortby') or '-pub_date'
 	sortkey = request.GET.get('sortkey')
 	taskList = None
 
