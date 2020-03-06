@@ -15,11 +15,10 @@ urlpatterns = [
     path('', views.homepage, name='homepage'),
     path('login/', views.authUser, name='authUser'),
     path('logout/', views.logout, name='logout'),
-    path('createtask/', views.createTask, name='createTask'),
-    path('updatetask/', views.updateTask, name='updateTask'),
     path('api/', include(router.urls)),
     path('api/gettasks/', views.getTasks, name='gettasks'),
     path('api/createtask/', views.createTask, name='createTask'),
     path('api/updatetask/', views.updateTask, name='updateTask'),
+    path('api/removetask/', views.removeTask, name='removeTask'),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

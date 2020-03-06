@@ -1,9 +1,9 @@
 let sortableFields = {
     'user': 'inc',
     'title': 'inc',
-    'pub_date': 'inc',
+    'pub_date': 'dec',
     'email': 'inc',
-    'status': 'inc',
+    'status': 'dec',
 };
 
 let activeSortField = 'pub_date';

@@ -137,6 +137,26 @@ def updateTask(request):
 	
 	return JsonResponse({'status': 'success'})
 
+def removeTask(request):
+	print('================remove task================')
+	print(request.POST)
+	taskid = request.POST['taskid']
+	task = Task.objects.get(id=taskid)
+
+	status = ''
+
+	try:
+		task.delete()
+		status = 'success'
+	except ObjectDoesNotExist:
+		print("Not found task with same id")
+		status = 'warning'
+
+	results = {
+		'status': status
+	}
+
+	return JsonResponse(results, content_type='application/json')
 
 def getTasks(request):
 	print('================get task================')

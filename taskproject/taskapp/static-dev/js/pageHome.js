@@ -28,6 +28,7 @@ class Task {
             }
         });
     }
+
     static create(data) {
         $.ajax({
             url: "/api/createtask/",
@@ -36,10 +37,13 @@ class Task {
             dataType: "json",
             success: function (response) {
                 taskCreateForm.clearFormData();
+                activeSortField = 'pub_date';
+                sortableFields[activeSortField] = 'dec';
                 Task.getPage();
             }
         });
     }
+
     static update(data) {
         $.ajax({
             url: "/api/updatetask/",
@@ -51,6 +55,22 @@ class Task {
                     let task = taskList.filter(task => task.data.taskid == data.taskid);
                     task[0].updateData(data);
                     task[0].fillFileds();
+                } else {
+                    console.error(response);
+                }
+            }
+        });
+    }
+
+    static removeTask(taskid) {
+        $.ajax({
+            url: "/api/removetask/",
+            type: "POST",
+            data: { 'taskid': taskid },
+            dataType: "json",
+            success: function (response) {
+                if (response.status === "success") {
+                    Task.getPage();
                 } else {
                     console.error(response);
                 }
@@ -144,8 +164,19 @@ class TaskListView {
             this.taskEdit.append('<i class="far fa-edit"></i>');
             this.taskControls.append(this.taskEdit);
 
+            this.taskRemove = $(document.createElement("button"));
+            this.taskRemove.attr("type", "button");
+            this.taskRemove.attr("taskid", this.data.taskid);
+            this.taskRemove.addClass("btn taskRemove");
+            this.taskRemove.append('<i class="far fa-trash-alt"></i>');
+            this.taskControls.append(this.taskRemove);
+
             this.taskConfirm.on("click", function () {
                 confirmTask.call(this)
+            });
+
+            this.taskRemove.on("click", () => {
+                Task.removeTask(this.data.taskid);
             });
 
             this.taskEdit.on("click", () => {

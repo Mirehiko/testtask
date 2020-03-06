@@ -78,9 +78,9 @@ var Paginator = /*#__PURE__*/function () {
 var sortableFields = {
   'user': 'inc',
   'title': 'inc',
-  'pub_date': 'inc',
+  'pub_date': 'dec',
   'email': 'inc',
-  'status': 'inc'
+  'status': 'dec'
 };
 var activeSortField = 'pub_date';
 
@@ -264,8 +264,9 @@ var Task = /*#__PURE__*/function () {
         data: data,
         dataType: "json",
         success: function success(response) {
-          // console.log("response:", response);
           taskCreateForm.clearFormData();
+          activeSortField = 'pub_date';
+          sortableFields[activeSortField] = 'dec';
           Task.getPage();
         }
       });
@@ -285,6 +286,25 @@ var Task = /*#__PURE__*/function () {
             });
             task[0].updateData(data);
             task[0].fillFileds();
+          } else {
+            console.error(response);
+          }
+        }
+      });
+    }
+  }, {
+    key: "removeTask",
+    value: function removeTask(taskid) {
+      $.ajax({
+        url: "/api/removetask/",
+        type: "POST",
+        data: {
+          'taskid': taskid
+        },
+        dataType: "json",
+        success: function success(response) {
+          if (response.status === "success") {
+            Task.getPage();
           } else {
             console.error(response);
           }
@@ -390,8 +410,17 @@ var TaskListView = /*#__PURE__*/function () {
         this.taskEdit.addClass("btn taskEdit");
         this.taskEdit.append('<i class="far fa-edit"></i>');
         this.taskControls.append(this.taskEdit);
+        this.taskRemove = $(document.createElement("button"));
+        this.taskRemove.attr("type", "button");
+        this.taskRemove.attr("taskid", this.data.taskid);
+        this.taskRemove.addClass("btn taskRemove");
+        this.taskRemove.append('<i class="far fa-trash-alt"></i>');
+        this.taskControls.append(this.taskRemove);
         this.taskConfirm.on("click", function () {
           confirmTask.call(this);
+        });
+        this.taskRemove.on("click", function () {
+          Task.removeTask(_this3.data.taskid);
         });
         this.taskEdit.on("click", function () {
           taskForms.closeForms();
