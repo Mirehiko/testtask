@@ -12,13 +12,20 @@
         <h2>Список задач <button id="createTask" class="btn createTask" title="Создать"><i
                     class="fas fa-plus"></i></button></h2>
         <nav class="menu taskMenu">
-            <div class="menu__item dropMenu">
-                <button class="menuBtn"><i class="fas fa-sort"></i>Сортировать</button>
-                <ul class="dropList">
-                    <li class="dropList__item sortItem" sortby="user">по имени</lidropList>
-                    <li class="dropList__item sortItem" sortby="email">по почте</li>
-                    <li class="dropList__item sortItem" sortby="status">по статусу</li>
-                </ul>
+            <div class="menu__item">
+                <button class="menuBtn sortBtn" sort="status"><i class="fas fa-sort"></i>Статус</button>
+            </div>
+            <div class="menu__item">
+                <button class="menuBtn sortBtn" sort="title"><i class="fas fa-sort"></i>Заголовок</button>
+            </div>
+            <div class="menu__item">
+                <button class="menuBtn sortBtn" sort="user"><i class="fas fa-sort"></i>Имя</button>
+            </div>
+            <div class="menu__item">
+                <button class="menuBtn sortBtn" sort="email"><i class="fas fa-sort"></i>Email</button>
+            </div>
+            <div class="menu__item">
+                <button class="menuBtn sortBtn" sort="pub_date"><i class="fas fa-sort"></i>Дата</button>
             </div>
         </nav>
         <div class="taskList">

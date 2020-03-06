@@ -142,14 +142,17 @@ def getTasks(request):
 	print('================get task================')
 	print(request.GET)
 	page_number = request.GET.get('page')
-	sortby = request.GET.get('sortby') or '-pub_date'
-	sortkey = request.GET.get('sortkey')
+	sort_key = request.GET.get('sortKey')
+	sort_way = request.GET.get('sortWay')
 	taskList = None
 
-	if sortby == 'status':
-		sortby = '-is_cofirmed'
+	if sort_key == 'status':
+		sort_key = 'is_cofirmed'
+	
+	if sort_way == 'dec':
+		sort_key = '-' + sort_key
 
-	taskList = Task.objects.order_by(sortby)
+	taskList = Task.objects.order_by(sort_key)
 
 	paginator = Paginator(taskList, 3)
 
