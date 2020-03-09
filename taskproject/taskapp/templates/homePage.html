@@ -6,61 +6,23 @@
     href="{% static 'css/pageHome.min.css' %}?v{{ settings.STATIC_VERSION }}">
 {% endblock %}
 
+{% block header %}
+{% endblock %}
+
 {% block main %}
-<main>
-    <section class="section">
-        <h2>Список задач <button id="createTask" class="btn createTask" title="Создать"><i
-                    class="fas fa-plus"></i></button></h2>
-        <nav class="menu taskMenu">
-            <div class="menu__item">
-                <button class="menuBtn sortBtn" sort="status"><i class="fas fa-sort"></i>Статус</button>
-            </div>
-            <div class="menu__item">
-                <button class="menuBtn sortBtn" sort="title"><i class="fas fa-sort"></i>Заголовок</button>
-            </div>
-            <div class="menu__item">
-                <button class="menuBtn sortBtn" sort="user"><i class="fas fa-sort"></i>Имя</button>
-            </div>
-            <div class="menu__item">
-                <button class="menuBtn sortBtn" sort="email"><i class="fas fa-sort"></i>Email</button>
-            </div>
-            <div class="menu__item">
-                <button class="menuBtn sortBtn" sort="pub_date"><i class="fas fa-sort"></i>Дата</button>
-            </div>
-        </nav>
-        <div class="taskList">
-        </div>
-        <div id="paginator"></div>
-    </section>
-    <section id="taskActions" class="section" window="empty">
-    </section>
-</main>
+<app-root></app-root>
 {% endblock %}
 
 {% block tail %}
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous" defer></script>
-<script type="text/javascript" src="{% static 'js/pageHome.min.js' %}?v{{ settings.STATIC_VERSION }}" charset="utf-8"
-    defer></script>
+<script src="{% static 'js/runtime-es2015.js' %}?v{{ settings.STATIC_VERSION }}" type="module"></script>
+<script src="{% static 'js/runtime-es5.js' %}?v{{ settings.STATIC_VERSION }}" nomodule defer></script>
+<script src="{% static 'js/polyfills-es5.js' %}?v{{ settings.STATIC_VERSION }}" nomodule defer></script>
+<script src="{% static 'js/polyfills-es2015.js' %}?v{{ settings.STATIC_VERSION }}" type="module"></script>
+<script src="{% static 'js/styles-es2015.js' %}?v{{ settings.STATIC_VERSION }}" type="module"></script>
+<script src="{% static 'js/styles-es5.js' %}?v{{ settings.STATIC_VERSION }}" nomodule defer></script>
+<script src="{% static 'js/vendor-es2015.js' %}?v{{ settings.STATIC_VERSION }}" type="module"></script>
+<script src="{% static 'js/vendor-es5.js' %}?v{{ settings.STATIC_VERSION }}" nomodule defer></script>
+<script src="{% static 'js/main-es2015.js' %}?v{{ settings.STATIC_VERSION }}" type="module"></script>
+<script src="{% static 'js/main-es5.js' %}?v{{ settings.STATIC_VERSION }}" nomodule defer></script>
 
-<script>
-    let taskList = [];
-    let toPage = {
-        prev: +'{{ prev }}',
-        next: +'{{ next }}',
-        page: +'{{page}}',
-    };
-    const is_authorized = `{{is_authorized}}`;
-
-    {% for task in taskList %}
-    taskList.push({
-        taskid: +'{{ task.id }}',
-        title: '{{ task.title }}',
-        user: '{{ task.user }}',
-        email: '{{ task.email }}',
-        description: `{{ task.description }}`,
-        is_cofirmed: '{{ task.is_cofirmed }}' === 'True' ? true : false,
-    });
-    {% endfor %}
-</script>
 {% endblock %}

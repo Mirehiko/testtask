@@ -19,7 +19,7 @@
 /*content*/
 
 main {
-  display: flex;
+  // display: flex;
 }
 
 .section {
@@ -63,6 +63,7 @@ main {
   border-radius: 5px;
   cursor: pointer;
 }
+
 .taskStateToggler:hover {
   background-color: #00000014;
 }
@@ -73,6 +74,7 @@ main {
   border-bottom: 1px solid #ccc;
   position: relative;
 }
+
 .taskMsg {
   padding: 2px 10px;
   background-color: #00000005;
@@ -81,6 +83,7 @@ main {
   margin: 5px;
   display: none;
 }
+
 .taskMsg-visible {
   display: inline-block;
 }
@@ -102,6 +105,7 @@ main {
   padding: 0;
   border: 1px solid #7b7b7b;
 }
+
 .taskBody .btn:hover {
   background-color: #00000014;
 }

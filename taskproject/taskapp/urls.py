@@ -13,6 +13,8 @@ app_name = 'taskapp'
 
 urlpatterns = [
     path('', views.homepage, name='homepage'),
+    path('tasklist/', views.homepage, name='homepage'),
+    path('dashboard/', views.homepage, name='homepage'),
     path('login/', views.authUser, name='authUser'),
     path('logout/', views.logout, name='logout'),
     path('api/', include(router.urls)),
