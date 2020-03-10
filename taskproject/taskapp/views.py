@@ -57,7 +57,7 @@ def homepage(request):
 	else:
 		taskList = Task.objects.all().order_by('-pub_date')
 
-	paginator = Paginator(taskList, 3)
+	paginator = Paginator(taskList, 10)
 
 	if page_number == None:
 		page_number = 1
@@ -73,7 +73,7 @@ def homepage(request):
 		prev_page = page_obj.previous_page_number()
 
 	context = {
-		'taskList': page_obj.object_list,
+		'results': page_obj.object_list,
 		'next': next_page,
 		'prev': prev_page,
 		'page': page_number,
@@ -95,33 +95,60 @@ def logout(request):
 	return redirect('/')
 
 def createTask(request):
-	title = request.POST['title']
-	description = request.POST['description']
-	username = request.POST['user']
-	email = request.POST['email']
+	# if request.session.has_key('username'):
+	# 	auth_user = request.session['username']
+	# else:
+	# 	return redirect('/login/')
+	print('======---CREATE---===========')
+	# print('request', request.POST)
+	print('request.method', request.method)
+	jsondata = json.loads(request.body)
+	print('json', jsondata)
+
+	title = jsondata['newtask']['title']
+	description = jsondata['newtask']['description']
+	username = jsondata['newtask']['user']
+	email = jsondata['newtask']['email']
+
+	print(title, description, username,email)
+	task = None
 
 	with transaction.atomic():
-		task = Task(user=username, description=description, title=title, email=email)
-		task.save()
+		task = Task.objects.create(user=username, description=description, title=title, email=email)
+		# task.save()
 
-	return JsonResponse({'status': 'success'})
+	print('task', task)
+	resp = {
+		'id': task.id,
+		'title': task.title,
+		'description': task.description,
+		'user': task.user,
+		'email': task.email,
+		'isCofirmed': task.is_cofirmed,
+	}
+
+	# return JsonResponse({'status': 'success'})
+	return JsonResponse(resp)
 	
 def updateTask(request):
-	if request.session.has_key('username'):
-		auth_user = request.session['username']
-	else:
-		return redirect('/login/')
+	# if request.session.has_key('username'):
+	# 	auth_user = request.session['username']
+	# else:
+	# 	return redirect('/login/')
 
 	print('======---UPDATE---===========')
-	print(request.POST)
-
-	task_id = request.POST['taskid']
-	title = request.POST['title']
-	description = request.POST['description']
-	username = request.POST['user']
-	email = request.POST['email']
+	# print('request', request.POST)
+	print('request.method', request.method)
+	jsondata = json.loads(request.body)
+	print('json', jsondata)
+	
+	task_id = jsondata['id']
+	title = jsondata['title']
+	description = jsondata['description']
+	username = jsondata['user']
+	email = jsondata['email']
 	is_cofirmed = False
-	if request.POST['is_cofirmed'] == 'true':
+	if jsondata['is_cofirmed'] == 'true':
 		is_cofirmed = True
 
 
@@ -138,9 +165,16 @@ def updateTask(request):
 	return JsonResponse({'status': 'success'})
 
 def removeTask(request):
+	# if request.session.has_key('username'):
+	# 	auth_user = request.session['username']
+	# else:
+	# 	return redirect('/login/')
 	print('================remove task================')
-	print(request.POST)
-	taskid = request.POST['taskid']
+	# print(request.POST)
+	print('request.method', request.method)
+	jsondata = json.loads(request.body)
+	print('json', jsondata)
+	taskid = jsondata['id']
 	task = Task.objects.get(id=taskid)
 
 	status = ''
@@ -161,6 +195,12 @@ def removeTask(request):
 def getTasks(request):
 	print('================get task================')
 	print(request.GET)
+	# print('request.method', request.method)
+	# jsondata = json.loads(request.body)
+	# print('json', jsondata)
+
+	print(request.GET.get('page'))
+	print('0-----------')
 	page_number = request.GET.get('page')
 	sort_key = request.GET.get('sortKey')
 	sort_way = request.GET.get('sortWay')
@@ -174,7 +214,7 @@ def getTasks(request):
 
 	taskList = Task.objects.order_by(sort_key)
 
-	paginator = Paginator(taskList, 3)
+	paginator = Paginator(taskList, 10)
 
 	if page_number == None:
 		page_number = 1
@@ -189,9 +229,9 @@ def getTasks(request):
 	if page_obj.has_previous():
 		prev_page = page_obj.previous_page_number()
 
-	json = []
+	jsonResult = []
 	for task in page_obj.object_list:
-		json.append({
+		jsonResult.append({
 			'taskid': task.id,
 			'title': task.title,
 			'user': task.user,
@@ -201,16 +241,16 @@ def getTasks(request):
 		})
 
 	results = {
-		'taskList': json,
+		'results': jsonResult,
 		'next': next_page,
 		'prev': prev_page,
 		'page': page_number,
 	}
 
-	if request.session.has_key('username'):
-		auth_user = request.session['username']
-		user = User.objects.get(name=auth_user)
-		results['user'] = user.name
-		results['is_authorized'] = True
+	# if request.session.has_key('username'):
+		# auth_user = request.session['username']
+		# user = User.objects.get(name=auth_user)
+		# results['user'] = user.name
+		# results['is_authorized'] = True
 
 	return JsonResponse(results, content_type='application/json')

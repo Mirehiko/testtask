@@ -78,7 +78,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'taskproject.wsgi.application'
 
-TASK_PER_PAGE = 3
+TASK_PER_PAGE = 10
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
