@@ -232,7 +232,7 @@ def getTasks(request):
 	jsonResult = []
 	for task in page_obj.object_list:
 		jsonResult.append({
-			'taskid': task.id,
+			'id': task.id,
 			'title': task.title,
 			'user': task.user,
 			'email': task.email,
