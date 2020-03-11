@@ -1479,8 +1479,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.sortKey = 'title';
         this.sortWay = 'inc';
         this.page = 1;
-        this.prev = true;
-        this.next = true;
+        this.prev = null;
+        this.next = null;
       }
 
       _createClass(TaskComponent, [{
