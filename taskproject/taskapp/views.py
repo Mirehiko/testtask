@@ -214,7 +214,7 @@ def getTasks(request):
 
 	taskList = Task.objects.order_by(sort_key)
 
-	paginator = Paginator(taskList, 10)
+	paginator = Paginator(taskList, 3)
 
 	if page_number == None:
 		page_number = 1
