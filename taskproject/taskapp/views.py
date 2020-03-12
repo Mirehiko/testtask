@@ -112,22 +112,11 @@ def createTask(request):
 	is_cofirmed = jsondata['newtask']['isCofirmed']
 	on_main = jsondata['newtask']['onMain']
 
-	if is_cofirmed == 'on':
-		is_cofirmed = True
-	else:
-		is_cofirmed = False
-
-	if on_main == 'on':
-		on_main = True
-	else:
-		on_main = False
-
-	print(title, description, username,email)
+	print(title, description, username,email,is_cofirmed,on_main)
 	task = None
 
 	with transaction.atomic():
 		task = Task.objects.create(user=username, description=description, title=title, email=email, is_cofirmed=is_cofirmed, on_main=on_main)
-		# task.save()
 
 	print('task', task)
 	resp = {
@@ -141,7 +130,6 @@ def createTask(request):
 		'pub_date': task.pub_date,
 	}
 
-	# return JsonResponse({'status': 'success'})
 	return JsonResponse(resp)
 	
 def updateTask(request):
@@ -163,11 +151,6 @@ def updateTask(request):
 	email = jsondata['email']
 	is_cofirmed = jsondata['isCofirmed']
 	on_main = jsondata['onMain']
-	# if jsondata['onMain'] == 'true':
-	# 	on_main = True
-	# if jsondata['isCofirmed'] == 'true':
-	# 	is_cofirmed = True
-
 
 	task = Task.objects.get(id=task_id)
 	task.title = title
