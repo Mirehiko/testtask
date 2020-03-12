@@ -575,6 +575,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.taskService.updateTask(task).subscribe(function (data) {
             console.log(data); // notify
+
+            alert('Задача успешно обновлена!');
           });
         }
       }, {
@@ -1010,6 +1012,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function save(task) {
           this.taskService.updateTask(this.task).subscribe(function (data) {
             console.log(data); // notify
+
+            alert('Задача успешно обновлена!');
           });
         }
       }]);
@@ -1607,7 +1611,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r6.next);
       }
-    } // import { TASKS } from '../mock-tasks'; // remove on prod
+    } // import { Page } from '../page';
+    // import { TASKS } from '../mock-tasks'; // remove on prod
 
 
     var TaskComponent =
@@ -1666,6 +1671,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           this.taskService.deleteTask(task).subscribe(function (data) {
             console.log(data); // notify
+
+            alert('Задача удалена');
           });
         }
       }, {
@@ -1686,14 +1693,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             email: taskEmail,
             isCofirmed: taskConfirmed,
             onMain: taskOnMain
-          }; // notify
-
+          };
           this.taskService.addTask({
             newtask: newtask
           }).subscribe(function (task) {
             _this3.tasks.push(task);
 
-            console.log(task);
+            console.log(task); // notify
+
+            alert('Задача успешно добавлена!');
           });
         }
       }, {

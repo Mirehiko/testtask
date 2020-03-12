@@ -303,6 +303,7 @@ class DashboardComponent {
         this.taskService.updateTask(task).subscribe(data => {
             console.log(data);
             // notify
+            alert('Задача успешно обновлена!');
         });
     }
     onSelect(task) {
@@ -491,6 +492,7 @@ class TaskDetailComponent {
         this.taskService.updateTask(this.task).subscribe(data => {
             console.log(data);
             // notify
+            alert('Задача успешно обновлена!');
         });
     }
 }
@@ -758,6 +760,7 @@ function TaskComponent_nav_29_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r6.next);
 } }
+// import { Page } from '../page';
 // import { TASKS } from '../mock-tasks'; // remove on prod
 class TaskComponent {
     constructor(taskService) {
@@ -799,6 +802,7 @@ class TaskComponent {
         this.taskService.deleteTask(task).subscribe(data => {
             console.log(data);
             // notify
+            alert('Задача удалена');
         });
     }
     add(taskTitle, taskDescribe, taskUser, taskEmail, taskConfirmed, taskOnMain) {
@@ -814,11 +818,12 @@ class TaskComponent {
             isCofirmed: taskConfirmed,
             onMain: taskOnMain,
         };
-        // notify
         this.taskService.addTask({ newtask })
             .subscribe(task => {
             this.tasks.push(task);
             console.log(task);
+            // notify
+            alert('Задача успешно добавлена!');
         });
     }
     onSelect(task) {
