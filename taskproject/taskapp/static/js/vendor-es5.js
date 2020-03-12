@@ -103292,6 +103292,2505 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./node_modules/angular-notifier/__ivy_ngcc__/fesm2015/angular-notifier.js":
+  /*!*********************************************************************************!*\
+    !*** ./node_modules/angular-notifier/__ivy_ngcc__/fesm2015/angular-notifier.js ***!
+    \*********************************************************************************/
+
+  /*! exports provided: NotifierConfig, NotifierConfigToken, NotifierContainerComponent, NotifierModule, NotifierNotificationComponent, NotifierOptionsToken, NotifierService, notifierCustomConfigFactory, notifierDefaultConfigFactory, ɵa, ɵb, ɵc */
+
+  /***/
+  function node_modulesAngularNotifier__ivy_ngcc__Fesm2015AngularNotifierJs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "NotifierConfig", function () {
+      return NotifierConfig;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "NotifierConfigToken", function () {
+      return NotifierConfigToken;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "NotifierContainerComponent", function () {
+      return NotifierContainerComponent;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "NotifierModule", function () {
+      return NotifierModule;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "NotifierNotificationComponent", function () {
+      return NotifierNotificationComponent;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "NotifierOptionsToken", function () {
+      return NotifierOptionsToken;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "NotifierService", function () {
+      return NotifierService;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "notifierCustomConfigFactory", function () {
+      return notifierCustomConfigFactory;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "notifierDefaultConfigFactory", function () {
+      return notifierDefaultConfigFactory;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵa", function () {
+      return NotifierQueueService;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵb", function () {
+      return NotifierTimerService;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵc", function () {
+      return NotifierAnimationService;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! rxjs */
+    "./node_modules/rxjs/_esm2015/index.js");
+    /* harmony import */
+
+
+    var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * Notification
+     *
+     * This class describes the structure of a notifiction, including all information it needs to live, and everyone else needs to work with it.
+     */
+
+
+    function NotifierContainerComponent_li_1_Template(rf, ctx) {
+      if (rf & 1) {
+        var _r623 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "li", 1);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "notifier-notification", 2);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ready", function NotifierContainerComponent_li_1_Template_notifier_notification_ready_1_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r623);
+
+          var ctx_r622 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          return ctx_r622.onNotificationReady($event);
+        })("dismiss", function NotifierContainerComponent_li_1_Template_notifier_notification_dismiss_1_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r623);
+
+          var ctx_r624 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          return ctx_r624.onNotificationDismiss($event);
+        });
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      }
+
+      if (rf & 2) {
+        var notification_r621 = ctx.$implicit;
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("notification", notification_r621);
+      }
+    }
+
+    var _c0 = function _c0(a0) {
+      return {
+        notification: a0
+      };
+    };
+
+    function NotifierNotificationComponent_ng_container_0_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0, 2);
+      }
+
+      if (rf & 2) {
+        var ctx_r625 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", ctx_r625.notification.template)("ngTemplateOutletContext", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](2, _c0, ctx_r625.notification));
+      }
+    }
+
+    function NotifierNotificationComponent_ng_template_1_button_2_Template(rf, ctx) {
+      if (rf & 1) {
+        var _r630 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 5);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function NotifierNotificationComponent_ng_template_1_button_2_Template_button_click_0_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r630);
+
+          var ctx_r629 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+
+          return ctx_r629.onClickDismiss();
+        });
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnamespaceSVG"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "svg", 6);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "path", 7);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      }
+    }
+
+    function NotifierNotificationComponent_ng_template_1_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p", 3);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, NotifierNotificationComponent_ng_template_1_button_2_Template, 3, 0, "button", 4);
+      }
+
+      if (rf & 2) {
+        var ctx_r627 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r627.notification.message);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r627.config.behaviour.showDismissButton);
+      }
+    }
+
+    var NotifierNotification =
+    /**
+     * Constructor
+     *
+     * @param {?} options Notifier options
+     */
+    function NotifierNotification(options) {
+      _classCallCheck(this, NotifierNotification);
+
+      /**
+       * The template to customize
+       * the appearance of the notification
+       */
+      this.template = null;
+      Object.assign(this, options); // If not set manually, we have to create a unique notification ID by ourselves. The ID generation relies on the current browser
+      // datetime in ms, in praticular the moment this notification gets constructed. Concurrency, and thus two IDs being the exact same,
+      // is not possible due to the action queue concept.
+
+      if (options.id === undefined) {
+        this.id = "ID_".concat(new Date().getTime());
+      }
+    };
+
+    if (false) {}
+    /**
+     * Notifiction options
+     *
+     * This interface describes which information are needed to create a new notification, or in other words, which information the external API
+     * call must provide.
+     * @record
+     */
+
+
+    function NotifierNotificationOptions() {}
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * Notifier queue service
+     *
+     * In general, API calls don't get processed right away. Instead, we have to queue them up in order to prevent simultanious API calls
+     * interfering with each other. This, at least in theory, is possible at any time. In particular, animations - which potentially overlap -
+     * can cause changes in JS classes as well as affect the DOM. Therefore, the queue service takes all actions, puts them in a queue, and
+     * processes them at the right time (which is when the previous action has been processed successfully).
+     *
+     * Technical sidenote:
+     * An action looks pretty similar to the ones within the Flux / Redux pattern.
+     */
+
+
+    var NotifierQueueService =
+    /*#__PURE__*/
+    function () {
+      /**
+       * Constructor
+       */
+      function NotifierQueueService() {
+        _classCallCheck(this, NotifierQueueService);
+
+        this.actionStream = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
+        this.actionQueue = [];
+        this.isActionInProgress = false;
+      }
+      /**
+       * Push a new action to the queue, and try to run it
+       *
+       * @param {?} action Action object
+       * @return {?}
+       */
+
+
+      _createClass2(NotifierQueueService, [{
+        key: "push",
+        value: function push(action) {
+          this.actionQueue.push(action);
+          this.tryToRunNextAction();
+        }
+        /**
+         * Continue with the next action (called when the current action is finished)
+         * @return {?}
+         */
+
+      }, {
+        key: "continue",
+        value: function _continue() {
+          this.isActionInProgress = false;
+          this.tryToRunNextAction();
+        }
+        /**
+         * Try to run the next action in the queue; we skip if there already is some action in progress, or if there is no action left
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "tryToRunNextAction",
+        value: function tryToRunNextAction() {
+          if (this.isActionInProgress || this.actionQueue.length === 0) {
+            return; // Skip (the queue can now go drink a coffee as it has nothing to do anymore)
+          }
+
+          this.isActionInProgress = true;
+          this.actionStream.next(this.actionQueue.shift()); // Push next action to the stream, and remove the current action from the queue
+        }
+      }]);
+
+      return NotifierQueueService;
+    }();
+
+    NotifierQueueService.ɵfac = function NotifierQueueService_Factory(t) {
+      return new (t || NotifierQueueService)();
+    };
+
+    NotifierQueueService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: NotifierQueueService,
+      factory: NotifierQueueService.ɵfac
+    });
+    /** @nocollapse */
+
+    NotifierQueueService.ctorParameters = function () {
+      return [];
+    };
+    /*@__PURE__*/
+
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NotifierQueueService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], function () {
+        return [];
+      }, null);
+    })();
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * Notifier options
+     * @record
+     */
+
+
+    function NotifierOptions() {}
+
+    if (false) {}
+    /**
+     * Notifier configuration
+     *
+     * The notifier configuration defines what notifications look like, how they behave, and how they get animated. It is a global
+     * configuration, which means that it only can be set once (at the beginning), and cannot be changed afterwards. Aligning to the world of
+     * Angular, this configuration can be provided in the root app module - alternatively, a meaningful default configuration will be used.
+     */
+
+
+    var NotifierConfig =
+    /**
+     * Constructor
+     *
+     * @param {?=} customOptions
+     */
+    function NotifierConfig() {
+      var customOptions = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+      _classCallCheck(this, NotifierConfig);
+
+      // Set default values
+      this.animations = {
+        enabled: true,
+        hide: {
+          easing: 'ease',
+          offset: 50,
+          preset: 'fade',
+          speed: 300
+        },
+        overlap: 150,
+        shift: {
+          easing: 'ease',
+          speed: 300
+        },
+        show: {
+          easing: 'ease',
+          preset: 'slide',
+          speed: 300
+        }
+      };
+      this.behaviour = {
+        autoHide: 7000,
+        onClick: false,
+        onMouseover: 'pauseAutoHide',
+        showDismissButton: true,
+        stacking: 4
+      };
+      this.position = {
+        horizontal: {
+          distance: 12,
+          position: 'left'
+        },
+        vertical: {
+          distance: 12,
+          gap: 10,
+          position: 'bottom'
+        }
+      };
+      this.theme = 'material'; // The following merges the custom options into the notifier config, respecting the already set default values
+      // This linear, more explicit and code-sizy workflow is preferred here over a recursive one (because we know the object structure)
+      // Technical sidenote: Objects are merged, other types of values simply overwritten / copied
+
+      if (customOptions.theme !== undefined) {
+        this.theme = customOptions.theme;
+      }
+
+      if (customOptions.animations !== undefined) {
+        if (customOptions.animations.enabled !== undefined) {
+          this.animations.enabled = customOptions.animations.enabled;
+        }
+
+        if (customOptions.animations.overlap !== undefined) {
+          this.animations.overlap = customOptions.animations.overlap;
+        }
+
+        if (customOptions.animations.hide !== undefined) {
+          Object.assign(this.animations.hide, customOptions.animations.hide);
+        }
+
+        if (customOptions.animations.shift !== undefined) {
+          Object.assign(this.animations.shift, customOptions.animations.shift);
+        }
+
+        if (customOptions.animations.show !== undefined) {
+          Object.assign(this.animations.show, customOptions.animations.show);
+        }
+      }
+
+      if (customOptions.behaviour !== undefined) {
+        Object.assign(this.behaviour, customOptions.behaviour);
+      }
+
+      if (customOptions.position !== undefined) {
+        if (customOptions.position.horizontal !== undefined) {
+          Object.assign(this.position.horizontal, customOptions.position.horizontal);
+        }
+
+        if (customOptions.position.vertical !== undefined) {
+          Object.assign(this.position.vertical, customOptions.position.vertical);
+        }
+      }
+    };
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+    // tslint:disable variable-name
+
+    /**
+     * Injection Token for notifier options
+     * @type {?}
+     */
+
+
+    var NotifierOptionsToken = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]('[angular-notifier] Notifier Options');
+    /**
+     * Injection Token for notifier configuration
+     * @type {?}
+     */
+
+    var NotifierConfigToken = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]('[anuglar-notifier] Notifier Config');
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * Notifier service
+     *
+     * This service provides access to the public notifier API. Once injected into a component, directive, pipe, service, or any other building
+     * block of an applications, it can be used to show new notifications, and hide existing ones. Internally, it transforms API calls into
+     * actions, which then get thrown into the action queue - eventually being processed at the right moment.
+     */
+
+    var NotifierService =
+    /*#__PURE__*/
+    function () {
+      /**
+       * Constructor
+       *
+       * @param {?} notifierQueueService Notifier queue service
+       * @param {?} config               Notifier configuration, optionally injected as a dependency
+       */
+      function NotifierService(notifierQueueService, config) {
+        _classCallCheck(this, NotifierService);
+
+        this.queueService = notifierQueueService;
+        this.config = config;
+      }
+      /**
+       * Get the notifier configuration
+       *
+       * @return {?} Notifier configuration
+       */
+
+
+      _createClass2(NotifierService, [{
+        key: "getConfig",
+        value: function getConfig() {
+          return this.config;
+        }
+        /**
+         * API: Show a new notification
+         *
+         * @param {?} notificationOptions Notification options
+         * @return {?}
+         */
+
+      }, {
+        key: "show",
+        value: function show(notificationOptions) {
+          this.queueService.push({
+            payload: notificationOptions,
+            type: 'SHOW'
+          });
+        }
+        /**
+         * API: Hide a specific notification, given its ID
+         *
+         * @param {?} notificationId ID of the notification to hide
+         * @return {?}
+         */
+
+      }, {
+        key: "hide",
+        value: function hide(notificationId) {
+          this.queueService.push({
+            payload: notificationId,
+            type: 'HIDE'
+          });
+        }
+        /**
+         * API: Hide the newest notification
+         * @return {?}
+         */
+
+      }, {
+        key: "hideNewest",
+        value: function hideNewest() {
+          this.queueService.push({
+            type: 'HIDE_NEWEST'
+          });
+        }
+        /**
+         * API: Hide the oldest notification
+         * @return {?}
+         */
+
+      }, {
+        key: "hideOldest",
+        value: function hideOldest() {
+          this.queueService.push({
+            type: 'HIDE_OLDEST'
+          });
+        }
+        /**
+         * API: Hide all notifications at once
+         * @return {?}
+         */
+
+      }, {
+        key: "hideAll",
+        value: function hideAll() {
+          this.queueService.push({
+            type: 'HIDE_ALL'
+          });
+        }
+        /**
+         * API: Shortcut for showing a new notification
+         *
+         * @param {?} type             Type of the notification
+         * @param {?} message          Message of the notification
+         * @param {?=} notificationId
+         * @return {?}
+         */
+
+      }, {
+        key: "notify",
+        value: function notify(type, message, notificationId) {
+          /** @type {?} */
+          var notificationOptions = {
+            message: message,
+            type: type
+          };
+
+          if (notificationId !== undefined) {
+            notificationOptions.id = notificationId;
+          }
+
+          this.show(notificationOptions);
+        }
+      }]);
+
+      return NotifierService;
+    }();
+
+    NotifierService.ɵfac = function NotifierService_Factory(t) {
+      return new (t || NotifierService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](NotifierQueueService), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](NotifierConfigToken));
+    };
+
+    NotifierService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: NotifierService,
+      factory: NotifierService.ɵfac
+    });
+    /** @nocollapse */
+
+    NotifierService.ctorParameters = function () {
+      return [{
+        type: NotifierQueueService
+      }, {
+        type: NotifierConfig,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [NotifierConfigToken]
+        }]
+      }];
+    };
+    /*@__PURE__*/
+
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NotifierService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], function () {
+        return [{
+          type: NotifierQueueService
+        }, {
+          type: NotifierConfig,
+          decorators: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+            args: [NotifierConfigToken]
+          }]
+        }];
+      }, null);
+    })();
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * Notifier container component
+     * ----------------------------
+     * This component acts as a wrapper for all notification components; consequently, it is responsible for creating a new notification
+     * component and removing an existing notification component. Being more precicely, it also handles side effects of those actions, such as
+     * shifting or even completely removing other notifications as well. Overall, this components handles actions coming from the queue service
+     * by subscribing to its action stream.
+     *
+     * Technical sidenote:
+     * This component has to be used somewhere in an application to work; it will not inject and create itself automatically, primarily in order
+     * to not break the Angular AoT compilation. Moreover, this component (and also the notification components) set their change detection
+     * strategy onPush, which means that we handle change detection manually in order to get the best performance. (#perfmatters)
+     */
+
+
+    var NotifierContainerComponent =
+    /*#__PURE__*/
+    function () {
+      /**
+       * Constructor
+       *
+       * @param {?} changeDetector       Change detector, used for manually triggering change detection runs
+       * @param {?} notifierQueueService Notifier queue service
+       * @param {?} notifierService      Notifier service
+       */
+      function NotifierContainerComponent(changeDetector, notifierQueueService, notifierService) {
+        var _this158 = this;
+
+        _classCallCheck(this, NotifierContainerComponent);
+
+        this.changeDetector = changeDetector;
+        this.queueService = notifierQueueService;
+        this.config = notifierService.getConfig();
+        this.notifications = []; // Connects this component up to the action queue, then handle incoming actions
+
+        this.queueServiceSubscription = this.queueService.actionStream.subscribe(
+        /**
+        * @param {?} action
+        * @return {?}
+        */
+        function (action) {
+          _this158.handleAction(action).then(
+          /**
+          * @return {?}
+          */
+          function () {
+            _this158.queueService.continue();
+          });
+        });
+      }
+      /**
+       * Component destroyment lifecycle hook, cleans up the observable subsciption
+       * @return {?}
+       */
+
+
+      _createClass2(NotifierContainerComponent, [{
+        key: "ngOnDestroy",
+        value: function ngOnDestroy() {
+          if (this.queueServiceSubscription) {
+            this.queueServiceSubscription.unsubscribe();
+          }
+        }
+        /**
+         * Notification identifier, used as the ngFor trackby function
+         *
+         * @param {?} index        Index
+         * @param {?} notification Notifier notification
+         * @return {?} Notification ID as the unique identnfier
+         */
+
+      }, {
+        key: "identifyNotification",
+        value: function identifyNotification(index, notification) {
+          return notification.id;
+        }
+        /**
+         * Event handler, handles clicks on notification dismiss buttons
+         *
+         * @param {?} notificationId ID of the notification to dismiss
+         * @return {?}
+         */
+
+      }, {
+        key: "onNotificationDismiss",
+        value: function onNotificationDismiss(notificationId) {
+          this.queueService.push({
+            payload: notificationId,
+            type: 'HIDE'
+          });
+        }
+        /**
+         * Event handler, handles notification ready events
+         *
+         * @param {?} notificationComponent Notification component reference
+         * @return {?}
+         */
+
+      }, {
+        key: "onNotificationReady",
+        value: function onNotificationReady(notificationComponent) {
+          /** @type {?} */
+          var currentNotification = this.notifications[this.notifications.length - 1];
+          currentNotification.component = notificationComponent; // Save the new omponent reference
+
+          this.continueHandleShowAction(currentNotification); // Continue with handling the show action
+        }
+        /**
+         * Handle incoming actions by mapping action types to methods, and then running them
+         *
+         * @private
+         * @param {?} action Action object
+         * @return {?} Promise, resolved when done
+         */
+
+      }, {
+        key: "handleAction",
+        value: function handleAction(action) {
+          switch (action.type) {
+            // TODO: Maybe a map (actionType -> class method) is a cleaner solution here?
+            case 'SHOW':
+              return this.handleShowAction(action);
+
+            case 'HIDE':
+              return this.handleHideAction(action);
+
+            case 'HIDE_OLDEST':
+              return this.handleHideOldestAction(action);
+
+            case 'HIDE_NEWEST':
+              return this.handleHideNewestAction(action);
+
+            case 'HIDE_ALL':
+              return this.handleHideAllAction(action);
+
+            default:
+              return new Promise(
+              /**
+              * @param {?} resolve
+              * @param {?} reject
+              * @return {?}
+              */
+              function (resolve, reject) {
+                resolve(); // Ignore unknown action types
+              });
+          }
+        }
+        /**
+         * Show a new notification
+         *
+         * We simply add the notification to the list, and then wait until its properly initialized / created / rendered.
+         *
+         * @private
+         * @param {?} action Action object
+         * @return {?} Promise, resolved when done
+         */
+
+      }, {
+        key: "handleShowAction",
+        value: function handleShowAction(action) {
+          var _this159 = this;
+
+          return new Promise(
+          /**
+          * @param {?} resolve
+          * @param {?} reject
+          * @return {?}
+          */
+          function (resolve, reject) {
+            _this159.tempPromiseResolver = resolve; // Save the promise resolve function so that it can be called later on by another method
+
+            _this159.addNotificationToList(new NotifierNotification(action.payload));
+          });
+        }
+        /**
+         * Continue to show a new notification (after the notification components is initialized / created / rendered).
+         *
+         * If this is the first (and thus only) notification, we can simply show it. Otherwhise, if stacking is disabled (or a low value), we
+         * switch out notifications, in particular we hide the existing one, and then show our new one. Yet, if stacking is enabled, we first
+         * shift all older notifications, and then show our new notification. In addition, if there are too many notification on the screen,
+         * we hide the oldest one first. Furthermore, if configured, animation overlapping is applied.
+         *
+         * @private
+         * @param {?} notification New notification to show
+         * @return {?}
+         */
+
+      }, {
+        key: "continueHandleShowAction",
+        value: function continueHandleShowAction(notification) {
+          var _this160 = this;
+
+          // First (which means only one) notification in the list?
+
+          /** @type {?} */
+          var numberOfNotifications = this.notifications.length;
+
+          if (numberOfNotifications === 1) {
+            notification.component.show().then(this.tempPromiseResolver); // Done
+          } else {
+            /** @type {?} */
+            var implicitStackingLimit = 2; // Stacking enabled? (stacking value below 2 means stacking is disabled)
+
+            if (this.config.behaviour.stacking === false || this.config.behaviour.stacking < implicitStackingLimit) {
+              this.notifications[0].component.hide().then(
+              /**
+              * @return {?}
+              */
+              function () {
+                _this160.removeNotificationFromList(_this160.notifications[0]);
+
+                notification.component.show().then(_this160.tempPromiseResolver); // Done
+              });
+            } else {
+              /** @type {?} */
+              var stepPromises = []; // Are there now too many notifications?
+
+              if (numberOfNotifications > this.config.behaviour.stacking) {
+                /** @type {?} */
+                var oldNotifications = this.notifications.slice(1, numberOfNotifications - 1); // Are animations enabled?
+
+                if (this.config.animations.enabled) {
+                  // Is animation overlap enabled?
+                  if (this.config.animations.overlap !== false && this.config.animations.overlap > 0) {
+                    stepPromises.push(this.notifications[0].component.hide());
+                    setTimeout(
+                    /**
+                    * @return {?}
+                    */
+                    function () {
+                      stepPromises.push(_this160.shiftNotifications(oldNotifications, notification.component.getHeight(), true));
+                    }, this.config.animations.hide.speed - this.config.animations.overlap);
+                    setTimeout(
+                    /**
+                    * @return {?}
+                    */
+                    function () {
+                      stepPromises.push(notification.component.show());
+                    }, this.config.animations.hide.speed + this.config.animations.shift.speed - this.config.animations.overlap);
+                  } else {
+                    stepPromises.push(new Promise(
+                    /**
+                    * @param {?} resolve
+                    * @param {?} reject
+                    * @return {?}
+                    */
+                    function (resolve, reject) {
+                      _this160.notifications[0].component.hide().then(
+                      /**
+                      * @return {?}
+                      */
+                      function () {
+                        _this160.shiftNotifications(oldNotifications, notification.component.getHeight(), true).then(
+                        /**
+                        * @return {?}
+                        */
+                        function () {
+                          notification.component.show().then(resolve);
+                        });
+                      });
+                    }));
+                  }
+                } else {
+                  stepPromises.push(this.notifications[0].component.hide());
+                  stepPromises.push(this.shiftNotifications(oldNotifications, notification.component.getHeight(), true));
+                  stepPromises.push(notification.component.show());
+                }
+              } else {
+                /** @type {?} */
+                var _oldNotifications = this.notifications.slice(0, numberOfNotifications - 1); // Are animations enabled?
+
+
+                if (this.config.animations.enabled) {
+                  // Is animation overlap enabled?
+                  if (this.config.animations.overlap !== false && this.config.animations.overlap > 0) {
+                    stepPromises.push(this.shiftNotifications(_oldNotifications, notification.component.getHeight(), true));
+                    setTimeout(
+                    /**
+                    * @return {?}
+                    */
+                    function () {
+                      stepPromises.push(notification.component.show());
+                    }, this.config.animations.shift.speed - this.config.animations.overlap);
+                  } else {
+                    stepPromises.push(new Promise(
+                    /**
+                    * @param {?} resolve
+                    * @param {?} reject
+                    * @return {?}
+                    */
+                    function (resolve, reject) {
+                      _this160.shiftNotifications(_oldNotifications, notification.component.getHeight(), true).then(
+                      /**
+                      * @return {?}
+                      */
+                      function () {
+                        notification.component.show().then(resolve);
+                      });
+                    }));
+                  }
+                } else {
+                  stepPromises.push(this.shiftNotifications(_oldNotifications, notification.component.getHeight(), true));
+                  stepPromises.push(notification.component.show());
+                }
+              }
+
+              Promise.all(stepPromises).then(
+              /**
+              * @return {?}
+              */
+              function () {
+                if (numberOfNotifications > _this160.config.behaviour.stacking) {
+                  _this160.removeNotificationFromList(_this160.notifications[0]);
+                }
+
+                _this160.tempPromiseResolver();
+              }); // Done
+            }
+          }
+        }
+        /**
+         * Hide an existing notification
+         *
+         * Fist, we skip everything if there are no notifications at all, or the given notification does not exist. Then, we hide the given
+         * notification. If there exist older notifications, we then shift them around to fill the gap. Once both hiding the given notification
+         * and shifting the older notificaitons is done, the given notification gets finally removed (from the DOM).
+         *
+         * @private
+         * @param {?} action Action object, payload contains the notification ID
+         * @return {?} Promise, resolved when done
+         */
+
+      }, {
+        key: "handleHideAction",
+        value: function handleHideAction(action) {
+          var _this161 = this;
+
+          return new Promise(
+          /**
+          * @param {?} resolve
+          * @param {?} reject
+          * @return {?}
+          */
+          function (resolve, reject) {
+            /** @type {?} */
+            var stepPromises = []; // Does the notification exist / are there even any notifications? (let's prevent accidential errors)
+
+            /** @type {?} */
+
+            var notification = _this161.findNotificationById(action.payload);
+
+            if (notification === undefined) {
+              resolve();
+              return;
+            } // Get older notifications
+
+            /** @type {?} */
+
+
+            var notificationIndex = _this161.findNotificationIndexById(action.payload);
+
+            if (notificationIndex === undefined) {
+              resolve();
+              return;
+            }
+            /** @type {?} */
+
+
+            var oldNotifications = _this161.notifications.slice(0, notificationIndex); // Do older notifications exist, and thus do we need to shift other notifications as a consequence?
+
+
+            if (oldNotifications.length > 0) {
+              // Are animations enabled?
+              if (_this161.config.animations.enabled && _this161.config.animations.hide.speed > 0) {
+                // Is animation overlap enabled?
+                if (_this161.config.animations.overlap !== false && _this161.config.animations.overlap > 0) {
+                  stepPromises.push(notification.component.hide());
+                  setTimeout(
+                  /**
+                  * @return {?}
+                  */
+                  function () {
+                    stepPromises.push(_this161.shiftNotifications(oldNotifications, notification.component.getHeight(), false));
+                  }, _this161.config.animations.hide.speed - _this161.config.animations.overlap);
+                } else {
+                  notification.component.hide().then(
+                  /**
+                  * @return {?}
+                  */
+                  function () {
+                    stepPromises.push(_this161.shiftNotifications(oldNotifications, notification.component.getHeight(), false));
+                  });
+                }
+              } else {
+                stepPromises.push(notification.component.hide());
+                stepPromises.push(_this161.shiftNotifications(oldNotifications, notification.component.getHeight(), false));
+              }
+            } else {
+              stepPromises.push(notification.component.hide());
+            } // Wait until both hiding and shifting is done, then remove the notification from the list
+
+
+            Promise.all(stepPromises).then(
+            /**
+            * @return {?}
+            */
+            function () {
+              _this161.removeNotificationFromList(notification);
+
+              resolve(); // Done
+            });
+          });
+        }
+        /**
+         * Hide the oldest notification (bridge to handleHideAction)
+         *
+         * @private
+         * @param {?} action Action object
+         * @return {?} Promise, resolved when done
+         */
+
+      }, {
+        key: "handleHideOldestAction",
+        value: function handleHideOldestAction(action) {
+          // Are there any notifications? (prevent accidential errors)
+          if (this.notifications.length === 0) {
+            return new Promise(
+            /**
+            * @param {?} resolve
+            * @param {?} reject
+            * @return {?}
+            */
+            function (resolve, reject) {
+              resolve();
+            }); // Done
+          } else {
+            action.payload = this.notifications[0].id;
+            return this.handleHideAction(action);
+          }
+        }
+        /**
+         * Hide the newest notification (bridge to handleHideAction)
+         *
+         * @private
+         * @param {?} action Action object
+         * @return {?} Promise, resolved when done
+         */
+
+      }, {
+        key: "handleHideNewestAction",
+        value: function handleHideNewestAction(action) {
+          // Are there any notifications? (prevent accidential errors)
+          if (this.notifications.length === 0) {
+            return new Promise(
+            /**
+            * @param {?} resolve
+            * @param {?} reject
+            * @return {?}
+            */
+            function (resolve, reject) {
+              resolve();
+            }); // Done
+          } else {
+            action.payload = this.notifications[this.notifications.length - 1].id;
+            return this.handleHideAction(action);
+          }
+        }
+        /**
+         * Hide all notifications at once
+         *
+         * @private
+         * @param {?} action Action object
+         * @return {?} Promise, resolved when done
+         */
+
+      }, {
+        key: "handleHideAllAction",
+        value: function handleHideAllAction(action) {
+          var _this162 = this;
+
+          return new Promise(
+          /**
+          * @param {?} resolve
+          * @param {?} reject
+          * @return {?}
+          */
+          function (resolve, reject) {
+            // Are there any notifications? (prevent accidential errors)
+
+            /** @type {?} */
+            var numberOfNotifications = _this162.notifications.length;
+
+            if (numberOfNotifications === 0) {
+              resolve(); // Done
+
+              return;
+            } // Are animations enabled?
+
+
+            if (_this162.config.animations.enabled && _this162.config.animations.hide.speed > 0 && _this162.config.animations.hide.offset !== false && _this162.config.animations.hide.offset > 0) {
+              var _loop3 = function _loop3(i) {
+                /** @type {?} */
+                var animationOffset = _this162.config.position.vertical.position === 'top' ? numberOfNotifications - 1 : i;
+                setTimeout(
+                /**
+                * @return {?}
+                */
+                function () {
+                  _this162.notifications[i].component.hide().then(
+                  /**
+                  * @return {?}
+                  */
+                  function () {
+                    // Are we done here, was this the last notification to be hidden?
+                    if (_this162.config.position.vertical.position === 'top' && i === 0 || _this162.config.position.vertical.position === 'bottom' && i === numberOfNotifications - 1) {
+                      _this162.removeAllNotificationsFromList();
+
+                      resolve(); // Done
+                    }
+                  });
+                }, _this162.config.animations.hide.offset * animationOffset);
+              };
+
+              for (var i = numberOfNotifications - 1; i >= 0; i--) {
+                _loop3(i);
+              }
+            } else {
+              /** @type {?} */
+              var stepPromises = [];
+
+              for (var _i23 = numberOfNotifications - 1; _i23 >= 0; _i23--) {
+                stepPromises.push(_this162.notifications[_i23].component.hide());
+              }
+
+              Promise.all(stepPromises).then(
+              /**
+              * @return {?}
+              */
+              function () {
+                _this162.removeAllNotificationsFromList();
+
+                resolve(); // Done
+              });
+            }
+          });
+        }
+        /**
+         * Shift multiple notifications at once
+         *
+         * @private
+         * @param {?} notifications List containing the notifications to be shifted
+         * @param {?} distance      Distance to shift (in px)
+         * @param {?} toMakePlace   Flag, defining in which direciton to shift
+         * @return {?} Promise, resolved when done
+         */
+
+      }, {
+        key: "shiftNotifications",
+        value: function shiftNotifications(notifications, distance, toMakePlace) {
+          return new Promise(
+          /**
+          * @param {?} resolve
+          * @param {?} reject
+          * @return {?}
+          */
+          function (resolve, reject) {
+            // Are there any notifications to shift?
+            if (notifications.length === 0) {
+              resolve();
+              return;
+            }
+            /** @type {?} */
+
+
+            var notificationPromises = [];
+
+            for (var i = notifications.length - 1; i >= 0; i--) {
+              notificationPromises.push(notifications[i].component.shift(distance, toMakePlace));
+            }
+
+            Promise.all(notificationPromises).then(resolve); // Done
+          });
+        }
+        /**
+         * Add a new notification to the list of notifications (triggers change detection)
+         *
+         * @private
+         * @param {?} notification Notification to add to the list of notifications
+         * @return {?}
+         */
+
+      }, {
+        key: "addNotificationToList",
+        value: function addNotificationToList(notification) {
+          this.notifications.push(notification);
+          this.changeDetector.markForCheck(); // Run change detection because the notification list changed
+        }
+        /**
+         * Remove an existing notification from the list of notifications (triggers change detection)
+         *
+         * @private
+         * @param {?} notification Notification to be removed from the list of notifications
+         * @return {?}
+         */
+
+      }, {
+        key: "removeNotificationFromList",
+        value: function removeNotificationFromList(notification) {
+          this.notifications = this.notifications.filter(
+          /**
+          * @param {?} item
+          * @return {?}
+          */
+          function (item) {
+            return item.component !== notification.component;
+          });
+          this.changeDetector.markForCheck(); // Run change detection because the notification list changed
+        }
+        /**
+         * Remove all notifications from the list (triggers change detection)
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "removeAllNotificationsFromList",
+        value: function removeAllNotificationsFromList() {
+          this.notifications = [];
+          this.changeDetector.markForCheck(); // Run change detection because the notification list changed
+        }
+        /**
+         * Helper: Find a notification in the notification list by a given notification ID
+         *
+         * @private
+         * @param {?} notificationId Notification ID, used for finding notification
+         * @return {?} Notification, undefined if not found
+         */
+
+      }, {
+        key: "findNotificationById",
+        value: function findNotificationById(notificationId) {
+          return this.notifications.find(
+          /**
+          * @param {?} currentNotification
+          * @return {?}
+          */
+          function (currentNotification) {
+            return currentNotification.id === notificationId;
+          });
+        }
+        /**
+         * Helper: Find a notification's index by a given notification ID
+         *
+         * @private
+         * @param {?} notificationId Notification ID, used for finding a notification's index
+         * @return {?} Notification index, undefined if not found
+         */
+
+      }, {
+        key: "findNotificationIndexById",
+        value: function findNotificationIndexById(notificationId) {
+          /** @type {?} */
+          var notificationIndex = this.notifications.findIndex(
+          /**
+          * @param {?} currentNotification
+          * @return {?}
+          */
+          function (currentNotification) {
+            return currentNotification.id === notificationId;
+          });
+          return notificationIndex !== -1 ? notificationIndex : undefined;
+        }
+      }]);
+
+      return NotifierContainerComponent;
+    }();
+
+    NotifierContainerComponent.ɵfac = function NotifierContainerComponent_Factory(t) {
+      return new (t || NotifierContainerComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](NotifierQueueService), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](NotifierService));
+    };
+
+    NotifierContainerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+      type: NotifierContainerComponent,
+      selectors: [["notifier-container"]],
+      hostAttrs: [1, "notifier__container"],
+      decls: 2,
+      vars: 2,
+      consts: [["class", "notifier__container-list", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "notifier__container-list"], [3, "notification", "ready", "dismiss"]],
+      template: function NotifierContainerComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "ul");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, NotifierContainerComponent_li_1_Template, 2, 1, "li", 0);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.notifications)("ngForTrackBy", ctx.identifyNotification);
+        }
+      },
+      directives: function directives() {
+        return [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgForOf"], NotifierNotificationComponent];
+      },
+      encapsulation: 2,
+      changeDetection: 0
+    });
+    /** @nocollapse */
+
+    NotifierContainerComponent.ctorParameters = function () {
+      return [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]
+      }, {
+        type: NotifierQueueService
+      }, {
+        type: NotifierService
+      }];
+    };
+    /*@__PURE__*/
+
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NotifierContainerComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+          changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectionStrategy"].OnPush,
+          // (#perfmatters)
+          host: {
+            class: 'notifier__container'
+          },
+          selector: 'notifier-container',
+          template: "<ul>\n\t<li class=\"notifier__container-list\" *ngFor=\"let notification of notifications; trackBy: identifyNotification;\">\n\t\t<notifier-notification\n\t\t\t[notification]=\"notification\"\n\t\t\t(ready)=\"onNotificationReady( $event )\"\n\t\t\t(dismiss)=\"onNotificationDismiss( $event )\">\n\t\t</notifier-notification>\n\t</li>\n</ul>\n"
+        }]
+      }], function () {
+        return [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]
+        }, {
+          type: NotifierQueueService
+        }, {
+          type: NotifierService
+        }];
+      }, null);
+    })();
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+
+    var ɵ0 =
+    /**
+    * @return {?}
+    */
+    function ɵ0() {
+      return {
+        from: {
+          opacity: '1'
+        },
+        to: {
+          opacity: '0'
+        }
+      };
+    },
+        ɵ1 =
+    /**
+    * @return {?}
+    */
+    function ɵ1() {
+      return {
+        from: {
+          opacity: '0'
+        },
+        to: {
+          opacity: '1'
+        }
+      };
+    };
+    /**
+     * Fade animation preset
+     * @type {?}
+     */
+
+
+    var fade = {
+      hide: ɵ0,
+      show: ɵ1
+    };
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    var ɵ0$1 =
+    /**
+    * @param {?} notification
+    * @return {?}
+    */
+    function ɵ0$1(notification) {
+      // Prepare variables
+
+      /** @type {?} */
+      var config = notification.component.getConfig();
+      /** @type {?} */
+
+      var shift = notification.component.getShift();
+      /** @type {?} */
+
+      var from;
+      /** @type {?} */
+
+      var to; // Configure variables, depending on configuration and component
+
+      if (config.position.horizontal.position === 'left') {
+        from = {
+          transform: "translate3d( 0, ".concat(shift, "px, 0 )")
+        };
+        to = {
+          transform: "translate3d( calc( -100% - ".concat(config.position.horizontal.distance, "px - 10px ), ").concat(shift, "px, 0 )")
+        };
+      } else if (config.position.horizontal.position === 'right') {
+        from = {
+          transform: "translate3d( 0, ".concat(shift, "px, 0 )")
+        };
+        to = {
+          transform: "translate3d( calc( 100% + ".concat(config.position.horizontal.distance, "px + 10px ), ").concat(shift, "px, 0 )")
+        };
+      } else {
+        /** @type {?} */
+        var horizontalPosition;
+
+        if (config.position.vertical.position === 'top') {
+          horizontalPosition = "calc( -100% - ".concat(config.position.horizontal.distance, "px - 10px )");
+        } else {
+          horizontalPosition = "calc( 100% + ".concat(config.position.horizontal.distance, "px + 10px )");
+        }
+
+        from = {
+          transform: "translate3d( -50%, ".concat(shift, "px, 0 )")
+        };
+        to = {
+          transform: "translate3d( -50%, ".concat(horizontalPosition, ", 0 )")
+        };
+      } // Done
+
+
+      return {
+        from: from,
+        to: to
+      };
+    },
+        ɵ1$1 =
+    /**
+    * @param {?} notification
+    * @return {?}
+    */
+    function ɵ1$1(notification) {
+      // Prepare variables
+
+      /** @type {?} */
+      var config = notification.component.getConfig();
+      /** @type {?} */
+
+      var from;
+      /** @type {?} */
+
+      var to; // Configure variables, depending on configuration and component
+
+      if (config.position.horizontal.position === 'left') {
+        from = {
+          transform: "translate3d( calc( -100% - ".concat(config.position.horizontal.distance, "px - 10px ), 0, 0 )")
+        };
+        to = {
+          transform: 'translate3d( 0, 0, 0 )'
+        };
+      } else if (config.position.horizontal.position === 'right') {
+        from = {
+          transform: "translate3d( calc( 100% + ".concat(config.position.horizontal.distance, "px + 10px ), 0, 0 )")
+        };
+        to = {
+          transform: 'translate3d( 0, 0, 0 )'
+        };
+      } else {
+        /** @type {?} */
+        var horizontalPosition;
+
+        if (config.position.vertical.position === 'top') {
+          horizontalPosition = "calc( -100% - ".concat(config.position.horizontal.distance, "px - 10px )");
+        } else {
+          horizontalPosition = "calc( 100% + ".concat(config.position.horizontal.distance, "px + 10px )");
+        }
+
+        from = {
+          transform: "translate3d( -50%, ".concat(horizontalPosition, ", 0 )")
+        };
+        to = {
+          transform: 'translate3d( -50%, 0, 0 )'
+        };
+      } // Done
+
+
+      return {
+        from: from,
+        to: to
+      };
+    };
+    /**
+     * Slide animation preset
+     * @type {?}
+     */
+
+
+    var slide = {
+      hide: ɵ0$1,
+      show: ɵ1$1
+    };
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * Notifier animation service
+     */
+
+    var NotifierAnimationService =
+    /*#__PURE__*/
+    function () {
+      /**
+       * Constructor
+       */
+      function NotifierAnimationService() {
+        _classCallCheck(this, NotifierAnimationService);
+
+        this.animationPresets = {
+          fade: fade,
+          slide: slide
+        };
+      }
+      /**
+       * Get animation data
+       *
+       * This method generates all data the Web Animations API needs to animate our notification. The result depends on both the animation
+       * direction (either in or out) as well as the notifications (and its attributes) itself.
+       *
+       * @param {?} direction    Animation direction, either in or out
+       * @param {?} notification Notification the animation data should be generated for
+       * @return {?} Animation information
+       */
+
+
+      _createClass2(NotifierAnimationService, [{
+        key: "getAnimationData",
+        value: function getAnimationData(direction, notification) {
+          // Get all necessary animation data
+
+          /** @type {?} */
+          var keyframes;
+          /** @type {?} */
+
+          var duration;
+          /** @type {?} */
+
+          var easing;
+
+          if (direction === 'show') {
+            keyframes = this.animationPresets[notification.component.getConfig().animations.show.preset].show(notification);
+            duration = notification.component.getConfig().animations.show.speed;
+            easing = notification.component.getConfig().animations.show.easing;
+          } else {
+            keyframes = this.animationPresets[notification.component.getConfig().animations.hide.preset].hide(notification);
+            duration = notification.component.getConfig().animations.hide.speed;
+            easing = notification.component.getConfig().animations.hide.easing;
+          } // Build and return animation data
+
+
+          return {
+            keyframes: [keyframes.from, keyframes.to],
+            options: {
+              duration: duration,
+              easing: easing,
+              fill: 'forwards' // Keep the newly painted state after the animation finished
+
+            }
+          };
+        }
+      }]);
+
+      return NotifierAnimationService;
+    }();
+
+    NotifierAnimationService.ɵfac = function NotifierAnimationService_Factory(t) {
+      return new (t || NotifierAnimationService)();
+    };
+
+    NotifierAnimationService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: NotifierAnimationService,
+      factory: NotifierAnimationService.ɵfac
+    });
+    /** @nocollapse */
+
+    NotifierAnimationService.ctorParameters = function () {
+      return [];
+    };
+    /*@__PURE__*/
+
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NotifierAnimationService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], function () {
+        return [];
+      }, null);
+    })();
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * Notifier timer service
+     *
+     * This service acts as a timer, needed due to the still rather limited setTimeout JavaScript API. The timer service can start and stop a
+     * timer. Furthermore, it can also pause the timer at any time, and resume later on. The timer API workd promise-based.
+     */
+
+
+    var NotifierTimerService =
+    /*#__PURE__*/
+    function () {
+      /**
+       * Constructor
+       */
+      function NotifierTimerService() {
+        _classCallCheck(this, NotifierTimerService);
+
+        this.now = 0;
+        this.remaining = 0;
+      }
+      /**
+       * Start (or resume) the timer
+       *
+       * @param {?} duration Timer duration, in ms
+       * @return {?} Promise, resolved once the timer finishes
+       */
+
+
+      _createClass2(NotifierTimerService, [{
+        key: "start",
+        value: function start(duration) {
+          var _this163 = this;
+
+          return new Promise(
+          /**
+          * @param {?} resolve
+          * @param {?} reject
+          * @return {?}
+          */
+          function (resolve, reject) {
+            // For the first run ...
+            _this163.remaining = duration; // Setup, then start the timer
+
+            _this163.finishPromiseResolver = resolve;
+
+            _this163.continue();
+          });
+        }
+        /**
+         * Pause the timer
+         * @return {?}
+         */
+
+      }, {
+        key: "pause",
+        value: function pause() {
+          clearTimeout(this.timerId);
+          this.remaining -= new Date().getTime() - this.now;
+        }
+        /**
+         * Continue the timer
+         * @return {?}
+         */
+
+      }, {
+        key: "continue",
+        value: function _continue() {
+          var _this164 = this;
+
+          this.now = new Date().getTime();
+          this.timerId = window.setTimeout(
+          /**
+          * @return {?}
+          */
+          function () {
+            _this164.finish();
+          }, this.remaining);
+        }
+        /**
+         * Stop the timer
+         * @return {?}
+         */
+
+      }, {
+        key: "stop",
+        value: function stop() {
+          clearTimeout(this.timerId);
+          this.remaining = 0;
+        }
+        /**
+         * Finish up the timeout by resolving the timer promise
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "finish",
+        value: function finish() {
+          this.finishPromiseResolver();
+        }
+      }]);
+
+      return NotifierTimerService;
+    }();
+
+    NotifierTimerService.ɵfac = function NotifierTimerService_Factory(t) {
+      return new (t || NotifierTimerService)();
+    };
+
+    NotifierTimerService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: NotifierTimerService,
+      factory: NotifierTimerService.ɵfac
+    });
+    /** @nocollapse */
+
+    NotifierTimerService.ctorParameters = function () {
+      return [];
+    };
+    /*@__PURE__*/
+
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NotifierTimerService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], function () {
+        return [];
+      }, null);
+    })();
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * Notifier notification component
+     * -------------------------------
+     * This component is responsible for actually displaying the notification on screen. In addition, it's able to show and hide this
+     * notification, in particular to animate this notification in and out, as well as shift (move) this notification vertically around.
+     * Furthermore, the notification component handles all interactions the user has with this notification / component, such as clicks and
+     * mouse movements.
+     */
+
+
+    var NotifierNotificationComponent =
+    /*#__PURE__*/
+    function () {
+      /**
+       * Constructor
+       *
+       * @param {?} elementRef               Reference to the component's element
+       * @param {?} renderer                 Angular renderer
+       * @param {?} notifierService          Notifier service
+       * @param {?} notifierTimerService     Notifier timer service
+       * @param {?} notifierAnimationService Notifier animation service
+       */
+      function NotifierNotificationComponent(elementRef, renderer, notifierService, notifierTimerService, notifierAnimationService) {
+        _classCallCheck(this, NotifierNotificationComponent);
+
+        this.config = notifierService.getConfig();
+        this.ready = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.dismiss = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.timerService = notifierTimerService;
+        this.animationService = notifierAnimationService;
+        this.renderer = renderer;
+        this.element = elementRef.nativeElement;
+        this.elementShift = 0;
+      }
+      /**
+       * Component after view init lifecycle hook, setts up the component and then emits the ready event
+       * @return {?}
+       */
+
+
+      _createClass2(NotifierNotificationComponent, [{
+        key: "ngAfterViewInit",
+        value: function ngAfterViewInit() {
+          this.setup();
+          this.elementHeight = this.element.offsetHeight;
+          this.elementWidth = this.element.offsetWidth;
+          this.ready.emit(this);
+        }
+        /**
+         * Get the notifier config
+         *
+         * @return {?} Notifier configuration
+         */
+
+      }, {
+        key: "getConfig",
+        value: function getConfig() {
+          return this.config;
+        }
+        /**
+         * Get notification element height (in px)
+         *
+         * @return {?} Notification element height (in px)
+         */
+
+      }, {
+        key: "getHeight",
+        value: function getHeight() {
+          return this.elementHeight;
+        }
+        /**
+         * Get notification element width (in px)
+         *
+         * @return {?} Notification element height (in px)
+         */
+
+      }, {
+        key: "getWidth",
+        value: function getWidth() {
+          return this.elementWidth;
+        }
+        /**
+         * Get notification shift offset (in px)
+         *
+         * @return {?} Notification element shift offset (in px)
+         */
+
+      }, {
+        key: "getShift",
+        value: function getShift() {
+          return this.elementShift;
+        }
+        /**
+         * Show (animate in) this notification
+         *
+         * @return {?} Promise, resolved when done
+         */
+
+      }, {
+        key: "show",
+        value: function show() {
+          var _this165 = this;
+
+          return new Promise(
+          /**
+          * @param {?} resolve
+          * @param {?} reject
+          * @return {?}
+          */
+          function (resolve, reject) {
+            // Are animations enabled?
+            if (_this165.config.animations.enabled && _this165.config.animations.show.speed > 0) {
+              // Get animation data
+
+              /** @type {?} */
+              var animationData = _this165.animationService.getAnimationData('show', _this165.notification); // Set initial styles (styles before animation), prevents quick flicker when animation starts
+
+              /** @type {?} */
+
+
+              var animatedProperties = Object.keys(animationData.keyframes[0]);
+
+              for (var i = animatedProperties.length - 1; i >= 0; i--) {
+                _this165.renderer.setStyle(_this165.element, animatedProperties[i], animationData.keyframes[0][animatedProperties[i]]);
+              } // Animate notification in
+
+
+              _this165.renderer.setStyle(_this165.element, 'visibility', 'visible');
+              /** @type {?} */
+
+
+              var animation = _this165.element.animate(animationData.keyframes, animationData.options);
+
+              animation.onfinish =
+              /**
+              * @return {?}
+              */
+              function () {
+                _this165.startAutoHideTimer();
+
+                resolve(); // Done
+              };
+            } else {
+              // Show notification
+              _this165.renderer.setStyle(_this165.element, 'visibility', 'visible');
+
+              _this165.startAutoHideTimer();
+
+              resolve(); // Done
+            }
+          });
+        }
+        /**
+         * Hide (animate out) this notification
+         *
+         * @return {?} Promise, resolved when done
+         */
+
+      }, {
+        key: "hide",
+        value: function hide() {
+          var _this166 = this;
+
+          return new Promise(
+          /**
+          * @param {?} resolve
+          * @param {?} reject
+          * @return {?}
+          */
+          function (resolve, reject) {
+            _this166.stopAutoHideTimer(); // Are animations enabled?
+
+
+            if (_this166.config.animations.enabled && _this166.config.animations.hide.speed > 0) {
+              /** @type {?} */
+              var animationData = _this166.animationService.getAnimationData('hide', _this166.notification);
+              /** @type {?} */
+
+
+              var animation = _this166.element.animate(animationData.keyframes, animationData.options);
+
+              animation.onfinish =
+              /**
+              * @return {?}
+              */
+              function () {
+                resolve(); // Done
+              };
+            } else {
+              resolve(); // Done
+            }
+          });
+        }
+        /**
+         * Shift (move) this notification
+         *
+         * @param {?} distance         Distance to shift (in px)
+         * @param {?} shiftToMakePlace Flag, defining in which direction to shift
+         * @return {?} Promise, resolved when done
+         */
+
+      }, {
+        key: "shift",
+        value: function shift(distance, shiftToMakePlace) {
+          var _this167 = this;
+
+          return new Promise(
+          /**
+          * @param {?} resolve
+          * @param {?} reject
+          * @return {?}
+          */
+          function (resolve, reject) {
+            // Calculate new position (position after the shift)
+
+            /** @type {?} */
+            var newElementShift;
+
+            if (_this167.config.position.vertical.position === 'top' && shiftToMakePlace || _this167.config.position.vertical.position === 'bottom' && !shiftToMakePlace) {
+              newElementShift = _this167.elementShift + distance + _this167.config.position.vertical.gap;
+            } else {
+              newElementShift = _this167.elementShift - distance - _this167.config.position.vertical.gap;
+            }
+            /** @type {?} */
+
+
+            var horizontalPosition = _this167.config.position.horizontal.position === 'middle' ? '-50%' : '0'; // Are animations enabled?
+
+            if (_this167.config.animations.enabled && _this167.config.animations.shift.speed > 0) {
+              /** @type {?} */
+              var animationData = {
+                // TODO: Extract into animation service
+                keyframes: [{
+                  transform: "translate3d( ".concat(horizontalPosition, ", ").concat(_this167.elementShift, "px, 0 )")
+                }, {
+                  transform: "translate3d( ".concat(horizontalPosition, ", ").concat(newElementShift, "px, 0 )")
+                }],
+                options: {
+                  duration: _this167.config.animations.shift.speed,
+                  easing: _this167.config.animations.shift.easing,
+                  fill: 'forwards'
+                }
+              };
+              _this167.elementShift = newElementShift;
+              /** @type {?} */
+
+              var animation = _this167.element.animate(animationData.keyframes, animationData.options);
+
+              animation.onfinish =
+              /**
+              * @return {?}
+              */
+              function () {
+                resolve(); // Done
+              };
+            } else {
+              _this167.renderer.setStyle(_this167.element, 'transform', "translate3d( ".concat(horizontalPosition, ", ").concat(newElementShift, "px, 0 )"));
+
+              _this167.elementShift = newElementShift;
+              resolve(); // Done
+            }
+          });
+        }
+        /**
+         * Handle click on dismiss button
+         * @return {?}
+         */
+
+      }, {
+        key: "onClickDismiss",
+        value: function onClickDismiss() {
+          this.dismiss.emit(this.notification.id);
+        }
+        /**
+         * Handle mouseover over notification area
+         * @return {?}
+         */
+
+      }, {
+        key: "onNotificationMouseover",
+        value: function onNotificationMouseover() {
+          if (this.config.behaviour.onMouseover === 'pauseAutoHide') {
+            this.pauseAutoHideTimer();
+          } else if (this.config.behaviour.onMouseover === 'resetAutoHide') {
+            this.stopAutoHideTimer();
+          }
+        }
+        /**
+         * Handle mouseout from notification area
+         * @return {?}
+         */
+
+      }, {
+        key: "onNotificationMouseout",
+        value: function onNotificationMouseout() {
+          if (this.config.behaviour.onMouseover === 'pauseAutoHide') {
+            this.continueAutoHideTimer();
+          } else if (this.config.behaviour.onMouseover === 'resetAutoHide') {
+            this.startAutoHideTimer();
+          }
+        }
+        /**
+         * Handle click on notification area
+         * @return {?}
+         */
+
+      }, {
+        key: "onNotificationClick",
+        value: function onNotificationClick() {
+          if (this.config.behaviour.onClick === 'hide') {
+            this.onClickDismiss();
+          }
+        }
+        /**
+         * Start the auto hide timer (if enabled)
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "startAutoHideTimer",
+        value: function startAutoHideTimer() {
+          var _this168 = this;
+
+          if (this.config.behaviour.autoHide !== false && this.config.behaviour.autoHide > 0) {
+            this.timerService.start(this.config.behaviour.autoHide).then(
+            /**
+            * @return {?}
+            */
+            function () {
+              _this168.onClickDismiss();
+            });
+          }
+        }
+        /**
+         * Pause the auto hide timer (if enabled)
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "pauseAutoHideTimer",
+        value: function pauseAutoHideTimer() {
+          if (this.config.behaviour.autoHide !== false && this.config.behaviour.autoHide > 0) {
+            this.timerService.pause();
+          }
+        }
+        /**
+         * Continue the auto hide timer (if enabled)
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "continueAutoHideTimer",
+        value: function continueAutoHideTimer() {
+          if (this.config.behaviour.autoHide !== false && this.config.behaviour.autoHide > 0) {
+            this.timerService.continue();
+          }
+        }
+        /**
+         * Stop the auto hide timer (if enabled)
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "stopAutoHideTimer",
+        value: function stopAutoHideTimer() {
+          if (this.config.behaviour.autoHide !== false && this.config.behaviour.autoHide > 0) {
+            this.timerService.stop();
+          }
+        }
+        /**
+         * Initial notification setup
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "setup",
+        value: function setup() {
+          // Set start position (initially the exact same for every new notification)
+          if (this.config.position.horizontal.position === 'left') {
+            this.renderer.setStyle(this.element, 'left', "".concat(this.config.position.horizontal.distance, "px"));
+          } else if (this.config.position.horizontal.position === 'right') {
+            this.renderer.setStyle(this.element, 'right', "".concat(this.config.position.horizontal.distance, "px"));
+          } else {
+            this.renderer.setStyle(this.element, 'left', '50%'); // Let's get the GPU handle some work as well (#perfmatters)
+
+            this.renderer.setStyle(this.element, 'transform', 'translate3d( -50%, 0, 0 )');
+          }
+
+          if (this.config.position.vertical.position === 'top') {
+            this.renderer.setStyle(this.element, 'top', "".concat(this.config.position.vertical.distance, "px"));
+          } else {
+            this.renderer.setStyle(this.element, 'bottom', "".concat(this.config.position.vertical.distance, "px"));
+          } // Add classes (responsible for visual design)
+
+
+          this.renderer.addClass(this.element, "notifier__notification--".concat(this.notification.type));
+          this.renderer.addClass(this.element, "notifier__notification--".concat(this.config.theme));
+        }
+      }]);
+
+      return NotifierNotificationComponent;
+    }();
+
+    NotifierNotificationComponent.ɵfac = function NotifierNotificationComponent_Factory(t) {
+      return new (t || NotifierNotificationComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](NotifierService), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](NotifierTimerService), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](NotifierAnimationService));
+    };
+
+    NotifierNotificationComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+      type: NotifierNotificationComponent,
+      selectors: [["notifier-notification"]],
+      hostAttrs: [1, "notifier__notification"],
+      hostBindings: function NotifierNotificationComponent_HostBindings(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function NotifierNotificationComponent_click_HostBindingHandler() {
+            return ctx.onNotificationClick();
+          })("mouseout", function NotifierNotificationComponent_mouseout_HostBindingHandler() {
+            return ctx.onNotificationMouseout();
+          })("mouseover", function NotifierNotificationComponent_mouseover_HostBindingHandler() {
+            return ctx.onNotificationMouseover();
+          });
+        }
+      },
+      inputs: {
+        notification: "notification"
+      },
+      outputs: {
+        ready: "ready",
+        dismiss: "dismiss"
+      },
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([// We provide the timer to the component's local injector, so that every notification components gets its own
+      // instance of the timer service, thus running their timers independently from each other
+      NotifierTimerService])],
+      decls: 3,
+      vars: 2,
+      consts: [[3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngIf", "ngIfElse"], ["predefinedNotification", ""], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [1, "notifier__notification-message"], ["class", "notifier__notification-button", "type", "button", "title", "dismiss", 3, "click", 4, "ngIf"], ["type", "button", "title", "dismiss", 1, "notifier__notification-button", 3, "click"], ["viewBox", "0 0 24 24", "width", "20", "height", "20", 1, "notifier__notification-button-icon"], ["d", "M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"]],
+      template: function NotifierNotificationComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, NotifierNotificationComponent_ng_container_0_Template, 1, 4, "ng-container", 0);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, NotifierNotificationComponent_ng_template_1_Template, 3, 2, "ng-template", null, 1, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
+        }
+
+        if (rf & 2) {
+          var _r626 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.notification.template)("ngIfElse", _r626);
+        }
+      },
+      directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgTemplateOutlet"]],
+      encapsulation: 2,
+      changeDetection: 0
+    });
+    /** @nocollapse */
+
+    NotifierNotificationComponent.ctorParameters = function () {
+      return [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]
+      }, {
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]
+      }, {
+        type: NotifierService
+      }, {
+        type: NotifierTimerService
+      }, {
+        type: NotifierAnimationService
+      }];
+    };
+
+    NotifierNotificationComponent.propDecorators = {
+      notification: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+      }],
+      ready: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }],
+      dismiss: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }]
+    };
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NotifierNotificationComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+          changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectionStrategy"].OnPush,
+          // (#perfmatters)
+          host: {
+            '(click)': 'onNotificationClick()',
+            '(mouseout)': 'onNotificationMouseout()',
+            '(mouseover)': 'onNotificationMouseover()',
+            class: 'notifier__notification'
+          },
+          providers: [// We provide the timer to the component's local injector, so that every notification components gets its own
+          // instance of the timer service, thus running their timers independently from each other
+          NotifierTimerService],
+          selector: 'notifier-notification',
+          template: "<ng-container *ngIf=\"notification.template; else predefinedNotification\" [ngTemplateOutlet]=\"notification.template\" [ngTemplateOutletContext]=\"{ notification: notification }\">\n</ng-container>\n\n<ng-template #predefinedNotification>\n\t<p class=\"notifier__notification-message\">{{ notification.message }}</p>\n\t<button class=\"notifier__notification-button\" type=\"button\" title=\"dismiss\" *ngIf=\"config.behaviour.showDismissButton\" (click)=\"onClickDismiss()\">\n\t\t<svg class=\"notifier__notification-button-icon\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\">\n\t\t\t<path d=\"M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z\" />\n\t\t</svg>\n\t</button>\n</ng-template>\n"
+        }]
+      }], function () {
+        return [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]
+        }, {
+          type: NotifierService
+        }, {
+          type: NotifierTimerService
+        }, {
+          type: NotifierAnimationService
+        }];
+      }, {
+        ready: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+        }],
+        dismiss: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+        }],
+        notification: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }]
+      });
+    })();
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * Factory for a notifier configuration with custom options
+     *
+     * Sidenote:
+     * Required as Angular AoT compilation cannot handle dynamic functions; see <https://github.com/angular/angular/issues/11262>.
+     *
+     * @param {?} options - Custom notifier options
+     * @return {?} - Notifier configuration as result
+     */
+
+
+    function notifierCustomConfigFactory(options) {
+      return new NotifierConfig(options);
+    }
+    /**
+     * Factory for a notifier configuration with default options
+     *
+     * Sidenote:
+     * Required as Angular AoT compilation cannot handle dynamic functions; see <https://github.com/angular/angular/issues/11262>.
+     *
+     * @return {?} - Notifier configuration as result
+     */
+
+
+    function notifierDefaultConfigFactory() {
+      return new NotifierConfig({});
+    }
+    /**
+     * Notifier module
+     */
+
+
+    var NotifierModule =
+    /*#__PURE__*/
+    function () {
+      function NotifierModule() {
+        _classCallCheck(this, NotifierModule);
+      }
+
+      _createClass2(NotifierModule, null, [{
+        key: "withConfig",
+
+        /**
+         * Setup the notifier module with custom providers, in this case with a custom configuration based on the givne options
+         *
+         * @param {?=} options
+         * @return {?} - Notifier module with custom providers
+         */
+        value: function withConfig() {
+          var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+          return {
+            ngModule: NotifierModule,
+            providers: [// Provide the options itself upfront (as we need to inject them as dependencies -- see below)
+            {
+              provide: NotifierOptionsToken,
+              useValue: options
+            }, // Provide a custom notifier configuration, based on the given notifier options
+            {
+              deps: [NotifierOptionsToken],
+              provide: NotifierConfigToken,
+              useFactory: notifierCustomConfigFactory
+            }]
+          };
+        }
+      }]);
+
+      return NotifierModule;
+    }();
+
+    NotifierModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+      type: NotifierModule
+    });
+    NotifierModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
+      factory: function NotifierModule_Factory(t) {
+        return new (t || NotifierModule)();
+      },
+      providers: [NotifierAnimationService, NotifierService, NotifierQueueService, // Provide the default notifier configuration if just the module is imported
+      {
+        provide: NotifierConfigToken,
+        useFactory: notifierDefaultConfigFactory
+      }],
+      imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]]]
+    });
+
+    (function () {
+      (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](NotifierModule, {
+        declarations: function declarations() {
+          return [NotifierContainerComponent, NotifierNotificationComponent];
+        },
+        imports: function imports() {
+          return [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]];
+        },
+        exports: function exports() {
+          return [NotifierContainerComponent];
+        }
+      });
+    })();
+    /*@__PURE__*/
+
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NotifierModule, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
+        args: [{
+          declarations: [NotifierContainerComponent, NotifierNotificationComponent],
+          exports: [NotifierContainerComponent],
+          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]],
+          providers: [NotifierAnimationService, NotifierService, NotifierQueueService, // Provide the default notifier configuration if just the module is imported
+          {
+            provide: NotifierConfigToken,
+            useFactory: notifierDefaultConfigFactory
+          }]
+        }]
+      }], null, null);
+    })();
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+    //# sourceMappingURL=angular-notifier.js.map
+
+    /***/
+
+  },
+
+  /***/
   "./node_modules/rxjs/_esm2015/index.js":
   /*!*********************************************!*\
     !*** ./node_modules/rxjs/_esm2015/index.js ***!
@@ -104007,15 +106506,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(AsyncSubject, _Subject__WEBPACK_IMP);
 
       function AsyncSubject() {
-        var _this158;
+        var _this169;
 
         _classCallCheck(this, AsyncSubject);
 
-        _this158 = _possibleConstructorReturn(this, _getPrototypeOf(AsyncSubject).apply(this, arguments));
-        _this158.value = null;
-        _this158.hasNext = false;
-        _this158.hasCompleted = false;
-        return _this158;
+        _this169 = _possibleConstructorReturn(this, _getPrototypeOf(AsyncSubject).apply(this, arguments));
+        _this169.value = null;
+        _this169.hasNext = false;
+        _this169.hasCompleted = false;
+        return _this169;
       }
 
       _createClass2(AsyncSubject, [{
@@ -104105,13 +106604,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(BehaviorSubject, _Subject__WEBPACK_IMP2);
 
       function BehaviorSubject(_value) {
-        var _this159;
+        var _this170;
 
         _classCallCheck(this, BehaviorSubject);
 
-        _this159 = _possibleConstructorReturn(this, _getPrototypeOf(BehaviorSubject).call(this));
-        _this159._value = _value;
-        return _this159;
+        _this170 = _possibleConstructorReturn(this, _getPrototypeOf(BehaviorSubject).call(this));
+        _this170._value = _value;
+        return _this170;
       }
 
       _createClass2(BehaviorSubject, [{
@@ -104187,16 +106686,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(InnerSubscriber, _Subscriber__WEBPACK_);
 
       function InnerSubscriber(parent, outerValue, outerIndex) {
-        var _this160;
+        var _this171;
 
         _classCallCheck(this, InnerSubscriber);
 
-        _this160 = _possibleConstructorReturn(this, _getPrototypeOf(InnerSubscriber).call(this));
-        _this160.parent = parent;
-        _this160.outerValue = outerValue;
-        _this160.outerIndex = outerIndex;
-        _this160.index = 0;
-        return _this160;
+        _this171 = _possibleConstructorReturn(this, _getPrototypeOf(InnerSubscriber).call(this));
+        _this171.parent = parent;
+        _this171.outerValue = outerValue;
+        _this171.outerIndex = outerIndex;
+        _this171.index = 0;
+        return _this171;
       }
 
       _createClass2(InnerSubscriber, [{
@@ -104492,12 +106991,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "forEach",
         value: function forEach(next, promiseCtor) {
-          var _this161 = this;
+          var _this172 = this;
 
           promiseCtor = getPromiseCtor(promiseCtor);
           return new promiseCtor(function (resolve, reject) {
             var subscription;
-            subscription = _this161.subscribe(function (value) {
+            subscription = _this172.subscribe(function (value) {
               try {
                 next(value);
               } catch (err) {
@@ -104537,13 +107036,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "toPromise",
         value: function toPromise(promiseCtor) {
-          var _this162 = this;
+          var _this173 = this;
 
           promiseCtor = getPromiseCtor(promiseCtor);
           return new promiseCtor(function (resolve, reject) {
             var value;
 
-            _this162.subscribe(function (x) {
+            _this173.subscribe(function (x) {
               return value = x;
             }, function (err) {
               return reject(err);
@@ -104748,7 +107247,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(ReplaySubject, _Subject__WEBPACK_IMP3);
 
       function ReplaySubject() {
-        var _this163;
+        var _this174;
 
         var bufferSize = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : Number.POSITIVE_INFINITY;
         var windowTime = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Number.POSITIVE_INFINITY;
@@ -104756,21 +107255,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _classCallCheck(this, ReplaySubject);
 
-        _this163 = _possibleConstructorReturn(this, _getPrototypeOf(ReplaySubject).call(this));
-        _this163.scheduler = scheduler;
-        _this163._events = [];
-        _this163._infiniteTimeWindow = false;
-        _this163._bufferSize = bufferSize < 1 ? 1 : bufferSize;
-        _this163._windowTime = windowTime < 1 ? 1 : windowTime;
+        _this174 = _possibleConstructorReturn(this, _getPrototypeOf(ReplaySubject).call(this));
+        _this174.scheduler = scheduler;
+        _this174._events = [];
+        _this174._infiniteTimeWindow = false;
+        _this174._bufferSize = bufferSize < 1 ? 1 : bufferSize;
+        _this174._windowTime = windowTime < 1 ? 1 : windowTime;
 
         if (windowTime === Number.POSITIVE_INFINITY) {
-          _this163._infiniteTimeWindow = true;
-          _this163.next = _this163.nextInfiniteTimeWindow;
+          _this174._infiniteTimeWindow = true;
+          _this174.next = _this174.nextInfiniteTimeWindow;
         } else {
-          _this163.next = _this163.nextTimeWindow;
+          _this174.next = _this174.nextTimeWindow;
         }
 
-        return _this163;
+        return _this174;
       }
 
       _createClass2(ReplaySubject, [{
@@ -104824,8 +107323,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               subscriber.next(_events[i]);
             }
           } else {
-            for (var _i23 = 0; _i23 < len && !subscriber.closed; _i23++) {
-              subscriber.next(_events[_i23].value);
+            for (var _i24 = 0; _i24 < len && !subscriber.closed; _i24++) {
+              subscriber.next(_events[_i24].value);
             }
           }
 
@@ -105013,13 +107512,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SubjectSubscriber, _Subscriber__WEBPACK_3);
 
       function SubjectSubscriber(destination) {
-        var _this164;
+        var _this175;
 
         _classCallCheck(this, SubjectSubscriber);
 
-        _this164 = _possibleConstructorReturn(this, _getPrototypeOf(SubjectSubscriber).call(this, destination));
-        _this164.destination = destination;
-        return _this164;
+        _this175 = _possibleConstructorReturn(this, _getPrototypeOf(SubjectSubscriber).call(this, destination));
+        _this175.destination = destination;
+        return _this175;
       }
 
       return SubjectSubscriber;
@@ -105031,17 +107530,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(Subject, _Observable__WEBPACK_);
 
       function Subject() {
-        var _this165;
+        var _this176;
 
         _classCallCheck(this, Subject);
 
-        _this165 = _possibleConstructorReturn(this, _getPrototypeOf(Subject).call(this));
-        _this165.observers = [];
-        _this165.closed = false;
-        _this165.isStopped = false;
-        _this165.hasError = false;
-        _this165.thrownError = null;
-        return _this165;
+        _this176 = _possibleConstructorReturn(this, _getPrototypeOf(Subject).call(this));
+        _this176.observers = [];
+        _this176.closed = false;
+        _this176.isStopped = false;
+        _this176.hasError = false;
+        _this176.thrownError = null;
+        return _this176;
       }
 
       _createClass2(Subject, [{
@@ -105165,14 +107664,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(AnonymousSubject, _Subject);
 
       function AnonymousSubject(destination, source) {
-        var _this166;
+        var _this177;
 
         _classCallCheck(this, AnonymousSubject);
 
-        _this166 = _possibleConstructorReturn(this, _getPrototypeOf(AnonymousSubject).call(this));
-        _this166.destination = destination;
-        _this166.source = source;
-        return _this166;
+        _this177 = _possibleConstructorReturn(this, _getPrototypeOf(AnonymousSubject).call(this));
+        _this177.destination = destination;
+        _this177.source = source;
+        return _this177;
       }
 
       _createClass2(AnonymousSubject, [{
@@ -105254,15 +107753,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SubjectSubscription, _Subscription__WEBPAC);
 
       function SubjectSubscription(subject, subscriber) {
-        var _this167;
+        var _this178;
 
         _classCallCheck(this, SubjectSubscription);
 
-        _this167 = _possibleConstructorReturn(this, _getPrototypeOf(SubjectSubscription).call(this));
-        _this167.subject = subject;
-        _this167.subscriber = subscriber;
-        _this167.closed = false;
-        return _this167;
+        _this178 = _possibleConstructorReturn(this, _getPrototypeOf(SubjectSubscription).call(this));
+        _this178.subject = subject;
+        _this178.subscriber = subscriber;
+        _this178.closed = false;
+        return _this178;
       }
 
       _createClass2(SubjectSubscription, [{
@@ -105364,47 +107863,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(Subscriber, _Subscription__WEBPAC2);
 
       function Subscriber(destinationOrNext, error, complete) {
-        var _this168;
+        var _this179;
 
         _classCallCheck(this, Subscriber);
 
-        _this168 = _possibleConstructorReturn(this, _getPrototypeOf(Subscriber).call(this));
-        _this168.syncErrorValue = null;
-        _this168.syncErrorThrown = false;
-        _this168.syncErrorThrowable = false;
-        _this168.isStopped = false;
+        _this179 = _possibleConstructorReturn(this, _getPrototypeOf(Subscriber).call(this));
+        _this179.syncErrorValue = null;
+        _this179.syncErrorThrown = false;
+        _this179.syncErrorThrowable = false;
+        _this179.isStopped = false;
 
         switch (arguments.length) {
           case 0:
-            _this168.destination = _Observer__WEBPACK_IMPORTED_MODULE_1__["empty"];
+            _this179.destination = _Observer__WEBPACK_IMPORTED_MODULE_1__["empty"];
             break;
 
           case 1:
             if (!destinationOrNext) {
-              _this168.destination = _Observer__WEBPACK_IMPORTED_MODULE_1__["empty"];
+              _this179.destination = _Observer__WEBPACK_IMPORTED_MODULE_1__["empty"];
               break;
             }
 
             if (typeof destinationOrNext === 'object') {
               if (destinationOrNext instanceof Subscriber) {
-                _this168.syncErrorThrowable = destinationOrNext.syncErrorThrowable;
-                _this168.destination = destinationOrNext;
-                destinationOrNext.add(_assertThisInitialized(_this168));
+                _this179.syncErrorThrowable = destinationOrNext.syncErrorThrowable;
+                _this179.destination = destinationOrNext;
+                destinationOrNext.add(_assertThisInitialized(_this179));
               } else {
-                _this168.syncErrorThrowable = true;
-                _this168.destination = new SafeSubscriber(_assertThisInitialized(_this168), destinationOrNext);
+                _this179.syncErrorThrowable = true;
+                _this179.destination = new SafeSubscriber(_assertThisInitialized(_this179), destinationOrNext);
               }
 
               break;
             }
 
           default:
-            _this168.syncErrorThrowable = true;
-            _this168.destination = new SafeSubscriber(_assertThisInitialized(_this168), destinationOrNext, error, complete);
+            _this179.syncErrorThrowable = true;
+            _this179.destination = new SafeSubscriber(_assertThisInitialized(_this179), destinationOrNext, error, complete);
             break;
         }
 
-        return _this168;
+        return _this179;
       }
 
       _createClass2(Subscriber, [{
@@ -105494,15 +107993,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SafeSubscriber, _Subscriber);
 
       function SafeSubscriber(_parentSubscriber, observerOrNext, error, complete) {
-        var _this169;
+        var _this180;
 
         _classCallCheck(this, SafeSubscriber);
 
-        _this169 = _possibleConstructorReturn(this, _getPrototypeOf(SafeSubscriber).call(this));
-        _this169._parentSubscriber = _parentSubscriber;
+        _this180 = _possibleConstructorReturn(this, _getPrototypeOf(SafeSubscriber).call(this));
+        _this180._parentSubscriber = _parentSubscriber;
         var next;
 
-        var context = _assertThisInitialized(_this169);
+        var context = _assertThisInitialized(_this180);
 
         if (Object(_util_isFunction__WEBPACK_IMPORTED_MODULE_0__["isFunction"])(observerOrNext)) {
           next = observerOrNext;
@@ -105515,18 +108014,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             context = Object.create(observerOrNext);
 
             if (Object(_util_isFunction__WEBPACK_IMPORTED_MODULE_0__["isFunction"])(context.unsubscribe)) {
-              _this169.add(context.unsubscribe.bind(context));
+              _this180.add(context.unsubscribe.bind(context));
             }
 
-            context.unsubscribe = _this169.unsubscribe.bind(_assertThisInitialized(_this169));
+            context.unsubscribe = _this180.unsubscribe.bind(_assertThisInitialized(_this180));
           }
         }
 
-        _this169._context = context;
-        _this169._next = next;
-        _this169._error = error;
-        _this169._complete = complete;
-        return _this169;
+        _this180._context = context;
+        _this180._next = next;
+        _this180._error = error;
+        _this180._complete = complete;
+        return _this180;
       }
 
       _createClass2(SafeSubscriber, [{
@@ -105582,14 +108081,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "complete",
         value: function complete() {
-          var _this170 = this;
+          var _this181 = this;
 
           if (!this.isStopped) {
             var _parentSubscriber = this._parentSubscriber;
 
             if (this._complete) {
               var wrappedComplete = function wrappedComplete() {
-                return _this170._complete.call(_this170._context);
+                return _this181._complete.call(_this181._context);
               };
 
               if (!_config__WEBPACK_IMPORTED_MODULE_4__["config"].useDeprecatedSynchronousErrorHandling || !_parentSubscriber.syncErrorThrowable) {
@@ -105980,16 +108479,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(ConnectableObservable, _Observable__WEBPACK_2);
 
       function ConnectableObservable(source, subjectFactory) {
-        var _this171;
+        var _this182;
 
         _classCallCheck(this, ConnectableObservable);
 
-        _this171 = _possibleConstructorReturn(this, _getPrototypeOf(ConnectableObservable).call(this));
-        _this171.source = source;
-        _this171.subjectFactory = subjectFactory;
-        _this171._refCount = 0;
-        _this171._isComplete = false;
-        return _this171;
+        _this182 = _possibleConstructorReturn(this, _getPrototypeOf(ConnectableObservable).call(this));
+        _this182.source = source;
+        _this182.subjectFactory = subjectFactory;
+        _this182._refCount = 0;
+        _this182._isComplete = false;
+        return _this182;
       }
 
       _createClass2(ConnectableObservable, [{
@@ -106079,13 +108578,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(ConnectableSubscriber, _Subject__WEBPACK_IMP4);
 
       function ConnectableSubscriber(destination, connectable) {
-        var _this172;
+        var _this183;
 
         _classCallCheck(this, ConnectableSubscriber);
 
-        _this172 = _possibleConstructorReturn(this, _getPrototypeOf(ConnectableSubscriber).call(this, destination));
-        _this172.connectable = connectable;
-        return _this172;
+        _this183 = _possibleConstructorReturn(this, _getPrototypeOf(ConnectableSubscriber).call(this, destination));
+        _this183.connectable = connectable;
+        return _this183;
       }
 
       _createClass2(ConnectableSubscriber, [{
@@ -106160,13 +108659,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(RefCountSubscriber, _Subscriber__WEBPACK_4);
 
       function RefCountSubscriber(destination, connectable) {
-        var _this173;
+        var _this184;
 
         _classCallCheck(this, RefCountSubscriber);
 
-        _this173 = _possibleConstructorReturn(this, _getPrototypeOf(RefCountSubscriber).call(this, destination));
-        _this173.connectable = connectable;
-        return _this173;
+        _this184 = _possibleConstructorReturn(this, _getPrototypeOf(RefCountSubscriber).call(this, destination));
+        _this184.connectable = connectable;
+        return _this184;
       }
 
       _createClass2(RefCountSubscriber, [{
@@ -106255,27 +108754,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SubscribeOnObservable, _Observable__WEBPACK_3);
 
       function SubscribeOnObservable(source) {
-        var _this174;
+        var _this185;
 
         var delayTime = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
         var scheduler = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _scheduler_asap__WEBPACK_IMPORTED_MODULE_1__["asap"];
 
         _classCallCheck(this, SubscribeOnObservable);
 
-        _this174 = _possibleConstructorReturn(this, _getPrototypeOf(SubscribeOnObservable).call(this));
-        _this174.source = source;
-        _this174.delayTime = delayTime;
-        _this174.scheduler = scheduler;
+        _this185 = _possibleConstructorReturn(this, _getPrototypeOf(SubscribeOnObservable).call(this));
+        _this185.source = source;
+        _this185.delayTime = delayTime;
+        _this185.scheduler = scheduler;
 
         if (!Object(_util_isNumeric__WEBPACK_IMPORTED_MODULE_2__["isNumeric"])(delayTime) || delayTime < 0) {
-          _this174.delayTime = 0;
+          _this185.delayTime = 0;
         }
 
         if (!scheduler || typeof scheduler.schedule !== 'function') {
-          _this174.scheduler = _scheduler_asap__WEBPACK_IMPORTED_MODULE_1__["asap"];
+          _this185.scheduler = _scheduler_asap__WEBPACK_IMPORTED_MODULE_1__["asap"];
         }
 
-        return _this174;
+        return _this185;
       }
 
       _createClass2(SubscribeOnObservable, [{
@@ -106433,7 +108932,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }
 
     function dispatch(state) {
-      var _this175 = this;
+      var _this186 = this;
 
       var self = this;
       var args = state.args,
@@ -106454,7 +108953,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           var value = innerArgs.length <= 1 ? innerArgs[0] : innerArgs;
 
-          _this175.add(scheduler.schedule(dispatchNext, 0, {
+          _this186.add(scheduler.schedule(dispatchNext, 0, {
             value: value,
             subject: subject
           }));
@@ -106616,7 +109115,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }
 
     function dispatch(state) {
-      var _this176 = this;
+      var _this187 = this;
 
       var params = state.params,
           subscriber = state.subscriber,
@@ -106637,14 +109136,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var err = innerArgs.shift();
 
           if (err) {
-            _this176.add(scheduler.schedule(dispatchError, 0, {
+            _this187.add(scheduler.schedule(dispatchError, 0, {
               err: err,
               subject: subject
             }));
           } else {
             var value = innerArgs.length <= 1 ? innerArgs[0] : innerArgs;
 
-            _this176.add(scheduler.schedule(dispatchNext, 0, {
+            _this187.add(scheduler.schedule(dispatchNext, 0, {
               value: value,
               subject: subject
             }));
@@ -106793,16 +109292,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(CombineLatestSubscriber, _OuterSubscriber__WEB);
 
       function CombineLatestSubscriber(destination, resultSelector) {
-        var _this177;
+        var _this188;
 
         _classCallCheck(this, CombineLatestSubscriber);
 
-        _this177 = _possibleConstructorReturn(this, _getPrototypeOf(CombineLatestSubscriber).call(this, destination));
-        _this177.resultSelector = resultSelector;
-        _this177.active = 0;
-        _this177.values = [];
-        _this177.observables = [];
-        return _this177;
+        _this188 = _possibleConstructorReturn(this, _getPrototypeOf(CombineLatestSubscriber).call(this, destination));
+        _this188.resultSelector = resultSelector;
+        _this188.active = 0;
+        _this188.values = [];
+        _this188.observables = [];
+        return _this188;
       }
 
       _createClass2(CombineLatestSubscriber, [{
@@ -107119,7 +109618,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var completed = 0;
         var emitted = 0;
 
-        var _loop3 = function _loop3(i) {
+        var _loop4 = function _loop4(i) {
           var source = Object(_from__WEBPACK_IMPORTED_MODULE_4__["from"])(sources[i]);
           var hasValue = false;
           subscriber.add(source.subscribe({
@@ -107151,7 +109650,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         };
 
         for (var i = 0; i < len; i++) {
-          _loop3(i);
+          _loop4(i);
         }
       });
     } //# sourceMappingURL=forkJoin.js.map
@@ -108274,15 +110773,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(RaceSubscriber, _OuterSubscriber__WEB2);
 
       function RaceSubscriber(destination) {
-        var _this178;
+        var _this189;
 
         _classCallCheck(this, RaceSubscriber);
 
-        _this178 = _possibleConstructorReturn(this, _getPrototypeOf(RaceSubscriber).call(this, destination));
-        _this178.hasFirst = false;
-        _this178.observables = [];
-        _this178.subscriptions = [];
-        return _this178;
+        _this189 = _possibleConstructorReturn(this, _getPrototypeOf(RaceSubscriber).call(this, destination));
+        _this189.hasFirst = false;
+        _this189.observables = [];
+        _this189.subscriptions = [];
+        return _this189;
       }
 
       _createClass2(RaceSubscriber, [{
@@ -108760,18 +111259,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(ZipSubscriber, _Subscriber__WEBPACK_5);
 
       function ZipSubscriber(destination, resultSelector) {
-        var _this179;
+        var _this190;
 
         var values = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : Object.create(null);
 
         _classCallCheck(this, ZipSubscriber);
 
-        _this179 = _possibleConstructorReturn(this, _getPrototypeOf(ZipSubscriber).call(this, destination));
-        _this179.iterators = [];
-        _this179.active = 0;
-        _this179.resultSelector = typeof resultSelector === 'function' ? resultSelector : null;
-        _this179.values = values;
-        return _this179;
+        _this190 = _possibleConstructorReturn(this, _getPrototypeOf(ZipSubscriber).call(this, destination));
+        _this190.iterators = [];
+        _this190.active = 0;
+        _this190.resultSelector = typeof resultSelector === 'function' ? resultSelector : null;
+        _this190.values = values;
+        return _this190;
       }
 
       _createClass2(ZipSubscriber, [{
@@ -108839,8 +111338,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var shouldComplete = false;
           var args = [];
 
-          for (var _i24 = 0; _i24 < len; _i24++) {
-            var _iterator20 = iterators[_i24];
+          for (var _i25 = 0; _i25 < len; _i25++) {
+            var _iterator20 = iterators[_i25];
 
             var result = _iterator20.next();
 
@@ -108969,17 +111468,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(ZipBufferIterator, _OuterSubscriber__WEB3);
 
       function ZipBufferIterator(destination, parent, observable) {
-        var _this180;
+        var _this191;
 
         _classCallCheck(this, ZipBufferIterator);
 
-        _this180 = _possibleConstructorReturn(this, _getPrototypeOf(ZipBufferIterator).call(this, destination));
-        _this180.parent = parent;
-        _this180.observable = observable;
-        _this180.stillUnsubscribed = true;
-        _this180.buffer = [];
-        _this180.isComplete = false;
-        return _this180;
+        _this191 = _possibleConstructorReturn(this, _getPrototypeOf(ZipBufferIterator).call(this, destination));
+        _this191.parent = parent;
+        _this191.observable = observable;
+        _this191.stillUnsubscribed = true;
+        _this191.buffer = [];
+        _this191.isComplete = false;
+        return _this191;
       }
 
       _createClass2(ZipBufferIterator, [{
@@ -109107,14 +111606,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(AuditSubscriber, _OuterSubscriber__WEB4);
 
       function AuditSubscriber(destination, durationSelector) {
-        var _this181;
+        var _this192;
 
         _classCallCheck(this, AuditSubscriber);
 
-        _this181 = _possibleConstructorReturn(this, _getPrototypeOf(AuditSubscriber).call(this, destination));
-        _this181.durationSelector = durationSelector;
-        _this181.hasValue = false;
-        return _this181;
+        _this192 = _possibleConstructorReturn(this, _getPrototypeOf(AuditSubscriber).call(this, destination));
+        _this192.durationSelector = durationSelector;
+        _this192.hasValue = false;
+        return _this192;
       }
 
       _createClass2(AuditSubscriber, [{
@@ -109292,16 +111791,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(BufferSubscriber, _OuterSubscriber__WEB5);
 
       function BufferSubscriber(destination, closingNotifier) {
-        var _this182;
+        var _this193;
 
         _classCallCheck(this, BufferSubscriber);
 
-        _this182 = _possibleConstructorReturn(this, _getPrototypeOf(BufferSubscriber).call(this, destination));
-        _this182.buffer = [];
+        _this193 = _possibleConstructorReturn(this, _getPrototypeOf(BufferSubscriber).call(this, destination));
+        _this193.buffer = [];
 
-        _this182.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this182), closingNotifier));
+        _this193.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this193), closingNotifier));
 
-        return _this182;
+        return _this193;
       }
 
       _createClass2(BufferSubscriber, [{
@@ -109390,14 +111889,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(BufferCountSubscriber, _Subscriber__WEBPACK_6);
 
       function BufferCountSubscriber(destination, bufferSize) {
-        var _this183;
+        var _this194;
 
         _classCallCheck(this, BufferCountSubscriber);
 
-        _this183 = _possibleConstructorReturn(this, _getPrototypeOf(BufferCountSubscriber).call(this, destination));
-        _this183.bufferSize = bufferSize;
-        _this183.buffer = [];
-        return _this183;
+        _this194 = _possibleConstructorReturn(this, _getPrototypeOf(BufferCountSubscriber).call(this, destination));
+        _this194.bufferSize = bufferSize;
+        _this194.buffer = [];
+        return _this194;
       }
 
       _createClass2(BufferCountSubscriber, [{
@@ -109433,16 +111932,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(BufferSkipCountSubscriber, _Subscriber__WEBPACK_7);
 
       function BufferSkipCountSubscriber(destination, bufferSize, startBufferEvery) {
-        var _this184;
+        var _this195;
 
         _classCallCheck(this, BufferSkipCountSubscriber);
 
-        _this184 = _possibleConstructorReturn(this, _getPrototypeOf(BufferSkipCountSubscriber).call(this, destination));
-        _this184.bufferSize = bufferSize;
-        _this184.startBufferEvery = startBufferEvery;
-        _this184.buffers = [];
-        _this184.count = 0;
-        return _this184;
+        _this195 = _possibleConstructorReturn(this, _getPrototypeOf(BufferSkipCountSubscriber).call(this, destination));
+        _this195.bufferSize = bufferSize;
+        _this195.startBufferEvery = startBufferEvery;
+        _this195.buffers = [];
+        _this195.count = 0;
+        return _this195;
       }
 
       _createClass2(BufferSkipCountSubscriber, [{
@@ -109591,47 +112090,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(BufferTimeSubscriber, _Subscriber__WEBPACK_8);
 
       function BufferTimeSubscriber(destination, bufferTimeSpan, bufferCreationInterval, maxBufferSize, scheduler) {
-        var _this185;
+        var _this196;
 
         _classCallCheck(this, BufferTimeSubscriber);
 
-        _this185 = _possibleConstructorReturn(this, _getPrototypeOf(BufferTimeSubscriber).call(this, destination));
-        _this185.bufferTimeSpan = bufferTimeSpan;
-        _this185.bufferCreationInterval = bufferCreationInterval;
-        _this185.maxBufferSize = maxBufferSize;
-        _this185.scheduler = scheduler;
-        _this185.contexts = [];
+        _this196 = _possibleConstructorReturn(this, _getPrototypeOf(BufferTimeSubscriber).call(this, destination));
+        _this196.bufferTimeSpan = bufferTimeSpan;
+        _this196.bufferCreationInterval = bufferCreationInterval;
+        _this196.maxBufferSize = maxBufferSize;
+        _this196.scheduler = scheduler;
+        _this196.contexts = [];
 
-        var context = _this185.openContext();
+        var context = _this196.openContext();
 
-        _this185.timespanOnly = bufferCreationInterval == null || bufferCreationInterval < 0;
+        _this196.timespanOnly = bufferCreationInterval == null || bufferCreationInterval < 0;
 
-        if (_this185.timespanOnly) {
+        if (_this196.timespanOnly) {
           var timeSpanOnlyState = {
-            subscriber: _assertThisInitialized(_this185),
+            subscriber: _assertThisInitialized(_this196),
             context: context,
             bufferTimeSpan: bufferTimeSpan
           };
 
-          _this185.add(context.closeAction = scheduler.schedule(dispatchBufferTimeSpanOnly, bufferTimeSpan, timeSpanOnlyState));
+          _this196.add(context.closeAction = scheduler.schedule(dispatchBufferTimeSpanOnly, bufferTimeSpan, timeSpanOnlyState));
         } else {
           var closeState = {
-            subscriber: _assertThisInitialized(_this185),
+            subscriber: _assertThisInitialized(_this196),
             context: context
           };
           var creationState = {
             bufferTimeSpan: bufferTimeSpan,
             bufferCreationInterval: bufferCreationInterval,
-            subscriber: _assertThisInitialized(_this185),
+            subscriber: _assertThisInitialized(_this196),
             scheduler: scheduler
           };
 
-          _this185.add(context.closeAction = scheduler.schedule(dispatchBufferClose, bufferTimeSpan, closeState));
+          _this196.add(context.closeAction = scheduler.schedule(dispatchBufferClose, bufferTimeSpan, closeState));
 
-          _this185.add(scheduler.schedule(dispatchBufferCreation, bufferCreationInterval, creationState));
+          _this196.add(scheduler.schedule(dispatchBufferCreation, bufferCreationInterval, creationState));
         }
 
-        return _this185;
+        return _this196;
       }
 
       _createClass2(BufferTimeSubscriber, [{
@@ -109833,18 +112332,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(BufferToggleSubscriber, _OuterSubscriber__WEB6);
 
       function BufferToggleSubscriber(destination, openings, closingSelector) {
-        var _this186;
+        var _this197;
 
         _classCallCheck(this, BufferToggleSubscriber);
 
-        _this186 = _possibleConstructorReturn(this, _getPrototypeOf(BufferToggleSubscriber).call(this, destination));
-        _this186.openings = openings;
-        _this186.closingSelector = closingSelector;
-        _this186.contexts = [];
+        _this197 = _possibleConstructorReturn(this, _getPrototypeOf(BufferToggleSubscriber).call(this, destination));
+        _this197.openings = openings;
+        _this197.closingSelector = closingSelector;
+        _this197.contexts = [];
 
-        _this186.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this186), openings));
+        _this197.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this197), openings));
 
-        return _this186;
+        return _this197;
       }
 
       _createClass2(BufferToggleSubscriber, [{
@@ -110027,17 +112526,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(BufferWhenSubscriber, _OuterSubscriber__WEB7);
 
       function BufferWhenSubscriber(destination, closingSelector) {
-        var _this187;
+        var _this198;
 
         _classCallCheck(this, BufferWhenSubscriber);
 
-        _this187 = _possibleConstructorReturn(this, _getPrototypeOf(BufferWhenSubscriber).call(this, destination));
-        _this187.closingSelector = closingSelector;
-        _this187.subscribing = false;
+        _this198 = _possibleConstructorReturn(this, _getPrototypeOf(BufferWhenSubscriber).call(this, destination));
+        _this198.closingSelector = closingSelector;
+        _this198.subscribing = false;
 
-        _this187.openBuffer();
+        _this198.openBuffer();
 
-        return _this187;
+        return _this198;
       }
 
       _createClass2(BufferWhenSubscriber, [{
@@ -110189,14 +112688,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(CatchSubscriber, _OuterSubscriber__WEB8);
 
       function CatchSubscriber(destination, selector, caught) {
-        var _this188;
+        var _this199;
 
         _classCallCheck(this, CatchSubscriber);
 
-        _this188 = _possibleConstructorReturn(this, _getPrototypeOf(CatchSubscriber).call(this, destination));
-        _this188.selector = selector;
-        _this188.caught = caught;
-        return _this188;
+        _this199 = _possibleConstructorReturn(this, _getPrototypeOf(CatchSubscriber).call(this, destination));
+        _this199.selector = selector;
+        _this199.caught = caught;
+        return _this199;
       }
 
       _createClass2(CatchSubscriber, [{
@@ -110535,16 +113034,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(CountSubscriber, _Subscriber__WEBPACK_9);
 
       function CountSubscriber(destination, predicate, source) {
-        var _this189;
+        var _this200;
 
         _classCallCheck(this, CountSubscriber);
 
-        _this189 = _possibleConstructorReturn(this, _getPrototypeOf(CountSubscriber).call(this, destination));
-        _this189.predicate = predicate;
-        _this189.source = source;
-        _this189.count = 0;
-        _this189.index = 0;
-        return _this189;
+        _this200 = _possibleConstructorReturn(this, _getPrototypeOf(CountSubscriber).call(this, destination));
+        _this200.predicate = predicate;
+        _this200.source = source;
+        _this200.count = 0;
+        _this200.index = 0;
+        return _this200;
       }
 
       _createClass2(CountSubscriber, [{
@@ -110650,15 +113149,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(DebounceSubscriber, _OuterSubscriber__WEB9);
 
       function DebounceSubscriber(destination, durationSelector) {
-        var _this190;
+        var _this201;
 
         _classCallCheck(this, DebounceSubscriber);
 
-        _this190 = _possibleConstructorReturn(this, _getPrototypeOf(DebounceSubscriber).call(this, destination));
-        _this190.durationSelector = durationSelector;
-        _this190.hasValue = false;
-        _this190.durationSubscription = null;
-        return _this190;
+        _this201 = _possibleConstructorReturn(this, _getPrototypeOf(DebounceSubscriber).call(this, destination));
+        _this201.durationSelector = durationSelector;
+        _this201.hasValue = false;
+        _this201.durationSubscription = null;
+        return _this201;
       }
 
       _createClass2(DebounceSubscriber, [{
@@ -110801,17 +113300,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(DebounceTimeSubscriber, _Subscriber__WEBPACK_10);
 
       function DebounceTimeSubscriber(destination, dueTime, scheduler) {
-        var _this191;
+        var _this202;
 
         _classCallCheck(this, DebounceTimeSubscriber);
 
-        _this191 = _possibleConstructorReturn(this, _getPrototypeOf(DebounceTimeSubscriber).call(this, destination));
-        _this191.dueTime = dueTime;
-        _this191.scheduler = scheduler;
-        _this191.debouncedSubscription = null;
-        _this191.lastValue = null;
-        _this191.hasValue = false;
-        return _this191;
+        _this202 = _possibleConstructorReturn(this, _getPrototypeOf(DebounceTimeSubscriber).call(this, destination));
+        _this202.dueTime = dueTime;
+        _this202.scheduler = scheduler;
+        _this202.debouncedSubscription = null;
+        _this202.lastValue = null;
+        _this202.hasValue = false;
+        return _this202;
       }
 
       _createClass2(DebounceTimeSubscriber, [{
@@ -110922,14 +113421,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(DefaultIfEmptySubscriber, _Subscriber__WEBPACK_11);
 
       function DefaultIfEmptySubscriber(destination, defaultValue) {
-        var _this192;
+        var _this203;
 
         _classCallCheck(this, DefaultIfEmptySubscriber);
 
-        _this192 = _possibleConstructorReturn(this, _getPrototypeOf(DefaultIfEmptySubscriber).call(this, destination));
-        _this192.defaultValue = defaultValue;
-        _this192.isEmpty = true;
-        return _this192;
+        _this203 = _possibleConstructorReturn(this, _getPrototypeOf(DefaultIfEmptySubscriber).call(this, destination));
+        _this203.defaultValue = defaultValue;
+        _this203.isEmpty = true;
+        return _this203;
       }
 
       _createClass2(DefaultIfEmptySubscriber, [{
@@ -111035,17 +113534,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(DelaySubscriber, _Subscriber__WEBPACK_12);
 
       function DelaySubscriber(destination, delay, scheduler) {
-        var _this193;
+        var _this204;
 
         _classCallCheck(this, DelaySubscriber);
 
-        _this193 = _possibleConstructorReturn(this, _getPrototypeOf(DelaySubscriber).call(this, destination));
-        _this193.delay = delay;
-        _this193.scheduler = scheduler;
-        _this193.queue = [];
-        _this193.active = false;
-        _this193.errored = false;
-        return _this193;
+        _this204 = _possibleConstructorReturn(this, _getPrototypeOf(DelaySubscriber).call(this, destination));
+        _this204.delay = delay;
+        _this204.scheduler = scheduler;
+        _this204.queue = [];
+        _this204.active = false;
+        _this204.errored = false;
+        return _this204;
       }
 
       _createClass2(DelaySubscriber, [{
@@ -111211,16 +113710,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(DelayWhenSubscriber, _OuterSubscriber__WEB10);
 
       function DelayWhenSubscriber(destination, delayDurationSelector) {
-        var _this194;
+        var _this205;
 
         _classCallCheck(this, DelayWhenSubscriber);
 
-        _this194 = _possibleConstructorReturn(this, _getPrototypeOf(DelayWhenSubscriber).call(this, destination));
-        _this194.delayDurationSelector = delayDurationSelector;
-        _this194.completed = false;
-        _this194.delayNotifierSubscriptions = [];
-        _this194.index = 0;
-        return _this194;
+        _this205 = _possibleConstructorReturn(this, _getPrototypeOf(DelayWhenSubscriber).call(this, destination));
+        _this205.delayDurationSelector = delayDurationSelector;
+        _this205.completed = false;
+        _this205.delayNotifierSubscriptions = [];
+        _this205.index = 0;
+        return _this205;
       }
 
       _createClass2(DelayWhenSubscriber, [{
@@ -111309,14 +113808,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SubscriptionDelayObservable, _Observable__WEBPACK_4);
 
       function SubscriptionDelayObservable(source, subscriptionDelay) {
-        var _this195;
+        var _this206;
 
         _classCallCheck(this, SubscriptionDelayObservable);
 
-        _this195 = _possibleConstructorReturn(this, _getPrototypeOf(SubscriptionDelayObservable).call(this));
-        _this195.source = source;
-        _this195.subscriptionDelay = subscriptionDelay;
-        return _this195;
+        _this206 = _possibleConstructorReturn(this, _getPrototypeOf(SubscriptionDelayObservable).call(this));
+        _this206.source = source;
+        _this206.subscriptionDelay = subscriptionDelay;
+        return _this206;
       }
 
       _createClass2(SubscriptionDelayObservable, [{
@@ -111335,15 +113834,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SubscriptionDelaySubscriber, _Subscriber__WEBPACK_13);
 
       function SubscriptionDelaySubscriber(parent, source) {
-        var _this196;
+        var _this207;
 
         _classCallCheck(this, SubscriptionDelaySubscriber);
 
-        _this196 = _possibleConstructorReturn(this, _getPrototypeOf(SubscriptionDelaySubscriber).call(this));
-        _this196.parent = parent;
-        _this196.source = source;
-        _this196.sourceSubscribed = false;
-        return _this196;
+        _this207 = _possibleConstructorReturn(this, _getPrototypeOf(SubscriptionDelaySubscriber).call(this));
+        _this207.parent = parent;
+        _this207.source = source;
+        _this207.sourceSubscribed = false;
+        return _this207;
       }
 
       _createClass2(SubscriptionDelaySubscriber, [{
@@ -111525,19 +114024,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(DistinctSubscriber, _OuterSubscriber__WEB11);
 
       function DistinctSubscriber(destination, keySelector, flushes) {
-        var _this197;
+        var _this208;
 
         _classCallCheck(this, DistinctSubscriber);
 
-        _this197 = _possibleConstructorReturn(this, _getPrototypeOf(DistinctSubscriber).call(this, destination));
-        _this197.keySelector = keySelector;
-        _this197.values = new Set();
+        _this208 = _possibleConstructorReturn(this, _getPrototypeOf(DistinctSubscriber).call(this, destination));
+        _this208.keySelector = keySelector;
+        _this208.values = new Set();
 
         if (flushes) {
-          _this197.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this197), flushes));
+          _this208.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this208), flushes));
         }
 
-        return _this197;
+        return _this208;
       }
 
       _createClass2(DistinctSubscriber, [{
@@ -111651,19 +114150,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(DistinctUntilChangedSubscriber, _Subscriber__WEBPACK_15);
 
       function DistinctUntilChangedSubscriber(destination, compare, keySelector) {
-        var _this198;
+        var _this209;
 
         _classCallCheck(this, DistinctUntilChangedSubscriber);
 
-        _this198 = _possibleConstructorReturn(this, _getPrototypeOf(DistinctUntilChangedSubscriber).call(this, destination));
-        _this198.keySelector = keySelector;
-        _this198.hasKey = false;
+        _this209 = _possibleConstructorReturn(this, _getPrototypeOf(DistinctUntilChangedSubscriber).call(this, destination));
+        _this209.keySelector = keySelector;
+        _this209.hasKey = false;
 
         if (typeof compare === 'function') {
-          _this198.compare = compare;
+          _this209.compare = compare;
         }
 
-        return _this198;
+        return _this209;
       }
 
       _createClass2(DistinctUntilChangedSubscriber, [{
@@ -111920,17 +114419,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(EverySubscriber, _Subscriber__WEBPACK_16);
 
       function EverySubscriber(destination, predicate, thisArg, source) {
-        var _this199;
+        var _this210;
 
         _classCallCheck(this, EverySubscriber);
 
-        _this199 = _possibleConstructorReturn(this, _getPrototypeOf(EverySubscriber).call(this, destination));
-        _this199.predicate = predicate;
-        _this199.thisArg = thisArg;
-        _this199.source = source;
-        _this199.index = 0;
-        _this199.thisArg = thisArg || _assertThisInitialized(_this199);
-        return _this199;
+        _this210 = _possibleConstructorReturn(this, _getPrototypeOf(EverySubscriber).call(this, destination));
+        _this210.predicate = predicate;
+        _this210.thisArg = thisArg;
+        _this210.source = source;
+        _this210.index = 0;
+        _this210.thisArg = thisArg || _assertThisInitialized(_this210);
+        return _this210;
       }
 
       _createClass2(EverySubscriber, [{
@@ -112030,14 +114529,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SwitchFirstSubscriber, _OuterSubscriber__WEB12);
 
       function SwitchFirstSubscriber(destination) {
-        var _this200;
+        var _this211;
 
         _classCallCheck(this, SwitchFirstSubscriber);
 
-        _this200 = _possibleConstructorReturn(this, _getPrototypeOf(SwitchFirstSubscriber).call(this, destination));
-        _this200.hasCompleted = false;
-        _this200.hasSubscription = false;
-        return _this200;
+        _this211 = _possibleConstructorReturn(this, _getPrototypeOf(SwitchFirstSubscriber).call(this, destination));
+        _this211.hasCompleted = false;
+        _this211.hasSubscription = false;
+        return _this211;
       }
 
       _createClass2(SwitchFirstSubscriber, [{
@@ -112167,16 +114666,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(ExhaustMapSubscriber, _OuterSubscriber__WEB13);
 
       function ExhaustMapSubscriber(destination, project) {
-        var _this201;
+        var _this212;
 
         _classCallCheck(this, ExhaustMapSubscriber);
 
-        _this201 = _possibleConstructorReturn(this, _getPrototypeOf(ExhaustMapSubscriber).call(this, destination));
-        _this201.project = project;
-        _this201.hasSubscription = false;
-        _this201.hasCompleted = false;
-        _this201.index = 0;
-        return _this201;
+        _this212 = _possibleConstructorReturn(this, _getPrototypeOf(ExhaustMapSubscriber).call(this, destination));
+        _this212.project = project;
+        _this212.hasSubscription = false;
+        _this212.hasCompleted = false;
+        _this212.index = 0;
+        return _this212;
       }
 
       _createClass2(ExhaustMapSubscriber, [{
@@ -112336,23 +114835,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(ExpandSubscriber, _OuterSubscriber__WEB14);
 
       function ExpandSubscriber(destination, project, concurrent, scheduler) {
-        var _this202;
+        var _this213;
 
         _classCallCheck(this, ExpandSubscriber);
 
-        _this202 = _possibleConstructorReturn(this, _getPrototypeOf(ExpandSubscriber).call(this, destination));
-        _this202.project = project;
-        _this202.concurrent = concurrent;
-        _this202.scheduler = scheduler;
-        _this202.index = 0;
-        _this202.active = 0;
-        _this202.hasCompleted = false;
+        _this213 = _possibleConstructorReturn(this, _getPrototypeOf(ExpandSubscriber).call(this, destination));
+        _this213.project = project;
+        _this213.concurrent = concurrent;
+        _this213.scheduler = scheduler;
+        _this213.index = 0;
+        _this213.active = 0;
+        _this213.hasCompleted = false;
 
         if (concurrent < Number.POSITIVE_INFINITY) {
-          _this202.buffer = [];
+          _this213.buffer = [];
         }
 
-        return _this202;
+        return _this213;
       }
 
       _createClass2(ExpandSubscriber, [{
@@ -112510,15 +115009,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(FilterSubscriber, _Subscriber__WEBPACK_17);
 
       function FilterSubscriber(destination, predicate, thisArg) {
-        var _this203;
+        var _this214;
 
         _classCallCheck(this, FilterSubscriber);
 
-        _this203 = _possibleConstructorReturn(this, _getPrototypeOf(FilterSubscriber).call(this, destination));
-        _this203.predicate = predicate;
-        _this203.thisArg = thisArg;
-        _this203.count = 0;
-        return _this203;
+        _this214 = _possibleConstructorReturn(this, _getPrototypeOf(FilterSubscriber).call(this, destination));
+        _this214.predicate = predicate;
+        _this214.thisArg = thisArg;
+        _this214.count = 0;
+        return _this214;
       }
 
       _createClass2(FilterSubscriber, [{
@@ -112609,15 +115108,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(FinallySubscriber, _Subscriber__WEBPACK_18);
 
       function FinallySubscriber(destination, callback) {
-        var _this204;
+        var _this215;
 
         _classCallCheck(this, FinallySubscriber);
 
-        _this204 = _possibleConstructorReturn(this, _getPrototypeOf(FinallySubscriber).call(this, destination));
+        _this215 = _possibleConstructorReturn(this, _getPrototypeOf(FinallySubscriber).call(this, destination));
 
-        _this204.add(new _Subscription__WEBPACK_IMPORTED_MODULE_1__["Subscription"](callback));
+        _this215.add(new _Subscription__WEBPACK_IMPORTED_MODULE_1__["Subscription"](callback));
 
-        return _this204;
+        return _this215;
       }
 
       return FinallySubscriber;
@@ -112703,17 +115202,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(FindValueSubscriber, _Subscriber__WEBPACK_19);
 
       function FindValueSubscriber(destination, predicate, source, yieldIndex, thisArg) {
-        var _this205;
+        var _this216;
 
         _classCallCheck(this, FindValueSubscriber);
 
-        _this205 = _possibleConstructorReturn(this, _getPrototypeOf(FindValueSubscriber).call(this, destination));
-        _this205.predicate = predicate;
-        _this205.source = source;
-        _this205.yieldIndex = yieldIndex;
-        _this205.thisArg = thisArg;
-        _this205.index = 0;
-        return _this205;
+        _this216 = _possibleConstructorReturn(this, _getPrototypeOf(FindValueSubscriber).call(this, destination));
+        _this216.predicate = predicate;
+        _this216.source = source;
+        _this216.yieldIndex = yieldIndex;
+        _this216.thisArg = thisArg;
+        _this216.index = 0;
+        return _this216;
       }
 
       _createClass2(FindValueSubscriber, [{
@@ -112946,19 +115445,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(GroupBySubscriber, _Subscriber__WEBPACK_20);
 
       function GroupBySubscriber(destination, keySelector, elementSelector, durationSelector, subjectSelector) {
-        var _this206;
+        var _this217;
 
         _classCallCheck(this, GroupBySubscriber);
 
-        _this206 = _possibleConstructorReturn(this, _getPrototypeOf(GroupBySubscriber).call(this, destination));
-        _this206.keySelector = keySelector;
-        _this206.elementSelector = elementSelector;
-        _this206.durationSelector = durationSelector;
-        _this206.subjectSelector = subjectSelector;
-        _this206.groups = null;
-        _this206.attemptedToUnsubscribe = false;
-        _this206.count = 0;
-        return _this206;
+        _this217 = _possibleConstructorReturn(this, _getPrototypeOf(GroupBySubscriber).call(this, destination));
+        _this217.keySelector = keySelector;
+        _this217.elementSelector = elementSelector;
+        _this217.durationSelector = durationSelector;
+        _this217.subjectSelector = subjectSelector;
+        _this217.groups = null;
+        _this217.attemptedToUnsubscribe = false;
+        _this217.count = 0;
+        return _this217;
       }
 
       _createClass2(GroupBySubscriber, [{
@@ -113076,15 +115575,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(GroupDurationSubscriber, _Subscriber__WEBPACK_21);
 
       function GroupDurationSubscriber(key, group, parent) {
-        var _this207;
+        var _this218;
 
         _classCallCheck(this, GroupDurationSubscriber);
 
-        _this207 = _possibleConstructorReturn(this, _getPrototypeOf(GroupDurationSubscriber).call(this, group));
-        _this207.key = key;
-        _this207.group = group;
-        _this207.parent = parent;
-        return _this207;
+        _this218 = _possibleConstructorReturn(this, _getPrototypeOf(GroupDurationSubscriber).call(this, group));
+        _this218.key = key;
+        _this218.group = group;
+        _this218.parent = parent;
+        return _this218;
       }
 
       _createClass2(GroupDurationSubscriber, [{
@@ -113114,15 +115613,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(GroupedObservable, _Observable__WEBPACK_5);
 
       function GroupedObservable(key, groupSubject, refCountSubscription) {
-        var _this208;
+        var _this219;
 
         _classCallCheck(this, GroupedObservable);
 
-        _this208 = _possibleConstructorReturn(this, _getPrototypeOf(GroupedObservable).call(this));
-        _this208.key = key;
-        _this208.groupSubject = groupSubject;
-        _this208.refCountSubscription = refCountSubscription;
-        return _this208;
+        _this219 = _possibleConstructorReturn(this, _getPrototypeOf(GroupedObservable).call(this));
+        _this219.key = key;
+        _this219.groupSubject = groupSubject;
+        _this219.refCountSubscription = refCountSubscription;
+        return _this219;
       }
 
       _createClass2(GroupedObservable, [{
@@ -113150,14 +115649,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(InnerRefCountSubscription, _Subscription__WEBPAC3);
 
       function InnerRefCountSubscription(parent) {
-        var _this209;
+        var _this220;
 
         _classCallCheck(this, InnerRefCountSubscription);
 
-        _this209 = _possibleConstructorReturn(this, _getPrototypeOf(InnerRefCountSubscription).call(this));
-        _this209.parent = parent;
+        _this220 = _possibleConstructorReturn(this, _getPrototypeOf(InnerRefCountSubscription).call(this));
+        _this220.parent = parent;
         parent.count++;
-        return _this209;
+        return _this220;
       }
 
       _createClass2(InnerRefCountSubscription, [{
@@ -113481,15 +115980,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(MapSubscriber, _Subscriber__WEBPACK_24);
 
       function MapSubscriber(destination, project, thisArg) {
-        var _this210;
+        var _this221;
 
         _classCallCheck(this, MapSubscriber);
 
-        _this210 = _possibleConstructorReturn(this, _getPrototypeOf(MapSubscriber).call(this, destination));
-        _this210.project = project;
-        _this210.count = 0;
-        _this210.thisArg = thisArg || _assertThisInitialized(_this210);
-        return _this210;
+        _this221 = _possibleConstructorReturn(this, _getPrototypeOf(MapSubscriber).call(this, destination));
+        _this221.project = project;
+        _this221.count = 0;
+        _this221.thisArg = thisArg || _assertThisInitialized(_this221);
+        return _this221;
       }
 
       _createClass2(MapSubscriber, [{
@@ -113572,13 +116071,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(MapToSubscriber, _Subscriber__WEBPACK_25);
 
       function MapToSubscriber(destination, value) {
-        var _this211;
+        var _this222;
 
         _classCallCheck(this, MapToSubscriber);
 
-        _this211 = _possibleConstructorReturn(this, _getPrototypeOf(MapToSubscriber).call(this, destination));
-        _this211.value = value;
-        return _this211;
+        _this222 = _possibleConstructorReturn(this, _getPrototypeOf(MapToSubscriber).call(this, destination));
+        _this222.value = value;
+        return _this222;
       }
 
       _createClass2(MapToSubscriber, [{
@@ -113919,20 +116418,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(MergeMapSubscriber, _OuterSubscriber__WEB15);
 
       function MergeMapSubscriber(destination, project) {
-        var _this212;
+        var _this223;
 
         var concurrent = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : Number.POSITIVE_INFINITY;
 
         _classCallCheck(this, MergeMapSubscriber);
 
-        _this212 = _possibleConstructorReturn(this, _getPrototypeOf(MergeMapSubscriber).call(this, destination));
-        _this212.project = project;
-        _this212.concurrent = concurrent;
-        _this212.hasCompleted = false;
-        _this212.buffer = [];
-        _this212.active = 0;
-        _this212.index = 0;
-        return _this212;
+        _this223 = _possibleConstructorReturn(this, _getPrototypeOf(MergeMapSubscriber).call(this, destination));
+        _this223.project = project;
+        _this223.concurrent = concurrent;
+        _this223.hasCompleted = false;
+        _this223.buffer = [];
+        _this223.active = 0;
+        _this223.index = 0;
+        return _this223;
       }
 
       _createClass2(MergeMapSubscriber, [{
@@ -114143,20 +116642,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(MergeScanSubscriber, _OuterSubscriber__WEB16);
 
       function MergeScanSubscriber(destination, accumulator, acc, concurrent) {
-        var _this213;
+        var _this224;
 
         _classCallCheck(this, MergeScanSubscriber);
 
-        _this213 = _possibleConstructorReturn(this, _getPrototypeOf(MergeScanSubscriber).call(this, destination));
-        _this213.accumulator = accumulator;
-        _this213.acc = acc;
-        _this213.concurrent = concurrent;
-        _this213.hasValue = false;
-        _this213.hasCompleted = false;
-        _this213.buffer = [];
-        _this213.active = 0;
-        _this213.index = 0;
-        return _this213;
+        _this224 = _possibleConstructorReturn(this, _getPrototypeOf(MergeScanSubscriber).call(this, destination));
+        _this224.accumulator = accumulator;
+        _this224.acc = acc;
+        _this224.concurrent = concurrent;
+        _this224.hasValue = false;
+        _this224.hasCompleted = false;
+        _this224.buffer = [];
+        _this224.active = 0;
+        _this224.index = 0;
+        return _this224;
       }
 
       _createClass2(MergeScanSubscriber, [{
@@ -114450,16 +116949,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(ObserveOnSubscriber, _Subscriber__WEBPACK_27);
 
       function ObserveOnSubscriber(destination, scheduler) {
-        var _this214;
+        var _this225;
 
         var delay = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
 
         _classCallCheck(this, ObserveOnSubscriber);
 
-        _this214 = _possibleConstructorReturn(this, _getPrototypeOf(ObserveOnSubscriber).call(this, destination));
-        _this214.scheduler = scheduler;
-        _this214.delay = delay;
-        return _this214;
+        _this225 = _possibleConstructorReturn(this, _getPrototypeOf(ObserveOnSubscriber).call(this, destination));
+        _this225.scheduler = scheduler;
+        _this225.delay = delay;
+        return _this225;
       }
 
       _createClass2(ObserveOnSubscriber, [{
@@ -114619,14 +117118,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(OnErrorResumeNextSubscriber, _OuterSubscriber__WEB17);
 
       function OnErrorResumeNextSubscriber(destination, nextSources) {
-        var _this215;
+        var _this226;
 
         _classCallCheck(this, OnErrorResumeNextSubscriber);
 
-        _this215 = _possibleConstructorReturn(this, _getPrototypeOf(OnErrorResumeNextSubscriber).call(this, destination));
-        _this215.destination = destination;
-        _this215.nextSources = nextSources;
-        return _this215;
+        _this226 = _possibleConstructorReturn(this, _getPrototypeOf(OnErrorResumeNextSubscriber).call(this, destination));
+        _this226.destination = destination;
+        _this226.nextSources = nextSources;
+        return _this226;
       }
 
       _createClass2(OnErrorResumeNextSubscriber, [{
@@ -114733,13 +117232,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(PairwiseSubscriber, _Subscriber__WEBPACK_28);
 
       function PairwiseSubscriber(destination) {
-        var _this216;
+        var _this227;
 
         _classCallCheck(this, PairwiseSubscriber);
 
-        _this216 = _possibleConstructorReturn(this, _getPrototypeOf(PairwiseSubscriber).call(this, destination));
-        _this216.hasPrev = false;
-        return _this216;
+        _this227 = _possibleConstructorReturn(this, _getPrototypeOf(PairwiseSubscriber).call(this, destination));
+        _this227.hasPrev = false;
+        return _this227;
       }
 
       _createClass2(PairwiseSubscriber, [{
@@ -115230,13 +117729,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(RefCountSubscriber, _Subscriber__WEBPACK_29);
 
       function RefCountSubscriber(destination, connectable) {
-        var _this217;
+        var _this228;
 
         _classCallCheck(this, RefCountSubscriber);
 
-        _this217 = _possibleConstructorReturn(this, _getPrototypeOf(RefCountSubscriber).call(this, destination));
-        _this217.connectable = connectable;
-        return _this217;
+        _this228 = _possibleConstructorReturn(this, _getPrototypeOf(RefCountSubscriber).call(this, destination));
+        _this228.connectable = connectable;
+        return _this228;
       }
 
       _createClass2(RefCountSubscriber, [{
@@ -115352,14 +117851,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(RepeatSubscriber, _Subscriber__WEBPACK_30);
 
       function RepeatSubscriber(destination, count, source) {
-        var _this218;
+        var _this229;
 
         _classCallCheck(this, RepeatSubscriber);
 
-        _this218 = _possibleConstructorReturn(this, _getPrototypeOf(RepeatSubscriber).call(this, destination));
-        _this218.count = count;
-        _this218.source = source;
-        return _this218;
+        _this229 = _possibleConstructorReturn(this, _getPrototypeOf(RepeatSubscriber).call(this, destination));
+        _this229.count = count;
+        _this229.source = source;
+        return _this229;
       }
 
       _createClass2(RepeatSubscriber, [{
@@ -115456,15 +117955,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(RepeatWhenSubscriber, _OuterSubscriber__WEB18);
 
       function RepeatWhenSubscriber(destination, notifier, source) {
-        var _this219;
+        var _this230;
 
         _classCallCheck(this, RepeatWhenSubscriber);
 
-        _this219 = _possibleConstructorReturn(this, _getPrototypeOf(RepeatWhenSubscriber).call(this, destination));
-        _this219.notifier = notifier;
-        _this219.source = source;
-        _this219.sourceIsBeingSubscribedTo = true;
-        return _this219;
+        _this230 = _possibleConstructorReturn(this, _getPrototypeOf(RepeatWhenSubscriber).call(this, destination));
+        _this230.notifier = notifier;
+        _this230.source = source;
+        _this230.sourceIsBeingSubscribedTo = true;
+        return _this230;
       }
 
       _createClass2(RepeatWhenSubscriber, [{
@@ -115612,14 +118111,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(RetrySubscriber, _Subscriber__WEBPACK_31);
 
       function RetrySubscriber(destination, count, source) {
-        var _this220;
+        var _this231;
 
         _classCallCheck(this, RetrySubscriber);
 
-        _this220 = _possibleConstructorReturn(this, _getPrototypeOf(RetrySubscriber).call(this, destination));
-        _this220.count = count;
-        _this220.source = source;
-        return _this220;
+        _this231 = _possibleConstructorReturn(this, _getPrototypeOf(RetrySubscriber).call(this, destination));
+        _this231.count = count;
+        _this231.source = source;
+        return _this231;
       }
 
       _createClass2(RetrySubscriber, [{
@@ -115717,14 +118216,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(RetryWhenSubscriber, _OuterSubscriber__WEB19);
 
       function RetryWhenSubscriber(destination, notifier, source) {
-        var _this221;
+        var _this232;
 
         _classCallCheck(this, RetryWhenSubscriber);
 
-        _this221 = _possibleConstructorReturn(this, _getPrototypeOf(RetryWhenSubscriber).call(this, destination));
-        _this221.notifier = notifier;
-        _this221.source = source;
-        return _this221;
+        _this232 = _possibleConstructorReturn(this, _getPrototypeOf(RetryWhenSubscriber).call(this, destination));
+        _this232.notifier = notifier;
+        _this232.source = source;
+        return _this232;
       }
 
       _createClass2(RetryWhenSubscriber, [{
@@ -115863,13 +118362,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SampleSubscriber, _OuterSubscriber__WEB20);
 
       function SampleSubscriber() {
-        var _this222;
+        var _this233;
 
         _classCallCheck(this, SampleSubscriber);
 
-        _this222 = _possibleConstructorReturn(this, _getPrototypeOf(SampleSubscriber).apply(this, arguments));
-        _this222.hasValue = false;
-        return _this222;
+        _this233 = _possibleConstructorReturn(this, _getPrototypeOf(SampleSubscriber).apply(this, arguments));
+        _this233.hasValue = false;
+        return _this233;
       }
 
       _createClass2(SampleSubscriber, [{
@@ -115970,21 +118469,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SampleTimeSubscriber, _Subscriber__WEBPACK_32);
 
       function SampleTimeSubscriber(destination, period, scheduler) {
-        var _this223;
+        var _this234;
 
         _classCallCheck(this, SampleTimeSubscriber);
 
-        _this223 = _possibleConstructorReturn(this, _getPrototypeOf(SampleTimeSubscriber).call(this, destination));
-        _this223.period = period;
-        _this223.scheduler = scheduler;
-        _this223.hasValue = false;
+        _this234 = _possibleConstructorReturn(this, _getPrototypeOf(SampleTimeSubscriber).call(this, destination));
+        _this234.period = period;
+        _this234.scheduler = scheduler;
+        _this234.hasValue = false;
 
-        _this223.add(scheduler.schedule(dispatchNotification, period, {
-          subscriber: _assertThisInitialized(_this223),
+        _this234.add(scheduler.schedule(dispatchNotification, period, {
+          subscriber: _assertThisInitialized(_this234),
           period: period
         }));
 
-        return _this223;
+        return _this234;
       }
 
       _createClass2(SampleTimeSubscriber, [{
@@ -116084,16 +118583,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(ScanSubscriber, _Subscriber__WEBPACK_33);
 
       function ScanSubscriber(destination, accumulator, _seed, hasSeed) {
-        var _this224;
+        var _this235;
 
         _classCallCheck(this, ScanSubscriber);
 
-        _this224 = _possibleConstructorReturn(this, _getPrototypeOf(ScanSubscriber).call(this, destination));
-        _this224.accumulator = accumulator;
-        _this224._seed = _seed;
-        _this224.hasSeed = hasSeed;
-        _this224.index = 0;
-        return _this224;
+        _this235 = _possibleConstructorReturn(this, _getPrototypeOf(ScanSubscriber).call(this, destination));
+        _this235.accumulator = accumulator;
+        _this235._seed = _seed;
+        _this235.hasSeed = hasSeed;
+        _this235.index = 0;
+        return _this235;
       }
 
       _createClass2(ScanSubscriber, [{
@@ -116209,20 +118708,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SequenceEqualSubscriber, _Subscriber__WEBPACK_34);
 
       function SequenceEqualSubscriber(destination, compareTo, comparator) {
-        var _this225;
+        var _this236;
 
         _classCallCheck(this, SequenceEqualSubscriber);
 
-        _this225 = _possibleConstructorReturn(this, _getPrototypeOf(SequenceEqualSubscriber).call(this, destination));
-        _this225.compareTo = compareTo;
-        _this225.comparator = comparator;
-        _this225._a = [];
-        _this225._b = [];
-        _this225._oneComplete = false;
+        _this236 = _possibleConstructorReturn(this, _getPrototypeOf(SequenceEqualSubscriber).call(this, destination));
+        _this236.compareTo = compareTo;
+        _this236.comparator = comparator;
+        _this236._a = [];
+        _this236._b = [];
+        _this236._oneComplete = false;
 
-        _this225.destination.add(compareTo.subscribe(new SequenceEqualCompareToSubscriber(destination, _assertThisInitialized(_this225))));
+        _this236.destination.add(compareTo.subscribe(new SequenceEqualCompareToSubscriber(destination, _assertThisInitialized(_this236))));
 
-        return _this225;
+        return _this236;
       }
 
       _createClass2(SequenceEqualSubscriber, [{
@@ -116310,13 +118809,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SequenceEqualCompareToSubscriber, _Subscriber__WEBPACK_35);
 
       function SequenceEqualCompareToSubscriber(destination, parent) {
-        var _this226;
+        var _this237;
 
         _classCallCheck(this, SequenceEqualCompareToSubscriber);
 
-        _this226 = _possibleConstructorReturn(this, _getPrototypeOf(SequenceEqualCompareToSubscriber).call(this, destination));
-        _this226.parent = parent;
-        return _this226;
+        _this237 = _possibleConstructorReturn(this, _getPrototypeOf(SequenceEqualCompareToSubscriber).call(this, destination));
+        _this237.parent = parent;
+        return _this237;
       }
 
       _createClass2(SequenceEqualCompareToSubscriber, [{
@@ -116558,16 +119057,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SingleSubscriber, _Subscriber__WEBPACK_36);
 
       function SingleSubscriber(destination, predicate, source) {
-        var _this227;
+        var _this238;
 
         _classCallCheck(this, SingleSubscriber);
 
-        _this227 = _possibleConstructorReturn(this, _getPrototypeOf(SingleSubscriber).call(this, destination));
-        _this227.predicate = predicate;
-        _this227.source = source;
-        _this227.seenValue = false;
-        _this227.index = 0;
-        return _this227;
+        _this238 = _possibleConstructorReturn(this, _getPrototypeOf(SingleSubscriber).call(this, destination));
+        _this238.predicate = predicate;
+        _this238.source = source;
+        _this238.seenValue = false;
+        _this238.index = 0;
+        return _this238;
       }
 
       _createClass2(SingleSubscriber, [{
@@ -116680,14 +119179,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SkipSubscriber, _Subscriber__WEBPACK_37);
 
       function SkipSubscriber(destination, total) {
-        var _this228;
+        var _this239;
 
         _classCallCheck(this, SkipSubscriber);
 
-        _this228 = _possibleConstructorReturn(this, _getPrototypeOf(SkipSubscriber).call(this, destination));
-        _this228.total = total;
-        _this228.count = 0;
-        return _this228;
+        _this239 = _possibleConstructorReturn(this, _getPrototypeOf(SkipSubscriber).call(this, destination));
+        _this239.total = total;
+        _this239.count = 0;
+        return _this239;
       }
 
       _createClass2(SkipSubscriber, [{
@@ -116777,15 +119276,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SkipLastSubscriber, _Subscriber__WEBPACK_38);
 
       function SkipLastSubscriber(destination, _skipCount) {
-        var _this229;
+        var _this240;
 
         _classCallCheck(this, SkipLastSubscriber);
 
-        _this229 = _possibleConstructorReturn(this, _getPrototypeOf(SkipLastSubscriber).call(this, destination));
-        _this229._skipCount = _skipCount;
-        _this229._count = 0;
-        _this229._ring = new Array(_skipCount);
-        return _this229;
+        _this240 = _possibleConstructorReturn(this, _getPrototypeOf(SkipLastSubscriber).call(this, destination));
+        _this240._skipCount = _skipCount;
+        _this240._count = 0;
+        _this240._ring = new Array(_skipCount);
+        return _this240;
       }
 
       _createClass2(SkipLastSubscriber, [{
@@ -116882,26 +119381,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SkipUntilSubscriber, _OuterSubscriber__WEB21);
 
       function SkipUntilSubscriber(destination, notifier) {
-        var _this230;
+        var _this241;
 
         _classCallCheck(this, SkipUntilSubscriber);
 
-        _this230 = _possibleConstructorReturn(this, _getPrototypeOf(SkipUntilSubscriber).call(this, destination));
-        _this230.hasValue = false;
-        var innerSubscriber = new _InnerSubscriber__WEBPACK_IMPORTED_MODULE_1__["InnerSubscriber"](_assertThisInitialized(_this230), undefined, undefined);
+        _this241 = _possibleConstructorReturn(this, _getPrototypeOf(SkipUntilSubscriber).call(this, destination));
+        _this241.hasValue = false;
+        var innerSubscriber = new _InnerSubscriber__WEBPACK_IMPORTED_MODULE_1__["InnerSubscriber"](_assertThisInitialized(_this241), undefined, undefined);
 
-        _this230.add(innerSubscriber);
+        _this241.add(innerSubscriber);
 
-        _this230.innerSubscription = innerSubscriber;
-        var innerSubscription = Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_2__["subscribeToResult"])(_assertThisInitialized(_this230), notifier, undefined, undefined, innerSubscriber);
+        _this241.innerSubscription = innerSubscriber;
+        var innerSubscription = Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_2__["subscribeToResult"])(_assertThisInitialized(_this241), notifier, undefined, undefined, innerSubscriber);
 
         if (innerSubscription !== innerSubscriber) {
-          _this230.add(innerSubscription);
+          _this241.add(innerSubscription);
 
-          _this230.innerSubscription = innerSubscription;
+          _this241.innerSubscription = innerSubscription;
         }
 
-        return _this230;
+        return _this241;
       }
 
       _createClass2(SkipUntilSubscriber, [{
@@ -116989,15 +119488,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SkipWhileSubscriber, _Subscriber__WEBPACK_39);
 
       function SkipWhileSubscriber(destination, predicate) {
-        var _this231;
+        var _this242;
 
         _classCallCheck(this, SkipWhileSubscriber);
 
-        _this231 = _possibleConstructorReturn(this, _getPrototypeOf(SkipWhileSubscriber).call(this, destination));
-        _this231.predicate = predicate;
-        _this231.skipping = true;
-        _this231.index = 0;
-        return _this231;
+        _this242 = _possibleConstructorReturn(this, _getPrototypeOf(SkipWhileSubscriber).call(this, destination));
+        _this242.predicate = predicate;
+        _this242.skipping = true;
+        _this242.index = 0;
+        return _this242;
       }
 
       _createClass2(SkipWhileSubscriber, [{
@@ -117275,14 +119774,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SwitchMapSubscriber, _OuterSubscriber__WEB22);
 
       function SwitchMapSubscriber(destination, project) {
-        var _this232;
+        var _this243;
 
         _classCallCheck(this, SwitchMapSubscriber);
 
-        _this232 = _possibleConstructorReturn(this, _getPrototypeOf(SwitchMapSubscriber).call(this, destination));
-        _this232.project = project;
-        _this232.index = 0;
-        return _this232;
+        _this243 = _possibleConstructorReturn(this, _getPrototypeOf(SwitchMapSubscriber).call(this, destination));
+        _this243.project = project;
+        _this243.index = 0;
+        return _this243;
       }
 
       _createClass2(SwitchMapSubscriber, [{
@@ -117474,14 +119973,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(TakeSubscriber, _Subscriber__WEBPACK_40);
 
       function TakeSubscriber(destination, total) {
-        var _this233;
+        var _this244;
 
         _classCallCheck(this, TakeSubscriber);
 
-        _this233 = _possibleConstructorReturn(this, _getPrototypeOf(TakeSubscriber).call(this, destination));
-        _this233.total = total;
-        _this233.count = 0;
-        return _this233;
+        _this244 = _possibleConstructorReturn(this, _getPrototypeOf(TakeSubscriber).call(this, destination));
+        _this244.total = total;
+        _this244.count = 0;
+        return _this244;
       }
 
       _createClass2(TakeSubscriber, [{
@@ -117585,15 +120084,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(TakeLastSubscriber, _Subscriber__WEBPACK_41);
 
       function TakeLastSubscriber(destination, total) {
-        var _this234;
+        var _this245;
 
         _classCallCheck(this, TakeLastSubscriber);
 
-        _this234 = _possibleConstructorReturn(this, _getPrototypeOf(TakeLastSubscriber).call(this, destination));
-        _this234.total = total;
-        _this234.ring = new Array();
-        _this234.count = 0;
-        return _this234;
+        _this245 = _possibleConstructorReturn(this, _getPrototypeOf(TakeLastSubscriber).call(this, destination));
+        _this245.total = total;
+        _this245.ring = new Array();
+        _this245.count = 0;
+        return _this245;
       }
 
       _createClass2(TakeLastSubscriber, [{
@@ -117708,13 +120207,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(TakeUntilSubscriber, _OuterSubscriber__WEB23);
 
       function TakeUntilSubscriber(destination) {
-        var _this235;
+        var _this246;
 
         _classCallCheck(this, TakeUntilSubscriber);
 
-        _this235 = _possibleConstructorReturn(this, _getPrototypeOf(TakeUntilSubscriber).call(this, destination));
-        _this235.seenValue = false;
-        return _this235;
+        _this246 = _possibleConstructorReturn(this, _getPrototypeOf(TakeUntilSubscriber).call(this, destination));
+        _this246.seenValue = false;
+        return _this246;
       }
 
       _createClass2(TakeUntilSubscriber, [{
@@ -117794,15 +120293,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(TakeWhileSubscriber, _Subscriber__WEBPACK_42);
 
       function TakeWhileSubscriber(destination, predicate, inclusive) {
-        var _this236;
+        var _this247;
 
         _classCallCheck(this, TakeWhileSubscriber);
 
-        _this236 = _possibleConstructorReturn(this, _getPrototypeOf(TakeWhileSubscriber).call(this, destination));
-        _this236.predicate = predicate;
-        _this236.inclusive = inclusive;
-        _this236.index = 0;
-        return _this236;
+        _this247 = _possibleConstructorReturn(this, _getPrototypeOf(TakeWhileSubscriber).call(this, destination));
+        _this247.predicate = predicate;
+        _this247.inclusive = inclusive;
+        _this247.index = 0;
+        return _this247;
       }
 
       _createClass2(TakeWhileSubscriber, [{
@@ -117915,28 +120414,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(TapSubscriber, _Subscriber__WEBPACK_43);
 
       function TapSubscriber(destination, observerOrNext, error, complete) {
-        var _this237;
+        var _this248;
 
         _classCallCheck(this, TapSubscriber);
 
-        _this237 = _possibleConstructorReturn(this, _getPrototypeOf(TapSubscriber).call(this, destination));
-        _this237._tapNext = _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
-        _this237._tapError = _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
-        _this237._tapComplete = _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
-        _this237._tapError = error || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
-        _this237._tapComplete = complete || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+        _this248 = _possibleConstructorReturn(this, _getPrototypeOf(TapSubscriber).call(this, destination));
+        _this248._tapNext = _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+        _this248._tapError = _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+        _this248._tapComplete = _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+        _this248._tapError = error || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+        _this248._tapComplete = complete || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
 
         if (Object(_util_isFunction__WEBPACK_IMPORTED_MODULE_2__["isFunction"])(observerOrNext)) {
-          _this237._context = _assertThisInitialized(_this237);
-          _this237._tapNext = observerOrNext;
+          _this248._context = _assertThisInitialized(_this248);
+          _this248._tapNext = observerOrNext;
         } else if (observerOrNext) {
-          _this237._context = observerOrNext;
-          _this237._tapNext = observerOrNext.next || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
-          _this237._tapError = observerOrNext.error || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
-          _this237._tapComplete = observerOrNext.complete || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+          _this248._context = observerOrNext;
+          _this248._tapNext = observerOrNext.next || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+          _this248._tapError = observerOrNext.error || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+          _this248._tapComplete = observerOrNext.complete || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
         }
 
-        return _this237;
+        return _this248;
       }
 
       _createClass2(TapSubscriber, [{
@@ -118061,17 +120560,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(ThrottleSubscriber, _OuterSubscriber__WEB24);
 
       function ThrottleSubscriber(destination, durationSelector, _leading, _trailing) {
-        var _this238;
+        var _this249;
 
         _classCallCheck(this, ThrottleSubscriber);
 
-        _this238 = _possibleConstructorReturn(this, _getPrototypeOf(ThrottleSubscriber).call(this, destination));
-        _this238.destination = destination;
-        _this238.durationSelector = durationSelector;
-        _this238._leading = _leading;
-        _this238._trailing = _trailing;
-        _this238._hasValue = false;
-        return _this238;
+        _this249 = _possibleConstructorReturn(this, _getPrototypeOf(ThrottleSubscriber).call(this, destination));
+        _this249.destination = destination;
+        _this249.durationSelector = durationSelector;
+        _this249._leading = _leading;
+        _this249._trailing = _trailing;
+        _this249._hasValue = false;
+        return _this249;
       }
 
       _createClass2(ThrottleSubscriber, [{
@@ -118230,18 +120729,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(ThrottleTimeSubscriber, _Subscriber__WEBPACK_44);
 
       function ThrottleTimeSubscriber(destination, duration, scheduler, leading, trailing) {
-        var _this239;
+        var _this250;
 
         _classCallCheck(this, ThrottleTimeSubscriber);
 
-        _this239 = _possibleConstructorReturn(this, _getPrototypeOf(ThrottleTimeSubscriber).call(this, destination));
-        _this239.duration = duration;
-        _this239.scheduler = scheduler;
-        _this239.leading = leading;
-        _this239.trailing = trailing;
-        _this239._hasTrailingValue = false;
-        _this239._trailingValue = null;
-        return _this239;
+        _this250 = _possibleConstructorReturn(this, _getPrototypeOf(ThrottleTimeSubscriber).call(this, destination));
+        _this250.duration = duration;
+        _this250.scheduler = scheduler;
+        _this250.leading = leading;
+        _this250.trailing = trailing;
+        _this250._hasTrailingValue = false;
+        _this250._trailingValue = null;
+        return _this250;
       }
 
       _createClass2(ThrottleTimeSubscriber, [{
@@ -118370,14 +120869,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(ThrowIfEmptySubscriber, _Subscriber__WEBPACK_45);
 
       function ThrowIfEmptySubscriber(destination, errorFactory) {
-        var _this240;
+        var _this251;
 
         _classCallCheck(this, ThrowIfEmptySubscriber);
 
-        _this240 = _possibleConstructorReturn(this, _getPrototypeOf(ThrowIfEmptySubscriber).call(this, destination));
-        _this240.errorFactory = errorFactory;
-        _this240.hasValue = false;
-        return _this240;
+        _this251 = _possibleConstructorReturn(this, _getPrototypeOf(ThrowIfEmptySubscriber).call(this, destination));
+        _this251.errorFactory = errorFactory;
+        _this251.hasValue = false;
+        return _this251;
       }
 
       _createClass2(ThrowIfEmptySubscriber, [{
@@ -118636,20 +121135,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(TimeoutWithSubscriber, _OuterSubscriber__WEB25);
 
       function TimeoutWithSubscriber(destination, absoluteTimeout, waitFor, withObservable, scheduler) {
-        var _this241;
+        var _this252;
 
         _classCallCheck(this, TimeoutWithSubscriber);
 
-        _this241 = _possibleConstructorReturn(this, _getPrototypeOf(TimeoutWithSubscriber).call(this, destination));
-        _this241.absoluteTimeout = absoluteTimeout;
-        _this241.waitFor = waitFor;
-        _this241.withObservable = withObservable;
-        _this241.scheduler = scheduler;
-        _this241.action = null;
+        _this252 = _possibleConstructorReturn(this, _getPrototypeOf(TimeoutWithSubscriber).call(this, destination));
+        _this252.absoluteTimeout = absoluteTimeout;
+        _this252.waitFor = waitFor;
+        _this252.withObservable = withObservable;
+        _this252.scheduler = scheduler;
+        _this252.action = null;
 
-        _this241.scheduleTimeout();
+        _this252.scheduleTimeout();
 
-        return _this241;
+        return _this252;
       }
 
       _createClass2(TimeoutWithSubscriber, [{
@@ -118872,14 +121371,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(WindowSubscriber, _OuterSubscriber__WEB26);
 
       function WindowSubscriber(destination) {
-        var _this242;
+        var _this253;
 
         _classCallCheck(this, WindowSubscriber);
 
-        _this242 = _possibleConstructorReturn(this, _getPrototypeOf(WindowSubscriber).call(this, destination));
-        _this242.window = new _Subject__WEBPACK_IMPORTED_MODULE_0__["Subject"]();
-        destination.next(_this242.window);
-        return _this242;
+        _this253 = _possibleConstructorReturn(this, _getPrototypeOf(WindowSubscriber).call(this, destination));
+        _this253.window = new _Subject__WEBPACK_IMPORTED_MODULE_0__["Subject"]();
+        destination.next(_this253.window);
+        return _this253;
       }
 
       _createClass2(WindowSubscriber, [{
@@ -119006,18 +121505,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(WindowCountSubscriber, _Subscriber__WEBPACK_46);
 
       function WindowCountSubscriber(destination, windowSize, startWindowEvery) {
-        var _this243;
+        var _this254;
 
         _classCallCheck(this, WindowCountSubscriber);
 
-        _this243 = _possibleConstructorReturn(this, _getPrototypeOf(WindowCountSubscriber).call(this, destination));
-        _this243.destination = destination;
-        _this243.windowSize = windowSize;
-        _this243.startWindowEvery = startWindowEvery;
-        _this243.windows = [new _Subject__WEBPACK_IMPORTED_MODULE_1__["Subject"]()];
-        _this243.count = 0;
-        destination.next(_this243.windows[0]);
-        return _this243;
+        _this254 = _possibleConstructorReturn(this, _getPrototypeOf(WindowCountSubscriber).call(this, destination));
+        _this254.destination = destination;
+        _this254.windowSize = windowSize;
+        _this254.startWindowEvery = startWindowEvery;
+        _this254.windows = [new _Subject__WEBPACK_IMPORTED_MODULE_1__["Subject"]()];
+        _this254.count = 0;
+        destination.next(_this254.windows[0]);
+        return _this254;
       }
 
       _createClass2(WindowCountSubscriber, [{
@@ -119191,13 +121690,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(CountedSubject, _Subject__WEBPACK_IMP5);
 
       function CountedSubject() {
-        var _this244;
+        var _this255;
 
         _classCallCheck(this, CountedSubject);
 
-        _this244 = _possibleConstructorReturn(this, _getPrototypeOf(CountedSubject).apply(this, arguments));
-        _this244._numberOfNextedValues = 0;
-        return _this244;
+        _this255 = _possibleConstructorReturn(this, _getPrototypeOf(CountedSubject).apply(this, arguments));
+        _this255._numberOfNextedValues = 0;
+        return _this255;
       }
 
       _createClass2(CountedSubject, [{
@@ -119223,47 +121722,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(WindowTimeSubscriber, _Subscriber__WEBPACK_47);
 
       function WindowTimeSubscriber(destination, windowTimeSpan, windowCreationInterval, maxWindowSize, scheduler) {
-        var _this245;
+        var _this256;
 
         _classCallCheck(this, WindowTimeSubscriber);
 
-        _this245 = _possibleConstructorReturn(this, _getPrototypeOf(WindowTimeSubscriber).call(this, destination));
-        _this245.destination = destination;
-        _this245.windowTimeSpan = windowTimeSpan;
-        _this245.windowCreationInterval = windowCreationInterval;
-        _this245.maxWindowSize = maxWindowSize;
-        _this245.scheduler = scheduler;
-        _this245.windows = [];
+        _this256 = _possibleConstructorReturn(this, _getPrototypeOf(WindowTimeSubscriber).call(this, destination));
+        _this256.destination = destination;
+        _this256.windowTimeSpan = windowTimeSpan;
+        _this256.windowCreationInterval = windowCreationInterval;
+        _this256.maxWindowSize = maxWindowSize;
+        _this256.scheduler = scheduler;
+        _this256.windows = [];
 
-        var window = _this245.openWindow();
+        var window = _this256.openWindow();
 
         if (windowCreationInterval !== null && windowCreationInterval >= 0) {
           var closeState = {
-            subscriber: _assertThisInitialized(_this245),
+            subscriber: _assertThisInitialized(_this256),
             window: window,
             context: null
           };
           var creationState = {
             windowTimeSpan: windowTimeSpan,
             windowCreationInterval: windowCreationInterval,
-            subscriber: _assertThisInitialized(_this245),
+            subscriber: _assertThisInitialized(_this256),
             scheduler: scheduler
           };
 
-          _this245.add(scheduler.schedule(dispatchWindowClose, windowTimeSpan, closeState));
+          _this256.add(scheduler.schedule(dispatchWindowClose, windowTimeSpan, closeState));
 
-          _this245.add(scheduler.schedule(dispatchWindowCreation, windowCreationInterval, creationState));
+          _this256.add(scheduler.schedule(dispatchWindowCreation, windowCreationInterval, creationState));
         } else {
           var timeSpanOnlyState = {
-            subscriber: _assertThisInitialized(_this245),
+            subscriber: _assertThisInitialized(_this256),
             window: window,
             windowTimeSpan: windowTimeSpan
           };
 
-          _this245.add(scheduler.schedule(dispatchWindowTimeSpanOnly, windowTimeSpan, timeSpanOnlyState));
+          _this256.add(scheduler.schedule(dispatchWindowTimeSpanOnly, windowTimeSpan, timeSpanOnlyState));
         }
 
-        return _this245;
+        return _this256;
       }
 
       _createClass2(WindowTimeSubscriber, [{
@@ -119457,18 +121956,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(WindowToggleSubscriber, _OuterSubscriber__WEB27);
 
       function WindowToggleSubscriber(destination, openings, closingSelector) {
-        var _this246;
+        var _this257;
 
         _classCallCheck(this, WindowToggleSubscriber);
 
-        _this246 = _possibleConstructorReturn(this, _getPrototypeOf(WindowToggleSubscriber).call(this, destination));
-        _this246.openings = openings;
-        _this246.closingSelector = closingSelector;
-        _this246.contexts = [];
+        _this257 = _possibleConstructorReturn(this, _getPrototypeOf(WindowToggleSubscriber).call(this, destination));
+        _this257.openings = openings;
+        _this257.closingSelector = closingSelector;
+        _this257.contexts = [];
 
-        _this246.add(_this246.openSubscription = Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_3__["subscribeToResult"])(_assertThisInitialized(_this246), openings, openings));
+        _this257.add(_this257.openSubscription = Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_3__["subscribeToResult"])(_assertThisInitialized(_this257), openings, openings));
 
-        return _this246;
+        return _this257;
       }
 
       _createClass2(WindowToggleSubscriber, [{
@@ -119679,17 +122178,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(WindowSubscriber, _OuterSubscriber__WEB28);
 
       function WindowSubscriber(destination, closingSelector) {
-        var _this247;
+        var _this258;
 
         _classCallCheck(this, WindowSubscriber);
 
-        _this247 = _possibleConstructorReturn(this, _getPrototypeOf(WindowSubscriber).call(this, destination));
-        _this247.destination = destination;
-        _this247.closingSelector = closingSelector;
+        _this258 = _possibleConstructorReturn(this, _getPrototypeOf(WindowSubscriber).call(this, destination));
+        _this258.destination = destination;
+        _this258.closingSelector = closingSelector;
 
-        _this247.openWindow();
+        _this258.openWindow();
 
-        return _this247;
+        return _this258;
       }
 
       _createClass2(WindowSubscriber, [{
@@ -119848,28 +122347,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(WithLatestFromSubscriber, _OuterSubscriber__WEB29);
 
       function WithLatestFromSubscriber(destination, observables, project) {
-        var _this248;
+        var _this259;
 
         _classCallCheck(this, WithLatestFromSubscriber);
 
-        _this248 = _possibleConstructorReturn(this, _getPrototypeOf(WithLatestFromSubscriber).call(this, destination));
-        _this248.observables = observables;
-        _this248.project = project;
-        _this248.toRespond = [];
+        _this259 = _possibleConstructorReturn(this, _getPrototypeOf(WithLatestFromSubscriber).call(this, destination));
+        _this259.observables = observables;
+        _this259.project = project;
+        _this259.toRespond = [];
         var len = observables.length;
-        _this248.values = new Array(len);
+        _this259.values = new Array(len);
 
         for (var i = 0; i < len; i++) {
-          _this248.toRespond.push(i);
+          _this259.toRespond.push(i);
         }
 
-        for (var _i25 = 0; _i25 < len; _i25++) {
-          var observable = observables[_i25];
+        for (var _i26 = 0; _i26 < len; _i26++) {
+          var observable = observables[_i26];
 
-          _this248.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this248), observable, observable, _i25));
+          _this259.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this259), observable, observable, _i26));
         }
 
-        return _this248;
+        return _this259;
       }
 
       _createClass2(WithLatestFromSubscriber, [{
@@ -120442,14 +122941,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(AnimationFrameAction, _AsyncAction__WEBPACK);
 
       function AnimationFrameAction(scheduler, work) {
-        var _this249;
+        var _this260;
 
         _classCallCheck(this, AnimationFrameAction);
 
-        _this249 = _possibleConstructorReturn(this, _getPrototypeOf(AnimationFrameAction).call(this, scheduler, work));
-        _this249.scheduler = scheduler;
-        _this249.work = work;
-        return _this249;
+        _this260 = _possibleConstructorReturn(this, _getPrototypeOf(AnimationFrameAction).call(this, scheduler, work));
+        _this260.scheduler = scheduler;
+        _this260.work = work;
+        return _this260;
       }
 
       _createClass2(AnimationFrameAction, [{
@@ -120602,14 +123101,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(AsapAction, _AsyncAction__WEBPACK2);
 
       function AsapAction(scheduler, work) {
-        var _this250;
+        var _this261;
 
         _classCallCheck(this, AsapAction);
 
-        _this250 = _possibleConstructorReturn(this, _getPrototypeOf(AsapAction).call(this, scheduler, work));
-        _this250.scheduler = scheduler;
-        _this250.work = work;
-        return _this250;
+        _this261 = _possibleConstructorReturn(this, _getPrototypeOf(AsapAction).call(this, scheduler, work));
+        _this261.scheduler = scheduler;
+        _this261.work = work;
+        return _this261;
       }
 
       _createClass2(AsapAction, [{
@@ -120755,15 +123254,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(AsyncAction, _Action__WEBPACK_IMPO);
 
       function AsyncAction(scheduler, work) {
-        var _this251;
+        var _this262;
 
         _classCallCheck(this, AsyncAction);
 
-        _this251 = _possibleConstructorReturn(this, _getPrototypeOf(AsyncAction).call(this, scheduler, work));
-        _this251.scheduler = scheduler;
-        _this251.work = work;
-        _this251.pending = false;
-        return _this251;
+        _this262 = _possibleConstructorReturn(this, _getPrototypeOf(AsyncAction).call(this, scheduler, work));
+        _this262.scheduler = scheduler;
+        _this262.work = work;
+        _this262.pending = false;
+        return _this262;
       }
 
       _createClass2(AsyncAction, [{
@@ -120904,23 +123403,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(AsyncScheduler, _Scheduler__WEBPACK_I);
 
       function AsyncScheduler(SchedulerAction) {
-        var _this252;
+        var _this263;
 
         var now = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _Scheduler__WEBPACK_IMPORTED_MODULE_0__["Scheduler"].now;
 
         _classCallCheck(this, AsyncScheduler);
 
-        _this252 = _possibleConstructorReturn(this, _getPrototypeOf(AsyncScheduler).call(this, SchedulerAction, function () {
-          if (AsyncScheduler.delegate && AsyncScheduler.delegate !== _assertThisInitialized(_this252)) {
+        _this263 = _possibleConstructorReturn(this, _getPrototypeOf(AsyncScheduler).call(this, SchedulerAction, function () {
+          if (AsyncScheduler.delegate && AsyncScheduler.delegate !== _assertThisInitialized(_this263)) {
             return AsyncScheduler.delegate.now();
           } else {
             return now();
           }
         }));
-        _this252.actions = [];
-        _this252.active = false;
-        _this252.scheduled = undefined;
-        return _this252;
+        _this263.actions = [];
+        _this263.active = false;
+        _this263.scheduled = undefined;
+        return _this263;
       }
 
       _createClass2(AsyncScheduler, [{
@@ -121005,14 +123504,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(QueueAction, _AsyncAction__WEBPACK3);
 
       function QueueAction(scheduler, work) {
-        var _this253;
+        var _this264;
 
         _classCallCheck(this, QueueAction);
 
-        _this253 = _possibleConstructorReturn(this, _getPrototypeOf(QueueAction).call(this, scheduler, work));
-        _this253.scheduler = scheduler;
-        _this253.work = work;
-        return _this253;
+        _this264 = _possibleConstructorReturn(this, _getPrototypeOf(QueueAction).call(this, scheduler, work));
+        _this264.scheduler = scheduler;
+        _this264.work = work;
+        return _this264;
       }
 
       _createClass2(QueueAction, [{
@@ -121142,20 +123641,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(VirtualTimeScheduler, _AsyncScheduler__WEBP4);
 
       function VirtualTimeScheduler() {
-        var _this254;
+        var _this265;
 
         var SchedulerAction = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : VirtualAction;
         var maxFrames = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Number.POSITIVE_INFINITY;
 
         _classCallCheck(this, VirtualTimeScheduler);
 
-        _this254 = _possibleConstructorReturn(this, _getPrototypeOf(VirtualTimeScheduler).call(this, SchedulerAction, function () {
-          return _this254.frame;
+        _this265 = _possibleConstructorReturn(this, _getPrototypeOf(VirtualTimeScheduler).call(this, SchedulerAction, function () {
+          return _this265.frame;
         }));
-        _this254.maxFrames = maxFrames;
-        _this254.frame = 0;
-        _this254.index = -1;
-        return _this254;
+        _this265.maxFrames = maxFrames;
+        _this265.frame = 0;
+        _this265.index = -1;
+        return _this265;
       }
 
       _createClass2(VirtualTimeScheduler, [{
@@ -121195,19 +123694,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(VirtualAction, _AsyncAction__WEBPACK4);
 
       function VirtualAction(scheduler, work) {
-        var _this255;
+        var _this266;
 
         var index = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : scheduler.index += 1;
 
         _classCallCheck(this, VirtualAction);
 
-        _this255 = _possibleConstructorReturn(this, _getPrototypeOf(VirtualAction).call(this, scheduler, work));
-        _this255.scheduler = scheduler;
-        _this255.work = work;
-        _this255.index = index;
-        _this255.active = true;
-        _this255.index = scheduler.index = index;
-        return _this255;
+        _this266 = _possibleConstructorReturn(this, _getPrototypeOf(VirtualAction).call(this, scheduler, work));
+        _this266.scheduler = scheduler;
+        _this266.work = work;
+        _this266.index = index;
+        _this266.active = true;
+        _this266.index = scheduler.index = index;
+        return _this266;
       }
 
       _createClass2(VirtualAction, [{
