@@ -109,12 +109,24 @@ def createTask(request):
 	description = jsondata['newtask']['description']
 	username = jsondata['newtask']['user']
 	email = jsondata['newtask']['email']
+	is_cofirmed = jsondata['newtask']['isCofirmed']
+	on_main = jsondata['newtask']['onMain']
+
+	if is_cofirmed == 'on':
+		is_cofirmed = True
+	else:
+		is_cofirmed = False
+
+	if on_main == 'on':
+		on_main = True
+	else:
+		on_main = False
 
 	print(title, description, username,email)
 	task = None
 
 	with transaction.atomic():
-		task = Task.objects.create(user=username, description=description, title=title, email=email)
+		task = Task.objects.create(user=username, description=description, title=title, email=email, is_cofirmed=is_cofirmed, on_main=on_main)
 		# task.save()
 
 	print('task', task)
@@ -125,6 +137,8 @@ def createTask(request):
 		'user': task.user,
 		'email': task.email,
 		'isCofirmed': task.is_cofirmed,
+		'onMain': task.on_main,
+		'pub_date': task.pub_date,
 	}
 
 	# return JsonResponse({'status': 'success'})
@@ -147,9 +161,12 @@ def updateTask(request):
 	description = jsondata['description']
 	username = jsondata['user']
 	email = jsondata['email']
-	is_cofirmed = False
-	if jsondata['is_cofirmed'] == 'true':
-		is_cofirmed = True
+	is_cofirmed = jsondata['isCofirmed']
+	on_main = jsondata['onMain']
+	# if jsondata['onMain'] == 'true':
+	# 	on_main = True
+	# if jsondata['isCofirmed'] == 'true':
+	# 	is_cofirmed = True
 
 
 	task = Task.objects.get(id=task_id)
@@ -158,6 +175,7 @@ def updateTask(request):
 	task.user = username
 	task.email = email
 	task.is_cofirmed = is_cofirmed
+	task.on_main = on_main
 
 	with transaction.atomic():
 		task.save()
@@ -195,16 +213,14 @@ def removeTask(request):
 def getTasks(request):
 	print('================get task================')
 	print(request.GET)
-	# print('request.method', request.method)
-	# jsondata = json.loads(request.body)
-	# print('json', jsondata)
+	print('page', request.GET.get('page'))
 
-	print(request.GET.get('page'))
-	print('0-----------')
 	page_number = request.GET.get('page')
 	sort_key = request.GET.get('sortKey')
 	sort_way = request.GET.get('sortWay')
+	main_only = request.GET.get('onMain', False)
 	taskList = None
+
 
 	if sort_key == 'status':
 		sort_key = 'is_cofirmed'
@@ -212,10 +228,18 @@ def getTasks(request):
 	if sort_way == 'dec':
 		sort_key = '-' + sort_key
 
-	taskList = Task.objects.order_by(sort_key)
+	if main_only == 'true':
+		main_only = True
+
+	if request.GET.get('onMain') is None:
+		taskList = Task.objects.order_by(sort_key)
+	else:
+		taskList = Task.objects.filter(on_main=main_only).order_by(sort_key)
+
+	# taskList = Task.objects.order_by(sort_key)
+	
 
 	paginator = Paginator(taskList, 3)
-
 	if page_number == None:
 		page_number = 1
 	page_obj = paginator.get_page(page_number)
@@ -237,7 +261,9 @@ def getTasks(request):
 			'user': task.user,
 			'email': task.email,
 			'description': task.description,
-			'is_cofirmed': task.is_cofirmed,
+			'isCofirmed': task.is_cofirmed,
+			'onMain': task.on_main,
+			'pub_date': task.pub_date,
 		})
 
 	results = {

@@ -22,9 +22,10 @@ class Task(models.Model):
     description = models.TextField(max_length=500, default='', verbose_name='Описание', blank=True)
     pub_date = models.DateTimeField(auto_now_add=True)
     is_cofirmed = models.BooleanField(verbose_name='Выполнена', default=False, blank=True)
+    on_main = models.BooleanField(verbose_name='Показывать на главной', default=False, blank=True)
 
     class Meta:
-        ordering = ('is_cofirmed', 'title', 'user', 'email', 'pub_date')
+        ordering = ('is_cofirmed', 'on_main', 'title', 'user', 'email', 'pub_date')
 
     def __str__(self):
         return self.title
