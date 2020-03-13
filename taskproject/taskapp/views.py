@@ -15,7 +15,10 @@ from django.core import serializers
 
 import json 
 from django.forms.models import model_to_dict
+from datetime import date, datetime, timedelta
+# from django.utils import timezone
 
+# timezone.localtime(timezone.now())
 
 class TaskViewSet(viewsets.ModelViewSet):
 	"""
@@ -253,7 +256,8 @@ def getTasks(request):
 			'description': task.description,
 			'isCofirmed': task.is_cofirmed,
 			'onMain': task.on_main,
-			'pub_date': task.pub_date,
+			'pub_date': task.pub_date.strftime("%d.%m.%Y"),
+			# 'pub_date': task.pub_date.strftime("%d.%m.%Y %H:%M:%S"),
 		})
 
 	results = {
