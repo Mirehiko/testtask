@@ -1209,6 +1209,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function save(task) {
           var _this3 = this;
 
+          if (!task.title || !task.user || !task.email) {
+            this.notifier.notify('warning', 'Поля \'Имя задачи\', \'ФИО\' и \'Email\' не должны быть пустыми!');
+            return;
+          }
+
           this.taskService.updateTask(this.task).subscribe(function (data) {
             console.log(data); // notify
 
@@ -2011,6 +2016,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           console.log(taskTitle, taskDescribe, taskUser, taskEmail, this.isNewConfirmed, this.isNewOnMain);
 
           if (!taskTitle || !taskUser || !taskEmail) {
+            this.notifier.notify('warning', 'Поля \'Имя задачи\', \'ФИО\' и \'Email\' не должны быть пустыми!');
             return;
           }
 

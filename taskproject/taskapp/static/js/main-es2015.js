@@ -591,6 +591,10 @@ class TaskDetailComponent {
         this.taskChange.emit(this.task);
     }
     save(task) {
+        if (!task.title || !task.user || !task.email) {
+            this.notifier.notify('warning', 'Поля \'Имя задачи\', \'ФИО\' и \'Email\' не должны быть пустыми!');
+            return;
+        }
         this.taskService.updateTask(this.task).subscribe(data => {
             console.log(data);
             // notify
@@ -978,6 +982,7 @@ class TaskComponent {
     add(taskTitle, taskDescribe, taskUser, taskEmail) {
         console.log(taskTitle, taskDescribe, taskUser, taskEmail, this.isNewConfirmed, this.isNewOnMain);
         if (!taskTitle || !taskUser || !taskEmail) {
+            this.notifier.notify('warning', 'Поля \'Имя задачи\', \'ФИО\' и \'Email\' не должны быть пустыми!');
             return;
         }
         const newtask = {
