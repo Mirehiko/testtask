@@ -211,6 +211,7 @@ def getTasks(request):
 	sort_key = request.GET.get('sortKey')
 	sort_way = request.GET.get('sortWay')
 	main_only = request.GET.get('onMain', False)
+	task_per_page = request.GET.get('taskPerPage', 5)
 	taskList = None
 
 
@@ -231,7 +232,7 @@ def getTasks(request):
 	# taskList = Task.objects.order_by(sort_key)
 	
 
-	paginator = Paginator(taskList, 3)
+	paginator = Paginator(taskList, task_per_page)
 
 	if page_number == None:
 		page_number = 1
@@ -265,6 +266,7 @@ def getTasks(request):
 		'next': next_page,
 		'prev': prev_page,
 		'page': page_number,
+		'taskPerPage': task_per_page,
 	}
 
 	# if request.session.has_key('username'):
