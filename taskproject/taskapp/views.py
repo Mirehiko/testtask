@@ -176,21 +176,27 @@ def removeTask(request):
 	jsondata = json.loads(request.body)
 	print('json', jsondata)
 	taskid = jsondata['id']
+	current_page = int(jsondata['page'])
 	task = Task.objects.get(id=taskid)
 
 	status = ''
+	results = {}
 
 	try:
 		task.delete()
-		status = 'success'
+		results['status'] = 'success'
 	except ObjectDoesNotExist:
 		print("Not found task with same id")
-		status = 'warning'
+		results['status'] = 'warning'
 
-	results = {
-		'status': status
-	}
+	paginator = Paginator(Task.objects.all(), 3)
+	total_pages = paginator.num_pages
 
+	if current_page < total_pages:
+		results['page'] = current_page
+	else:
+		results['page'] = total_pages
+	
 	return JsonResponse(results, content_type='application/json')
 
 def getTasks(request):
@@ -223,6 +229,7 @@ def getTasks(request):
 	
 
 	paginator = Paginator(taskList, 3)
+
 	if page_number == None:
 		page_number = 1
 	page_obj = paginator.get_page(page_number)
